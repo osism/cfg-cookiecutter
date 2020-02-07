@@ -1,0 +1,27 @@
+---
+##########################
+# versions
+
+{% if cookiecutter.with_ceph|int -%}
+ceph_version: {{cookiecutter.ceph_version}}
+{% endif -%}
+openstack_version: {{cookiecutter.openstack_version}}
+
+{% if cookiecutter.with_ceph|int -%}
+ceph_manager_version: {{cookiecutter.ceph_manager_version}}
+{% endif -%}
+kolla_manager_version: {{cookiecutter.kolla_manager_version}}
+osism_manager_version: {{cookiecutter.osism_manager_version}}
+
+##########################
+# manager
+
+{% if not cookiecutter.with_ceph|int -%}
+ceph_ansible_enable: false
+{% endif -%}
+
+{% raw -%}
+configure_cockpit: yes
+cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+{%- endraw %}

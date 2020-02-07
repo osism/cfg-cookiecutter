@@ -1,0 +1,12 @@
+---
+extends: default
+
+rules:
+  line-length:
+    max: 300
+    level: warning
+
+  truthy: disable
+
+ignore: |
+  cfg-customer/environments/kolla/secrets.yml

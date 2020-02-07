@@ -1,0 +1,116 @@
+---
+##########################
+# versions
+
+{%- if cookiecutter.with_ceph|int %}
+ceph_version: {{cookiecutter.ceph_version}}
+{%- endif %}
+openstack_version: {{cookiecutter.openstack_version}}
+
+##########################
+# helper
+
+configure_adminer: no
+{%- if cookiecutter.with_ceph|int %}
+configure_cephclient: yes
+{%- else %}
+configure_cephclient: no
+{%- endif %}
+configure_openstackclient: yes
+configure_phpmyadmin: yes
+configure_rally: no
+configure_sshconfig: yes
+{%- if cookiecutter.with_ceph|int %}
+
+##########################
+# cephclient
+
+{% raw -%}
+cephclient_keyring: "{{ lookup('file', '{{ configuration_directory }}/environments/infrastructure/files/ceph/ceph.client.admin.keyring') }}"
+cephclient_keyring_name: client.admin
+cephclient_mons:
+  - FIXME
+cephclient_cluster_fsid: "{{ ceph_cluster_fsid }}"
+cephclient_groupname: cephclient
+{%- endraw %}
+{%- endif %}
+
+##########################
+# openstackclient
+
+opentstackclient_groupname: openstackclient
+{% raw -%}
+openstackclient_configuration_directory: "{{ configuration_directory }}/environments/openstack"
+{%- endraw %}
+
+##########################
+# adminer
+
+{% raw -%}
+adminer_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+adminer_database_host: "{{ kolla_internal_vip_address }}"
+{%- endraw %}
+
+##########################
+# phpmyadmin
+
+{% raw -%}
+phpmyadmin_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+phpmyadmin_database_host: "{{ kolla_internal_vip_address }}"
+{%- endraw %}
+
+##########################
+# mirror
+
+configure_aptly: no
+configure_registry: no
+
+# aptly
+
+{% raw -%}
+aptly_nginx_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
+
+aptly_configuration:
+  full_name: Foobar GmbH
+  email_address: info@foo.bar
+  gpg_password: "{{ aptly_gpg_password }}"
+  virtual_host: aptly
+
+aptly_repository_keys:
+  - https://download.docker.com/linux/ubuntu/gpg
+
+aptly_repositories:
+  - name: "{{ ansible_distribution_release }}-docker"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+  - name: "{{ ansible_distribution_release }}"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-backports"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-security"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security main restricted universe multiverse"
+  - name: "{{ ansible_distribution_release }}-updates"
+    architecture: amd64
+    distribution: "{{ ansible_distribution_release }}"
+    repository: "http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted universe multiverse"
+{%- endraw %}
+
+# registry
+
+{% raw -%}
+registry_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interface]['ipv4']['address'] }}"
+{%- endraw %}
+
+##########################
+# netdata
+
+{% raw -%}
+netdata_api_host: FIXME
+{%- endraw %}

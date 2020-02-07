@@ -1,0 +1,5 @@
+##########################################################
+# environment: manager
+
+[manager]
+manager01.{{cookiecutter.domain}} ansible_host=10.1.10.10

@@ -1,0 +1,24 @@
+---
+##########################
+# versions
+
+{%- if cookiecutter.with_ceph|int %}
+ceph_version: {{cookiecutter.ceph_version}}
+{%- endif %}
+openstack_version: {{cookiecutter.openstack_version}}
+repository_version: {{cookiecutter.repository_version}}
+
+{%- if cookiecutter.with_ceph|int %}
+ceph_manager_version: {{cookiecutter.ceph_manager_version}}
+{%- endif %}
+kolla_manager_version: {{cookiecutter.kolla_manager_version}}
+osism_manager_version: {{cookiecutter.osism_manager_version}}
+
+##########################
+# mirror-images
+
+docker_registry_external: index.docker.io
+docker_registry_internal: {{cookiecutter.docker_registry}}
+docker_namespace: osism
+
+remove_local_docker_images: false

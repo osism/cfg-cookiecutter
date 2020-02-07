@@ -1,0 +1,13 @@
+ansible
+cookiecutter
+cryptography
+oslo.utils
+paramiko
+passlib
+pwgen
+pycrypto
+pykeepass
+python-gilt
+pyyaml
+ruamel.yaml
+yamllint

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+read -p "Please enter the ansible vault password: " -s vault_pass
+echo $vault_pass
