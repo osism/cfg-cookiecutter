@@ -62,6 +62,7 @@ enable_watcher: "no"
 
 enable_etcd: "no"
 enable_grafana: "yes"
+enable_mongodb: "no"
 enable_redis: "yes"
 enable_skydive: "no"
 
