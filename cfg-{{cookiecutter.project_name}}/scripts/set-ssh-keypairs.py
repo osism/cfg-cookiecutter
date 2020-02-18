@@ -19,7 +19,7 @@ yaml.width = float("inf")
 # set private keys
 
 with open(SECRETSFILE) as fp:
-    secrets = yaml.load(open(SECRETSFILE))
+    secrets = yaml.load(fp)
 
 for key in PRIVATE_KEYS.keys():
     with open("secrets/id_rsa.%s" % key, 'r') as fp:
@@ -33,7 +33,7 @@ with open(SECRETSFILE, 'w+') as fp:
 # set public keys
 
 with open(CONFIGURATIONFILE) as fp:
-    configuration = yaml.load(open(CONFIGURATIONFILE))
+    configuration = yaml.load(fp)
 
 # operator public key
 

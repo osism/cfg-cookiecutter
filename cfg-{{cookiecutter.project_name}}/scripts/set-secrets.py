@@ -21,13 +21,13 @@ yaml.preserve_quotes = True
 yaml.width = float("inf")
 
 with open(SECRETSFILE_INPUT) as fp:
-    secrets_input = yaml.load(open(SECRETSFILE_INPUT))
+    secrets_input = yaml.load(fp)
 
 with open(SECRETSFILE_OUTPUT_ALL) as fp:
-    secrets_output_all = yaml.load(open(SECRETSFILE_OUTPUT_ALL))
+    secrets_output_all = yaml.load(fp)
 
 with open(SECRETSFILE_OUTPUT_KOLLA) as fp:
-    secrets_output_kolla = yaml.load(open(SECRETSFILE_OUTPUT_KOLLA))
+    secrets_output_kolla = yaml.load(fp)
 
 for key in SECRETS_ALL.keys():
     secrets_output_all[key] = secrets_input[SECRETS_ALL[key]]
