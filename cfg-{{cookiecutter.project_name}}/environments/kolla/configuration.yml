@@ -54,6 +54,7 @@ enable_ceilometer: "no"
 enable_cinder: "yes"
 enable_cinder_backup: "yes"
 enable_cloudkitty: "no"
+enable_designate: "no"
 enable_gnocchi: "no"
 enable_heat: "yes"
 enable_magnum: "no"
@@ -118,6 +119,10 @@ octavia_loadbalancer_topology: "ACTIVE_STANDBY"
 # ceilometer
 ceilometer_database_type: gnocchi
 ceilometer_event_type: panko
+
+# designate
+designate_ns_record: openstack.{{cookiecutter.domain}}
+
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################################################
