@@ -6,7 +6,16 @@ install:
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
 
-script:
+env:
+  matrix:
+    - OPENSTACK_VERSION=queens
+    - OPENSTACK_VERSION=rocky
+    - OPENSTACK_VERSION=stein
+    - OPENSTACK_VERSION=train
+
+before_script:
   - yamllint cookiecutter.yml.sample
   - flake8 --max-line-length 150 *.py
-  - cookiecutter --no-input .
+
+script:
+  - cookiecutter --no-input . openstack_version=$OPENSTACK_VERSION
