@@ -4,7 +4,10 @@
 MANAGER_VERSION={{ cookiecutter.osism_manager_version }} gilt overlay
 MANAGER_VERSION={{ cookiecutter.osism_manager_version }} gilt overlay
 
-mv environments/kolla/files/overlays/haproxy/haproxy.cfg.{{ cookiecutter.openstack_version }} environments/kolla/files/overlays/haproxy/haproxy.cfg
+if [[ "{{ cookiecutter.openstack_version }}" == "queens" || "{{ cookiecutter.openstack_version }}" == "rocky" ]]; then
+    mv environments/kolla/files/overlays/haproxy/haproxy.cfg.{{ cookiecutter.openstack_version }} environments/kolla/files/overlays/haproxy/haproxy.cfg
+    rm -rf environments/kolla/files/overlays/haproxy/services.d/
+fi
 rm -f environments/kolla/files/overlays/haproxy/haproxy.cfg.*
 
 rm -rf environments/kolla/files/overlays/gnocchi-api
