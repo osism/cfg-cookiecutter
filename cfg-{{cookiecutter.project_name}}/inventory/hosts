@@ -45,6 +45,9 @@ control01.{{cookiecutter.domain}}
 [cephclient:children]
 ceph-control
 
+[ceph-grafana-server:children]
+ceph-control
+
 [ceph-mgr:children]
 ceph-control
 
@@ -69,6 +72,9 @@ storage01.{{cookiecutter.domain}}
 # NOTE: Subsequent groups necessary for compatibility to ceph-ansible. Don't change it.
 
 [ceph-client]
+
+[grafana-server:children]
+ceph-grafana-server
 
 [iscsi-gws:children]
 ceph-iscsigw
