@@ -132,8 +132,14 @@ control01.{{cookiecutter.domain}}
 [storage]
 control01.{{cookiecutter.domain}}
 
+[monitoring]
+manager01.{{cookiecutter.domain}}
+
 [grafana:children]
-control
+monitoring
+
+[influxdb:children]
+monitoring
 
 [kibana:children]
 control
