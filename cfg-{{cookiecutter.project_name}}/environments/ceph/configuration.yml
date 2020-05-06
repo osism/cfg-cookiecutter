@@ -145,7 +145,7 @@ ceph_mgr_modules:
 # custom
 
 ceph_conf_overrides:
+  global:
+    osd pool default size: 3
   mon:
     mon allow pool delete: true
-  osd:
-    osd pool default size: 3
