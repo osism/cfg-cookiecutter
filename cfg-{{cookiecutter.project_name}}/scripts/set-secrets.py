@@ -50,6 +50,7 @@ operator_password = ''.join([
         string.ascii_letters + string.digits)
     for n in range(16)
 ])
+secrets_output_all['operator_password_unhashed'] = operator_password
 secrets_output_all['operator_password'] = sha512_crypt.hash(operator_password)
 secrets_output_all.yaml_add_eol_comment(operator_password, key='operator_password')
 
