@@ -24,7 +24,7 @@ try:
 except FileNotFoundError:
     pass
 
-kp.add_entry(kp.root_group, 'User - Operator', username='dragon', password=secrets.get('operator_password'))
+kp.add_entry(kp.root_group, 'User - Operator', username='dragon', password=secrets.get('operator_password_unhashed'))
 kp.add_entry(kp.root_group, 'Keystone - Admin', username='admin', password=secrets.get('keystone_admin_password'))
 
 kp.save()
