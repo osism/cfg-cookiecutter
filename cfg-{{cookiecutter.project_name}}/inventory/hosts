@@ -255,6 +255,9 @@ control
 [etcd:children]
 control
 
+[zun:children]
+control
+
 # glance
 
 [glance-api:children]
@@ -587,3 +590,14 @@ ovn-database
 
 [ovn-sb-db:children]
 ovn-database
+
+# zun
+
+[zun-api:children]
+zun
+
+[zun-wsproxy:children]
+zun
+
+[zun-compute:children]
+compute
