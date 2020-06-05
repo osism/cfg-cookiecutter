@@ -54,6 +54,44 @@ def generate_RSA(bits=4096):
     return private_key, public_key
 
 
+def genpwd(passwords_file, length, uuid_keys, ssh_keys, blank_keys,
+           fernet_keys, hmac_md5_keys):
+    with open(passwords_file, 'r') as f:
+        passwords = yaml.safe_load(f.read())
+
+    for k, v in passwords.items():
+        if (k in ssh_keys and
+                (v is None or
+                 v.get('public_key') is None and
+                 v.get('private_key') is None)):
+            private_key, public_key = generate_RSA()
+            passwords[k] = {
+                'private_key': private_key,
+                'public_key': public_key
+            }
+            continue
+        if v is None:
+            if k in blank_keys and v is None:
+                continue
+            if k in uuid_keys:
+                passwords[k] = uuidutils.generate_uuid()
+            elif k in hmac_md5_keys:
+                passwords[k] = (hmac.new(
+                    uuidutils.generate_uuid().encode(), ''.encode(), md5)
+                    .hexdigest())
+            elif k in fernet_keys:
+                passwords[k] = fernet.Fernet.generate_key().decode()
+            else:
+                passwords[k] = ''.join([
+                    random.SystemRandom().choice(
+                        string.ascii_letters + string.digits)
+                    for n in range(length)
+                ])
+
+    with open(passwords_file, 'w') as f:
+        f.write(yaml.safe_dump(passwords, default_flow_style=False))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -65,8 +103,7 @@ def main():
     passwords_file = os.path.expanduser(args.passwords)
 
     # These keys should be random uuids
-    uuid_keys = ['ceph_cluster_fsid',
-                 'rbd_secret_uuid',
+    uuid_keys = ['rbd_secret_uuid',
                  'cinder_rbd_secret_uuid',
                  'gnocchi_project_id',
                  'gnocchi_resource_id',
@@ -91,40 +128,8 @@ def main():
     # length of password
     length = 40
 
-    with open(passwords_file, 'r') as f:
-        passwords = yaml.safe_load(f.read())
-
-    for k, v in passwords.items():
-        if (k in ssh_keys and
-                (v is None
-                 or v.get('public_key') is None
-                 and v.get('private_key') is None)):
-            private_key, public_key = generate_RSA()
-            passwords[k] = {
-                'private_key': private_key,
-                'public_key': public_key
-            }
-            continue
-        if v is None:
-            if k in blank_keys and v is None:
-                continue
-            if k in uuid_keys:
-                passwords[k] = uuidutils.generate_uuid()
-            elif k in hmac_md5_keys:
-                passwords[k] = (hmac.new(
-                    uuidutils.generate_uuid().encode(), ''.encode(), md5)
-                    .hexdigest())
-            elif k in fernet_keys:
-                passwords[k] = fernet.Fernet.generate_key()
-            else:
-                passwords[k] = ''.join([
-                    random.SystemRandom().choice(
-                        string.ascii_letters + string.digits)
-                    for n in range(length)
-                ])
-
-    with open(passwords_file, 'w') as f:
-        f.write(yaml.safe_dump(passwords, default_flow_style=False))
+    genpwd(passwords_file, length, uuid_keys, ssh_keys, blank_keys,
+           fernet_keys, hmac_md5_keys)
 
 
 if __name__ == '__main__':
