@@ -107,6 +107,8 @@ memcached
 elasticsearch
 kibana
 
+[podman]
+
 ##########################################################
 # environment: kolla
 
