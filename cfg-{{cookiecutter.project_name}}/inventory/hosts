@@ -10,9 +10,6 @@ control01.{{cookiecutter.domain}}
 manager01.{{cookiecutter.domain}}
 storage01.{{cookiecutter.domain}}
 
-[cobbler]
-manager01.{{cookiecutter.domain}}
-
 [helper]
 manager01.{{cookiecutter.domain}}
 
@@ -26,7 +23,6 @@ manager01.{{cookiecutter.domain}}
 manager01.{{cookiecutter.domain}}
 
 [infrastructure:children]
-cobbler
 helper
 manager
 mirror
