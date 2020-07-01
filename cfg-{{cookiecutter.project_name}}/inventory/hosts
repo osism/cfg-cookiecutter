@@ -10,23 +10,27 @@ control01.{{cookiecutter.domain}}
 manager01.{{cookiecutter.domain}}
 storage01.{{cookiecutter.domain}}
 
-[helper]
-manager01.{{cookiecutter.domain}}
+[helper:children]
+manager
 
 [manager]
 manager01.{{cookiecutter.domain}}
 
-[mirror]
-manager01.{{cookiecutter.domain}}
+[mirror:children]
+manager
 
-[openstackclient]
-manager01.{{cookiecutter.domain}}
+[openstackclient:children]
+manager
+
+[patchman:children]
+manager
 
 [infrastructure:children]
 helper
 manager
 mirror
 openstackclient
+patchman
 
 ##########################################################
 # environment: ceph
