@@ -1,3 +1,4 @@
+---
 name: Cookiecutter
 
 on: [push, pull_request]
@@ -15,16 +16,16 @@ jobs:
           - ussuri
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
-    - run: pip install -r requirements.txt
-    - run: cookiecutter --no-input . openstack_version=${{ matrix.openstack-version }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - run: pip install -r requirements.txt
+      - run: cookiecutter --no-input . openstack_version=${{ matrix.openstack-version }}
