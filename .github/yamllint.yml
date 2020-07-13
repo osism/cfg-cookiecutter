@@ -1,0 +1,17 @@
+---
+extends: default
+
+rules:
+  line-length: disable
+  truthy: disable
+
+# NOTE: These files are Jinja2 templates. Therefore they are ignored.
+ignore: |
+  cfg-{{cookiecutter.project_name}}/environments/ceph/configuration.yml
+  cfg-{{cookiecutter.project_name}}/environments/configuration.yml
+  cfg-{{cookiecutter.project_name}}/environments/custom/playbook-cronjobs.yml
+  cfg-{{cookiecutter.project_name}}/environments/infrastructure/configuration-mirror-images.yml
+  cfg-{{cookiecutter.project_name}}/environments/infrastructure/configuration.yml
+  cfg-{{cookiecutter.project_name}}/environments/kolla/configuration.yml
+  cfg-{{cookiecutter.project_name}}/environments/manager/configuration.yml
+  cfg-{{cookiecutter.project_name}}/inventory/host_vars/manager01.{{cookiecutter.domain}}.yml
