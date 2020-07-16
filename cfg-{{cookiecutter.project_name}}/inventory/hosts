@@ -25,12 +25,16 @@ manager
 [patchman:children]
 manager
 
+[pulp:children]
+manager
+
 [infrastructure:children]
 helper
 manager
 mirror
 openstackclient
 patchman
+pulp
 
 ##########################################################
 # environment: ceph
