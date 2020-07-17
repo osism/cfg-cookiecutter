@@ -4,12 +4,6 @@
 ##########################################################
 # environment: manager & infrastructure
 
-[netdata]
-compute01.{{cookiecutter.domain}}
-control01.{{cookiecutter.domain}}
-manager01.{{cookiecutter.domain}}
-storage01.{{cookiecutter.domain}}
-
 [helper:children]
 manager
 
@@ -18,6 +12,15 @@ manager01.{{cookiecutter.domain}}
 
 [mirror:children]
 manager
+
+[netbox:children]
+manager
+
+[netdata]
+compute01.{{cookiecutter.domain}}
+control01.{{cookiecutter.domain}}
+manager01.{{cookiecutter.domain}}
+storage01.{{cookiecutter.domain}}
 
 [openstackclient:children]
 manager
@@ -32,6 +35,7 @@ manager
 helper
 manager
 mirror
+netbox
 openstackclient
 patchman
 pulp
