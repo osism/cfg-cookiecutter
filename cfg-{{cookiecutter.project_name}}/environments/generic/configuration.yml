@@ -2,4 +2,4 @@
 ##########################
 # patchman-client
 
-patchman_client_server_url: http://{{ '{{' }} hostvars['manager01.{{cookiecutter.domain}}']['ansible_' + management_interface]['ipv4']['address'] {{ '}}' }}:8150
+patchman_client_host: "{{ '{{' }} hostvars['manager01.{{cookiecutter.domain}}']['ansible_' + management_interface]['ipv4']['address'] {{ '}}' }}"
