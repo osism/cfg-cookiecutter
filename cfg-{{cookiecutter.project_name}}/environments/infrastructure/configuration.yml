@@ -109,13 +109,6 @@ registry_host: "{{ hostvars[inventory_hostname]['ansible_' + management_interfac
 {%- endraw %}
 
 ##########################
-# netdata
-
-{% raw -%}
-netdata_api_host: FIXME
-{%- endraw %}
-
-##########################
 # patchman
 
 {% raw -%}
