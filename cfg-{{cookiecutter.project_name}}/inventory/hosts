@@ -145,6 +145,13 @@ control01.{{cookiecutter.domain}}
 [monitoring]
 manager01.{{cookiecutter.domain}}
 
+[common:children]
+control
+network
+compute
+storage
+monitoring
+
 [grafana:children]
 monitoring
 
@@ -657,3 +664,17 @@ elasticsearch
 
 [prometheus-blackbox-exporter:children]
 monitoring
+
+# common
+
+[cron:children]
+common
+
+[fluentd:children]
+common
+
+[kolla-logs:children]
+common
+
+[kolla-toolbox:children]
+common
