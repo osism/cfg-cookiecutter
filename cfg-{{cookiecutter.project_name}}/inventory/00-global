@@ -1,0 +1,5 @@
+[global]
+compute01.{{cookiecutter.domain}}
+control01.{{cookiecutter.domain}}
+manager01.{{cookiecutter.domain}}
+storage01.{{cookiecutter.domain}}

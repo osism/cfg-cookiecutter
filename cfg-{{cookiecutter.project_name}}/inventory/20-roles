@@ -1,0 +1,27 @@
+##########################################################
+# roles
+
+[manager]
+manager01.{{cookiecutter.domain}}
+
+[monitoring:children]
+manager
+
+[control]
+control01.{{cookiecutter.domain}}
+
+[compute]
+compute01.{{cookiecutter.domain}}
+
+[network:children]
+control
+
+# NOTE: Group for storage services like Cinder. Not for Ceph.
+[storage:children]
+control
+
+[ceph-control]
+control01.{{cookiecutter.domain}}
+
+[ceph-resource]
+storage01.{{cookiecutter.domain}}
