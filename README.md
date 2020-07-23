@@ -28,7 +28,7 @@ $ pipenv shell
 
 ```
 $ cookiecutter ssh://git@github.com:osism/cfg-cookiecutter.git
-ceph_fsid [Use a great UUID here]:
+ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
@@ -40,7 +40,7 @@ Alternative:
 $ git clone ssh://git@github.com:osism/cfg-cookiecutter.git
 $ cd cookiecutter
 $ cookiecutter .
-ceph_fsid [Use a great UUID here]:
+ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
@@ -55,12 +55,12 @@ In ``cookiecutter.yml.sample`` you can find a sample user config.
 ```
 ---
 default_context:
-  ceph_fsid: bb678031-08a6-4e58-9231-b1b3a0a7d2ae
+  ceph_fsid: 00000000-0000-0000-0000-000000000000
 ```
 
 ```
 $ cookiecutter --config-file cookiecutter.yml ssh://git@github.com:osism/cfg-cookiecutter.git
-ceph_fsid [bb678031-08a6-4e58-9231-b1b3a0a7d2ae]:
+ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
