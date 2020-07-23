@@ -1,7 +1,7 @@
 {
     "with_ceph": 1,
     "with_vault": 1,
-    "ceph_fsid": "Use a great UUID here",
+    "ceph_fsid": "00000000-0000-0000-0000-000000000000",
     "ceph_manager_version": "latest",
     "ceph_network_backend": "193.168.80.0/24",
     "ceph_network_frontend": "192.168.70.0/24",
