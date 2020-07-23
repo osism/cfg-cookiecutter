@@ -2,6 +2,24 @@
 # custom host groups
 
 ##########################################################
+# environment: monitoring
+
+[netdata]
+compute01.{{cookiecutter.domain}}
+control01.{{cookiecutter.domain}}
+manager01.{{cookiecutter.domain}}
+storage01.{{cookiecutter.domain}}
+
+[zabbix-agent]
+compute01.{{cookiecutter.domain}}
+control01.{{cookiecutter.domain}}
+manager01.{{cookiecutter.domain}}
+storage01.{{cookiecutter.domain}}
+
+[zabbix:children]
+manager
+
+##########################################################
 # environment: manager & infrastructure
 
 [helper:children]
@@ -15,12 +33,6 @@ manager
 
 [netbox:children]
 manager
-
-[netdata]
-compute01.{{cookiecutter.domain}}
-control01.{{cookiecutter.domain}}
-manager01.{{cookiecutter.domain}}
-storage01.{{cookiecutter.domain}}
 
 [openstackclient:children]
 manager
