@@ -16,10 +16,6 @@ compute01.{{cookiecutter.domain}}
 [network:children]
 control
 
-# NOTE: Group for storage services like Cinder. Not for Ceph.
-[storage:children]
-control
-
 [ceph-control]
 control01.{{cookiecutter.domain}}
 
