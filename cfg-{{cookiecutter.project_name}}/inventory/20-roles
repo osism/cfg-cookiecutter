@@ -1,6 +1,9 @@
 ##########################################################
 # roles
 
+# NOTE: This file is used to store the hosts for initial import into
+#       the netbox (when using netbox).
+
 [generic]
 compute01.{{cookiecutter.domain}}
 control01.{{cookiecutter.domain}}
@@ -10,8 +13,8 @@ storage01.{{cookiecutter.domain}}
 [manager]
 manager01.{{cookiecutter.domain}}
 
-[monitoring:children]
-manager
+[monitoring]
+manager01.{{cookiecutter.domain}}
 
 [control]
 control01.{{cookiecutter.domain}}
@@ -19,11 +22,31 @@ control01.{{cookiecutter.domain}}
 [compute]
 compute01.{{cookiecutter.domain}}
 
-[network:children]
-control
+[network]
+control01.{{cookiecutter.domain}}
 
 [ceph-control]
 control01.{{cookiecutter.domain}}
 
 [ceph-resource]
 storage01.{{cookiecutter.domain}}
+
+# NOTE: After the initial import of the inventory in the netbox,
+#       the groups in this file can be emptied. The systems are
+#       then assigned to their roles via tags in the netbox.
+
+# [generic]
+#
+# [manager]
+#
+# [monitoring]
+#
+# [control]
+#
+# [compute]
+#
+# [network]
+#
+# [ceph-control]
+#
+# [ceph-resource]
