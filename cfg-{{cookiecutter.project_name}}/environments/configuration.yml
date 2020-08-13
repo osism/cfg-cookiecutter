@@ -89,12 +89,6 @@ operator_authorized_keys:
 {%- endraw %}
 
 ##########################
-# network-interfaces
-
-network_allow_service_restart: no
-network_restart_method: nothing
-
-##########################
 # proxy
 
 proxy_proxies: {}
