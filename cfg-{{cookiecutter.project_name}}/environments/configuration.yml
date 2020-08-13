@@ -69,11 +69,6 @@ sysdig_configure_repository: yes
 zabbix_agent_configure_repository: yes
 
 ##########################
-# timezone
-
-timezone_zone: UTC
-
-##########################
 # operator
 
 operator_user: dragon
