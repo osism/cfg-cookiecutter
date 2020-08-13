@@ -187,11 +187,3 @@ security_sshd_allowed_macs: hmac-sha2-256,hmac-sha2-512,hmac-sha1
 ceph_share_directory: /share
 ceph_cluster_fsid: {{cookiecutter.ceph_fsid}}
 {%- endif %}
-
-##########################
-# cockpit
-
-configure_cockpit: yes
-{% raw -%}
-cockpit_ssh_interface: "{{ console_interface }}"
-{%- endraw %}
