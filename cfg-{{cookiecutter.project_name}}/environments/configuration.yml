@@ -46,9 +46,6 @@ repository_version: {{cookiecutter.repository_version}}
 ##########################
 # operator
 
-operator_user: dragon
-operator_group: dragon
-
 # yamllint disable rule:line-length
 operator_public_key: FIXME
 # yamllint enable rule:line-length
