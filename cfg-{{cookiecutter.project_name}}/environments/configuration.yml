@@ -56,11 +56,6 @@ operator_authorized_keys:
 {%- endraw %}
 
 ##########################
-# proxy
-
-proxy_proxies: {}
-
-##########################
 # resolvconf
 
 resolvconf_nameserver:
