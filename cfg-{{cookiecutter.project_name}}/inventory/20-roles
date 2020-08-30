@@ -1,8 +1,16 @@
 ##########################################################
 # roles
 
-# NOTE: This file is used to store the hosts for initial import into
-#       the netbox (when using netbox).
+# NOTE: If netbox is not used, nothing needs to be changed here. In
+#       this case this inventory is used as before. The hosts are
+#       then managed here as normal.
+#
+#       If netbox is used this file is only used to store the hosts
+#       for the initial import into the netbox.
+#
+#       After the initial import of the inventory in the netbox,
+#       the groups in this file can be emptied. The systems are
+#       then assigned to their roles via tags in the netbox.
 
 [generic]
 compute01.{{cookiecutter.domain}}
@@ -31,10 +39,10 @@ control01.{{cookiecutter.domain}}
 [ceph-resource]
 storage01.{{cookiecutter.domain}}
 
-# NOTE: After the initial import of the inventory in the netbox,
-#       the groups in this file can be emptied. The systems are
-#       then assigned to their roles via tags in the netbox.
-
+# NOTE: These empty groups are only necessary if netbox is used. After
+#       the initial import of the hosts these groups can be commented
+#       out. The groups above with the initial hosts can be commented.
+#
 # [generic]
 #
 # [manager]
