@@ -58,7 +58,7 @@ enable_designate: "no"
 enable_gnocchi: "no"
 enable_heat: "yes"
 enable_magnum: "no"
-enable_ocatvia: "no"
+enable_octavia: "no"
 enable_panko: "no"
 enable_watcher: "no"
 
