@@ -1,7 +1,7 @@
 ---
 name: Check python syntax
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     paths:
       - '**.py'

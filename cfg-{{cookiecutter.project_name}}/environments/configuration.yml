@@ -23,12 +23,12 @@ configuration_git_version: {{cookiecutter.git_version}}
 docker_user: "{{ operator_user }}"
 {%- endraw %}
 
-docker_configure_repository: no
+docker_configure_repository: false
 
-docker_configure_storage_driver: yes
+docker_configure_storage_driver: true
 docker_storage_driver: overlay2
 
-docker_configure_insecure_registries: yes
+docker_configure_insecure_registries: true
 docker_insecure_registries:
   - {{cookiecutter.docker_registry}}
 
@@ -85,8 +85,8 @@ cleanup_services_common:
   - nscd
   - ntp
 
-install_microcode_package_common: yes
-rng_enable_common: yes
+install_microcode_package_common: true
+rng_enable_common: true
 
 ##########################
 # kolla

@@ -10,7 +10,7 @@ openstack_version: {{cookiecutter.openstack_version}}
 ##########################
 # helper
 
-configure_cephclient: no
+configure_cephclient: false
 {%- endif %}
 {%- if cookiecutter.with_ceph|int %}
 
