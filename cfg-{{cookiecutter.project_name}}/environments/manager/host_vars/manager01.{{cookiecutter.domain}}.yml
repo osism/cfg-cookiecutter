@@ -13,7 +13,7 @@ cockpit_ssh_interface: vlan10
 ##########################################################
 # network-interfaces
 
-network_allow_service_restart: no
+network_allow_service_restart: false
 network_restart_method: nothing
 
 network_interfaces:

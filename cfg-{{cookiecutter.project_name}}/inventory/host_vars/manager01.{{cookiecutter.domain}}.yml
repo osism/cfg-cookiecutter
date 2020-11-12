@@ -17,7 +17,7 @@ fluentd_host: 10.1.20.10
 # cockpit
 
 {% raw -%}
-configure_cockpit_server: yes
+configure_cockpit_server: true
 cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
 cockpit_ssh_interface: vlan10{% endraw %}
 
@@ -29,7 +29,7 @@ netdata_host_type: server
 ##########################################################
 # network-interfaces
 
-network_allow_service_restart: no
+network_allow_service_restart: false
 network_restart_method: nothing
 
 network_interfaces:
