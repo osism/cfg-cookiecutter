@@ -12,6 +12,12 @@ kolla_base_distro: ubuntu
 kolla_install_type: source
 openstack_release: {{cookiecutter.openstack_version}}
 
+{% raw -%}
+# NOTE: With this parameter the rolling images are used.
+#       If this is not desired, remove this parameter.
+kolla_image_version: "{{ openstack_release }}"
+{%- endraw %}
+
 ##########################################################
 # kolla
 
