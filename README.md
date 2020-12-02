@@ -29,7 +29,6 @@ $ pipenv shell
 ```
 $ cookiecutter ssh://git@github.com:osism/cfg-cookiecutter.git
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
 ```
@@ -41,7 +40,6 @@ $ git clone ssh://git@github.com:osism/cfg-cookiecutter.git
 $ cd cookiecutter
 $ cookiecutter .
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
 ```
@@ -61,7 +59,6 @@ default_context:
 ```
 $ cookiecutter --config-file cookiecutter.yml ssh://git@github.com:osism/cfg-cookiecutter.git
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_manager_version [latest]:
 ceph_network_backend [192.168.80.0/24]:
 [...]
 ```
@@ -99,17 +96,7 @@ ceph_network_backend [192.168.80.0/24]:
     <td><code>github.com</code></td>
   </tr>
   <tr>
-    <td><code>ceph_manager_version</code></td>
-    <td>The version of the ceph-ansible container</td>
-    <td><code>latest</code></td>
-  </tr>
-  <tr>
-    <td><code>kolla_manager_version</code></td>
-    <td>The version of the kolla-ansible container</td>
-    <td><code>latest</code></td>
-  </tr>
-  <tr>
-    <td><code>osism_manager_version</code></td>
+    <td><code>manager_version</code></td>
     <td>The version of the osism-ansible container</td>
     <td><code>latest</code></td>
   </tr>

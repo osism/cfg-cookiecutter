@@ -5,13 +5,9 @@
 {% if cookiecutter.with_ceph|int -%}
 ceph_version: {{cookiecutter.ceph_version}}
 {% endif -%}
+manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
 
-{% if cookiecutter.with_ceph|int -%}
-ceph_manager_version: {{cookiecutter.ceph_manager_version}}
-{% endif -%}
-kolla_manager_version: {{cookiecutter.kolla_manager_version}}
-osism_manager_version: {{cookiecutter.osism_manager_version}}
 
 ##########################
 # manager
