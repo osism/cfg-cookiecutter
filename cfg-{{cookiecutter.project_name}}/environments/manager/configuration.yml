@@ -8,6 +8,10 @@ ceph_version: {{cookiecutter.ceph_version}}
 manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
 
+##########################
+# docker
+
+docker_configure_repository: true
 
 ##########################
 # manager
