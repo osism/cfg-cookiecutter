@@ -9,16 +9,6 @@ manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
 
 ##########################
-# docker
-
-docker_configure_repository: true
-
-##########################
-# operator
-
-operator_user: dragon
-
-##########################
 # manager
 
 {% if not cookiecutter.with_ceph|int -%}
