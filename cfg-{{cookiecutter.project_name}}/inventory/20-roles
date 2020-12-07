@@ -13,31 +13,22 @@
 #       then assigned to their roles via tags in the netbox.
 
 [generic]
-compute01.{{cookiecutter.domain}}
-control01.{{cookiecutter.domain}}
-manager01.{{cookiecutter.domain}}
-storage01.{{cookiecutter.domain}}
+node01.{{cookiecutter.domain}}
 
 [manager]
-manager01.{{cookiecutter.domain}}
+node01.{{cookiecutter.domain}}
 
 [monitoring]
-manager01.{{cookiecutter.domain}}
 
 [control]
-control01.{{cookiecutter.domain}}
 
 [compute]
-compute01.{{cookiecutter.domain}}
 
 [network]
-control01.{{cookiecutter.domain}}
 
 [ceph-control]
-control01.{{cookiecutter.domain}}
 
 [ceph-resource]
-storage01.{{cookiecutter.domain}}
 
 # NOTE: These empty groups are only necessary if netbox is used. After
 #       the initial import of the hosts these groups can be commented

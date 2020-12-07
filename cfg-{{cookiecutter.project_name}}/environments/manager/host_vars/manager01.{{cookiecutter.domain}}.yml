@@ -1,14 +1,19 @@
 ---
 ##########################################################
+# ansible
+
+ansible_host: 192.168.16.5
+
+##########################################################
 # generic
 
-management_interface: vlan10
-console_interface: vlan20
+management_interface: eno1
+console_interface: eno1
 
 ##########################################################
 # cockpit
 
-cockpit_ssh_interface: vlan10
+cockpit_ssh_interface: eno1
 
 ##########################################################
 # network-interfaces
@@ -17,47 +22,11 @@ network_allow_service_restart: false
 network_restart_method: nothing
 
 network_interfaces:
-  - device: enp3s0f0
+  - device: eno1
     auto: true
     family: inet
-    method: manual
-    bond:
-      master: bond0
-    mtu: 9000
-
-  - device: enp3s0f1
-    auto: true
-    family: inet
-    method: manual
-    bond:
-      master: bond0
-    mtu: 9000
-
-  - device: bond0
-    auto: true
-    family: inet
-    method: manual
-    bond:
-      mode: 802.3ad
-      xmit-hash-policy: layer3+4
-      miimon: 100
-      slaves: enp3s0f0 enp3s0f1
-      lacp-rate: 1
-    mtu: 9000
-
-  - device: vlan10
     method: static
-    address: 10.1.10.10
-    netmask: 255.255.255.0
-    gateway: 10.1.10.1
-    vlan:
-      raw-device: bond0
-    mtu: 9000
-
-  - device: vlan20
-    method: static
-    address: 10.1.20.10
-    netmask: 255.255.255.0
-    vlan:
-      raw-device: bond0
-    mtu: 9000
+    address: 192.168.16.5
+    netmask: 255.255.240.0
+    gateway: 192.168.16.1
+    mtu: 1500
