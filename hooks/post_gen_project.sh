@@ -37,6 +37,9 @@ else
 fi
 
 if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
+
+    rm -rf environments/infrastructure/files
+
     rm -rf environments/ceph
 
     rm -rf environments/kolla/files/overlays/gnocchi

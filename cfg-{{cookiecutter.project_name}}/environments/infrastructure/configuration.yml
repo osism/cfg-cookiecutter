@@ -6,12 +6,6 @@
 ceph_version: {{cookiecutter.ceph_version}}
 {%- endif %}
 openstack_version: {{cookiecutter.openstack_version}}
-{%- if cookiecutter.with_ceph|int == 0 %}
-##########################
-# helper
-
-configure_cephclient: false
-{%- endif %}
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################
