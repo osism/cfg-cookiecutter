@@ -28,7 +28,6 @@ cockpit_ssh_interface: eno1
 {% raw -%}
 # configure_cockpit_server: true
 # cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
-# cockpit_ssh_interface: vlan10
 {%- endraw %}
 
 ##########################################################
