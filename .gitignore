@@ -1,4 +1,3 @@
 .venv
 .tox
-Pipfile.lock
 cfg-customer
