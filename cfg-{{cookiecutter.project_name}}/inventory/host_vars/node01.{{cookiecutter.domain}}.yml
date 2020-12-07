@@ -64,6 +64,7 @@ network_interfaces:
 network_interface: eno1
 
 # api_interface:
+# bifrost_network_interface:
 # dns_interface:
 # kolla_external_vip_interface:
 # migration_interface:
