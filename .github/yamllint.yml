@@ -13,4 +13,4 @@ ignore: |
   cfg-{{cookiecutter.project_name}}/environments/infrastructure/configuration.yml
   cfg-{{cookiecutter.project_name}}/environments/kolla/configuration.yml
   cfg-{{cookiecutter.project_name}}/environments/manager/configuration.yml
-  cfg-{{cookiecutter.project_name}}/inventory/host_vars/manager01.{{cookiecutter.domain}}.yml
+  cfg-{{cookiecutter.project_name}}/inventory/host_vars/node01.{{cookiecutter.domain}}.yml

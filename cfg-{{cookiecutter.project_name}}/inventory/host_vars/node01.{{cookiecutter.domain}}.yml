@@ -1,0 +1,93 @@
+---
+##########################################################
+# ansible
+
+# NOTE: Address where the node can be reached via SSH.
+ansible_host: 192.168.16.10
+
+##########################################################
+# generic
+
+# NOTE: Interface where the node can be reached via SSH.
+console_interface: eno1
+
+# NOTE: The internal interface for the internal communication.
+management_interface: eno1
+
+# NOTE: The address of the internal interface.
+internal_address: 192.168.16.10
+fluentd_host: 192.168.16.10
+
+##########################################################
+# cockpit
+
+cockpit_ssh_interface: eno1
+
+# NOTE: Uncomment this when this node should be a Cockpit server.
+
+{% raw -%}
+# configure_cockpit_server: true
+# cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+# cockpit_ssh_interface: vlan10
+{%- endraw %}
+
+##########################################################
+# netdata
+
+netdata_host_type: client
+
+# NOTE: Uncomment this when this node should be a Netdata server.
+
+# netdata_host_type: server
+
+##########################################################
+# network-interfaces
+
+network_allow_service_restart: false
+network_restart_method: nothing
+
+# NOTE: This is the initial management interface. Further interfaces
+#       must be added.
+
+network_interfaces:
+  - device: eno1
+    auto: true
+    family: inet
+    method: static
+    address: 192.168.16.10
+    netmask: 255.255.240.0
+    gateway: 192.168.16.1
+    mtu: 1500
+
+##########################################################
+# kolla
+
+network_interface: eno1
+
+# api_interface:
+# dns_interface:
+# kolla_external_vip_interface:
+# migration_interface:
+# neutron_external_interface:
+# octavia_network_interface:
+# storage_interface:
+# tunnel_interface:
+
+##########################################################
+# ceph
+
+# NOTE: Uncomment this when this node is a part of the Ceph cluster.
+
+# monitor_address:
+# radosgw_address:
+
+# monitor_interface:
+# radosgw_interface:
+
+# NOTE: Uncomment this when this node should be a OSD node.
+
+# devices:
+#   - /dev/sdb
+#   - /dev/sdc
+#   - /dev/sdd
+#   - /dev/sde
