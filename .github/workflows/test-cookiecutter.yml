@@ -1,10 +1,10 @@
 ---
-name: Cookiecutter
+name: Test cookiecutter
 
 on: [push, pull_request]  # yamllint disable-line rule:truthy
 
 jobs:
-  build:
+  test-cookiecutter:
 
     runs-on: ubuntu-latest
     strategy:
@@ -14,6 +14,7 @@ jobs:
           - stein
           - train
           - ussuri
+          - victoria
 
     steps:
       - uses: actions/checkout@v2

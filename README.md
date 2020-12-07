@@ -1,8 +1,5 @@
 # Cookiecutter template for an OSISM configuration repository
 
-![Cookiecutter](https://github.com/osism/cfg-cookiecutter/workflows/Cookiecutter/badge.svg)
-![Lint](https://github.com/osism/cfg-cookiecutter/workflows/Lint/badge.svg)
-
 ## Installation
 
 The `pwgen` tool must be installed.
