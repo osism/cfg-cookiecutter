@@ -53,7 +53,8 @@ operator_password = ''.join([
 ])
 secrets_output_all['operator_password_unhashed'] = operator_password
 secrets_output_all['operator_password'] = sha512_crypt.hash(operator_password)
-secrets_output_all.yaml_add_eol_comment(operator_password, key='operator_password')
+secrets_output_all.yaml_add_eol_comment(operator_password,
+                                        key='operator_password')
 
 with open(SECRETSFILE_OUTPUT_ALL, 'w+') as fp:
     yaml.dump(secrets_output_all, fp)
