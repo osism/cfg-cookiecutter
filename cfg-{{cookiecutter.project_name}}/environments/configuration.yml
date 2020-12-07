@@ -92,6 +92,12 @@ install_microcode_package_common: true
 rng_enable_common: true
 
 ##########################
+# proxy
+
+proxy_package_manager: false
+proxy_proxies: {}
+
+##########################
 # kolla
 
 kolla_internal_vip_address: {{cookiecutter.ip_internal}}
