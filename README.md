@@ -20,7 +20,7 @@ $ pip3 install -r requirements.txt
 ```
 $ cookiecutter ssh://git@github.com:osism/cfg-cookiecutter.git
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_network_backend [192.168.80.0/24]:
+ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
 
@@ -31,7 +31,7 @@ $ git clone ssh://git@github.com:osism/cfg-cookiecutter.git
 $ cd cookiecutter
 $ cookiecutter .
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_network_backend [192.168.80.0/24]:
+ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
 
@@ -50,7 +50,7 @@ default_context:
 ```
 $ cookiecutter --config-file cookiecutter.yml ssh://git@github.com:osism/cfg-cookiecutter.git
 ceph_fsid [00000000-0000-0000-0000-000000000000]:
-ceph_network_backend [192.168.80.0/24]:
+ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
 
