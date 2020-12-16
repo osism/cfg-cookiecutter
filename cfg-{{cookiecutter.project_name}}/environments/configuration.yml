@@ -79,15 +79,12 @@ hosts_additional_entries:
 ##########################
 # common
 
-cleanup_services_common:
+cleanup_services_extra:
   - NetworkManager
   - iscsid
   - lxcfs
   - nscd
   - ntp
-
-install_microcode_package_common: true
-rng_enable_common: true
 
 ##########################
 # proxy
