@@ -35,6 +35,7 @@ ceph_docker_registry: {{cookiecutter.docker_registry}}
 {%- endif %}
 docker_registry: index.docker.io
 docker_registry_ansible: {{cookiecutter.docker_registry}}
+docker_registry_service: {{cookiecutter.docker_registry}}
 
 ##########################
 # versions
