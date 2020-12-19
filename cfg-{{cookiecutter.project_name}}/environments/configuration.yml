@@ -90,7 +90,6 @@ cleanup_services_extra:
 ##########################
 # proxy
 
-proxy_package_manager: false
 proxy_proxies: {}
 
 ##########################
