@@ -65,7 +65,6 @@ resolvconf_nameserver:
   - {{ name_server }}
 {%- endfor %}
 resolvconf_search: {{cookiecutter.domain}}
-resolvconf_package: ""
 
 ##########################
 # hosts
