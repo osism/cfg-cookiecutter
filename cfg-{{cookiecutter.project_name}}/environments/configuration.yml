@@ -26,9 +26,9 @@ docker_user: "{{ operator_user }}"
 docker_configure_storage_driver: true
 docker_storage_driver: overlay2
 
-docker_configure_insecure_registries: true
-docker_insecure_registries:
-  - {{cookiecutter.docker_registry}}
+# docker_configure_insecure_registries: true
+# docker_insecure_registries:
+#   - {{cookiecutter.docker_registry}}
 
 {%- if cookiecutter.with_ceph|int %}
 ceph_docker_registry: {{cookiecutter.docker_registry}}
