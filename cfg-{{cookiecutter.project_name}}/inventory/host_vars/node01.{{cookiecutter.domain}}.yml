@@ -42,9 +42,6 @@ netdata_host_type: client
 ##########################################################
 # network-interfaces
 
-network_allow_service_restart: false
-network_restart_method: nothing
-
 # NOTE: This is the initial management interface. Further interfaces
 #       must be added.
 
