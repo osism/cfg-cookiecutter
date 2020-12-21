@@ -18,9 +18,6 @@ cockpit_ssh_interface: eno1
 ##########################################################
 # network-interfaces
 
-network_allow_service_restart: false
-network_restart_method: nothing
-
 network_interfaces:
   - device: eno1
     auto: true
