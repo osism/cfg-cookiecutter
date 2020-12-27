@@ -29,41 +29,34 @@ kolla_external_fqdn: {{cookiecutter.fqdn_external}}
 # openstack
 
 # enable services
+enable_cinder: "yes"
+enable_cinder_backup: "yes"
+enable_heat: "yes"
+
+enable_grafana: "yes"
+
+# disable services
 enable_aodh: "no"
 enable_barbican: "no"
 enable_ceilometer: "no"
-enable_cinder: "yes"
-enable_cinder_backup: "yes"
-enable_cloudkitty: "no"
 enable_designate: "no"
 enable_gnocchi: "no"
-enable_heat: "yes"
 enable_magnum: "no"
 enable_octavia: "no"
 enable_panko: "no"
 enable_watcher: "no"
 
 enable_etcd: "no"
-enable_grafana: "yes"
 enable_mongodb: "no"
 enable_prometheus: "no"
-enable_redis: "yes"
 enable_skydive: "no"
-
-# disable services
-enable_chrony: "no"
 
 # generic
 
-# NOTE: This has to be "False", not "false"!
-openstack_logging_debug: "False"
 openstack_service_workers: 5
 
 # profiling
 enable_osprofiler: "no"
-
-# logging
-enable_central_logging: "yes"
 
 # elasticsearch
 
