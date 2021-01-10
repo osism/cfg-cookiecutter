@@ -1,0 +1,5 @@
+# [ceph-mds:children]
+# ceph-control
+
+# [ceph-rgw:children]
+# ceph-control
