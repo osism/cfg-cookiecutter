@@ -1,5 +1,14 @@
 ---
 ##########################################################
+# services
+
+enable_bird: false
+enable_netdata: true
+enable_osquery: true
+enable_patchman_client: true
+enable_zabbix_agent: true
+
+##########################################################
 # ansible
 
 # NOTE: Address where the node can be reached via SSH.
