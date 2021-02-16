@@ -2,7 +2,7 @@ PyYAML==5.4.1
 ansible==2.10.7
 cookiecutter==1.7.2
 cryptography==3.4.4
-oslo.utils==4.7.0
+oslo.utils==4.8.0
 paramiko==2.7.2
 passlib==1.7.4
 pwgen==0.8.2.post0
