@@ -6,7 +6,7 @@
     "ceph_network_frontend": "192.168.64.0/20",
     "ceph_version": "nautilus",
     "docker_registry": "quay.io",
-    "docker_version": "5:19.03.13",
+    "docker_version": "5:20.10.5",
     "domain": "osism.test",
     "fqdn_external": "api.osism.test",
     "fqdn_internal": "api-int.osism.test",
