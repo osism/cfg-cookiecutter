@@ -1,7 +1,7 @@
 ---
 name: Test cookiecutter
 
-on: [push, pull_request]  # yamllint disable-line rule:truthy
+"on": [push, pull_request]
 
 jobs:
   test-cookiecutter:
@@ -10,7 +10,6 @@ jobs:
     strategy:
       matrix:
         openstack-version:
-          - rocky
           - stein
           - train
           - ussuri
