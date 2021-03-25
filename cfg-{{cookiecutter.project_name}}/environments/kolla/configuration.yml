@@ -77,12 +77,8 @@ neutron_plugin_agent: "openvswitch"
 
 enable_neutron_agent_ha: "yes"
 enable_neutron_dvr: "no"
-enable_neutron_fwaas: "no"
 enable_neutron_qos: "yes"
 enable_neutron_vpnaas: "no"
-
-# NOTE: is only needed for Rocky
-neutron_fwaas_version: "v2"
 
 # nova
 nova_console: novnc
