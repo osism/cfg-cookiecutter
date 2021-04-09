@@ -34,6 +34,5 @@ awx_vault_type: vault
 vault_enable: false
 vault_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
 
-netbox_enable: false
 netbox_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
 {%- endraw %}
