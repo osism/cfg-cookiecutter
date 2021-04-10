@@ -2,6 +2,7 @@
 ##########################
 # versions
 
+awx_version: latest
 {% if cookiecutter.with_ceph|int -%}
 ceph_version: {{cookiecutter.ceph_version}}
 {% endif -%}
