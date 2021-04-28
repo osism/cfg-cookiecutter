@@ -12,22 +12,38 @@
 #       the groups in this file can be emptied. The systems are
 #       then assigned to their roles via tags in the netbox.
 
+# The "all" group is not used in OSISM. Therefore it is important
+# that all nodes are explicitly listed here.
 [generic]
 node01.{{cookiecutter.domain}}
 
+# Nodes that act as manager (sometimes called deployment node)
+# are included in this group.
 [manager]
 node01.{{cookiecutter.domain}}
 
+# Nodes which are intended for monitoring services belong to
+# this group
 [monitoring]
 
+# Nodes that serve as controllers, so things like scheduler,
+# API or database run there, of the environment.
 [control]
 
+# Virtual systems managed by OpenStack Nova are placed on
+# nodes in this group.
 [compute]
 
+# Network resources managed by OpenStack Neutron, such as
+# L3 routers, are placed on these nodes.
 [network]
 
+# Nodes that serve as controllers for Ceph, so things like the
+# Ceph Monitor service run here.
 [ceph-control]
 
+# The storage available in these systems is provided in the
+# form of OSDs for Ceph.
 [ceph-resource]
 
 # NOTE: These empty groups are only necessary if netbox is used. After
