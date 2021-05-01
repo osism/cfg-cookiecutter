@@ -35,7 +35,8 @@ node01.{{cookiecutter.domain}}
 [compute]
 
 # Network resources managed by OpenStack Neutron, such as
-# L3 routers, are placed on these nodes.
+# L3 routers, are placed on these nodes. This group has nothing
+# to do with the general network configuration.
 [network]
 
 # Nodes that serve as controllers for Ceph, so things like the
