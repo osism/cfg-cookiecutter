@@ -22,7 +22,7 @@ python scripts/set-secrets.py
 python scripts/set-ssh-keypairs.py
 
 # pwgen -1 32 > secrets/keepass
-python scripts/generate-keepass.py
+KEEPASS_PASSWORD="{{ cookiecutter.keepass_password }}" python scripts/generate-keepass.py
 chmod 0600 secrets/keepass.kdbx
 
 if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
