@@ -10,7 +10,8 @@ yaml = YAML()
 with open('environments/secrets.yml') as fp:
     secrets = yaml.load(fp)
 
-kp = PyKeePass('secrets/keepass.kdbx', password=os.getenv('KEEPASS_PASSWORD', 'password'))
+kp = PyKeePass('secrets/keepass.kdbx',
+               password=os.getenv('KEEPASS_PASSWORD', 'password'))
 
 # FIXME(berendt): use attachments
 kp.add_entry(kp.root_group, 'SSH Keypair Configuration',
