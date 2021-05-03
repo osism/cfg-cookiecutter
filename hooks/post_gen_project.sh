@@ -9,6 +9,8 @@ rm -rf environments/kolla/files/overlays/gnocchi-api
 rm -rf environments/kolla/files/overlays/gnocchi-metricd
 rm -rf environments/kolla/files/overlays/gnocchi-statsd
 
+chmod 0700 secrets/
+
 for name in operator configuration; do
     ssh-keygen -t rsa -b 4096 -N "" -f secrets/id_rsa.$name -C "" -m PEM
 done
@@ -21,9 +23,11 @@ python scripts/set-ssh-keypairs.py
 
 # pwgen -1 32 > secrets/keepass
 python scripts/generate-keepass.py
+chmod 0600 secrets/keepass.kdbx
 
 if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
     pwgen -1 32 > secrets/vaultpass
+    chmod 0600 secrets/vaultpass
     for secretsfile in $(find environments -name 'secrets.yml'); do
         ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
     done
