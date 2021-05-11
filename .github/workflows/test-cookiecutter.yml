@@ -13,6 +13,7 @@ jobs:
           - train
           - ussuri
           - victoria
+          - wallaby
 
     steps:
       - uses: actions/checkout@v2
