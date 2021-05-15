@@ -1,6 +1,6 @@
 PyYAML==5.4.1
 ansible==3.4.0
-cookiecutter==1.7.2
+cookiecutter==1.7.3
 cryptography==3.4.7
 oslo.utils==4.9.0
 paramiko==2.7.2
