@@ -84,11 +84,6 @@ cleanup_services_extra:
   - ntp
 
 ##########################
-# proxy
-
-proxy_proxies: {}
-
-##########################
 # kolla
 
 kolla_internal_vip_address: {{cookiecutter.ip_internal}}
