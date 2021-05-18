@@ -1,4 +1,84 @@
 #!/usr/bin/env bash
+#
+# Password manager script
+# Caution: This script has two modes
+#   1. Called without parameters
+#      You will be prompted for the password. This is the "original" mode which let's this script
+#      work with serveral containers that require the vault password to perform their playbook runs
+#   2. Called with a single parameter
+#      Do not use on manager, only local.
+#      You can search trough all vault-encrypted files in the environments folder.
+#      The files must end with *secrets.yml.
+#      Example call: ./.vault_pass bar
+#      This will search for all entries in all vault-encrypted files that contain the string "bar"
+#      You will only get prompted for the vault-password a single time, the password is stored in
+#      an environment variable which is automatically removed as the script opens it's own
+#      subshell. It is not recommended to source the script, as this might introduce unpredictable
+#      bugs and exposes your vault secret.
+#
+###################################################################################################
 
-read -p "Please enter the ansible vault password: " -s vault_pass
-echo $vault_pass
+BASEDIR=$(dirname "$0")
+SCRIPTNAME=$(basename "$0")
+
+
+###################################################################################################
+# Functions
+###################################################################################################
+
+search_for_passwords () {
+  base_dir="$1"
+  script_name="$2"
+  password_to_be_searched="$3"
+  number_of_arguments=$#
+  
+  # check if ansible-vault is installed
+  if ! command -v ansible-vault &>/dev/null; then
+    echo "ansible-vault not installed. Do not install or use on manager."
+    exit 1
+  fi
+
+  # Get rid of function parameters, otherwise they would have been passed with the below "source"
+  for (( i = 0; i < number_of_arguments ; i++ )); do
+    shift
+  done
+
+  # check if environment variable is set, otherwise source yourself to set it
+  # shellcheck disable=SC1090
+  # shellcheck disable=SC1091
+  source "$script_name" 1>/dev/null
+
+  # Add some line breaks for better readability
+  echo ""
+  echo ""
+  echo ""
+
+  # Find all *secrets.yml files, read them and grep for the password you are looking for
+  find "$base_dir" -name "*secrets.yml" -print0 | while IFS= read -r -d '' file; do
+    ansible-vault view --vault-password-file "$script_name" "$file" 2>/dev/null | grep "$password_to_be_searched"
+  done
+}
+
+get_vault_pass () {
+  if [ -z "$VAULTPASS" ]; then
+    read -r -p "Please enter the ansible vault password: " -s vault_pass
+    export VAULTPASS=$vault_pass
+  fi
+  echo "$VAULTPASS"
+}
+
+
+###################################################################################################
+# Main
+###################################################################################################
+
+if test $# -eq 1 ; then
+  password_to_be_searched="$1"
+  search_for_passwords "$BASEDIR" "$SCRIPTNAME" "$password_to_be_searched"
+elif test $# -eq 0 ; then
+  get_vault_pass
+else
+  echo "Too many arguments passed"
+  exit 1
+fi
+
