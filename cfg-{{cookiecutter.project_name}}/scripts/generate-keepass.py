@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+
 from pykeepass import PyKeePass
 from ruamel.yaml import YAML
 
@@ -8,7 +10,8 @@ yaml = YAML()
 with open('environments/secrets.yml') as fp:
     secrets = yaml.load(fp)
 
-kp = PyKeePass('secrets/keepass.kdbx', password='password')
+kp = PyKeePass('secrets/keepass.kdbx',
+               password=os.getenv('KEEPASS_PASSWORD', 'password'))
 
 # FIXME(berendt): use attachments
 kp.add_entry(kp.root_group, 'SSH Keypair Configuration',
