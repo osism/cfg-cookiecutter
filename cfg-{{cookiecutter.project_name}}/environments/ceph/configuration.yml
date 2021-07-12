@@ -1,6 +1,4 @@
 ---
-ceph_image_version: {{cookiecutter.ceph_version}}
-
 ##########################
 # generic
 

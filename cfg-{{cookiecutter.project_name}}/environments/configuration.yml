@@ -19,6 +19,8 @@ configuration_git_version: {{cookiecutter.git_version}}
 ##########################
 # docker
 
+docker_version: "{{cookiecutter.docker_version}}"
+
 {% raw -%}
 docker_user: "{{ operator_user }}"
 {%- endraw %}
@@ -33,12 +35,6 @@ ceph_docker_registry: {{cookiecutter.docker_registry}}
 docker_registry: index.docker.io
 docker_registry_ansible: {{cookiecutter.docker_registry}}
 docker_registry_service: {{cookiecutter.docker_registry}}
-
-##########################
-# versions
-
-docker_version: "{{cookiecutter.docker_version}}"
-repository_version: {{cookiecutter.repository_version}}
 
 ##########################
 # operator

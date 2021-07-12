@@ -1,18 +1,12 @@
 ---
-##########################
-# versions
-
 {%- if cookiecutter.with_ceph|int %}
-ceph_version: {{cookiecutter.ceph_version}}
-{%- endif %}
-openstack_version: {{cookiecutter.openstack_version}}
-{%- if cookiecutter.with_ceph|int %}
-
 ##########################
 # cephclient
 
-{% raw -%}
 cephclient_mons:
   - FIXME
-{%- endraw %}
+{%- else %}
+# Dummy variable to avoid error because ansible does not recognize the
+# file as a good configuration file when no variable in it.
+dummy:
 {%- endif %}
