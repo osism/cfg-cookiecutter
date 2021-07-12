@@ -89,7 +89,7 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>ceph_version</code></td>
     <td>The version of Ceph</td>
-    <td><code>nautilus</code></td>
+    <td><code>pacific</code></td>
   </tr>
   <tr>
     <td><code>docker_registry</code></td>
@@ -169,17 +169,12 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>openstack_version</code></td>
     <td>The version of OpenStack</td>
-    <td><code>victoria</code></td>
+    <td><code>wallaby</code></td>
   </tr>
   <tr>
     <td><code>project_name</code></td>
     <td>Name of the first OpenStack project</td>
     <td><code>customer</code></td>
-  </tr>
-  <tr>
-    <td><code>repository_version</code></td>
-    <td>The repository version</td>
-    <td><code>latest</code></td>
   </tr>
   <tr>
     <td><code>with_ceph</code></td>

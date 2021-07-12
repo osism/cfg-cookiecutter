@@ -10,9 +10,6 @@ jobs:
     strategy:
       matrix:
         openstack-version:
-          - train
-          - ussuri
-          - victoria
           - wallaby
 
     steps:

@@ -3,13 +3,6 @@
 # images
 
 docker_registry: {{cookiecutter.docker_registry}}
-openstack_release: {{cookiecutter.openstack_version}}
-
-{% raw -%}
-# NOTE: With this parameter the rolling images are used.
-#       If this is not desired, remove this parameter.
-kolla_image_version: "{{ openstack_release }}"
-{%- endraw %}
 
 ##########################################################
 # haproxy
