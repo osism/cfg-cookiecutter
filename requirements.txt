@@ -10,4 +10,4 @@ pycrypto==2.6.1
 pykeepass==4.0.1
 python-gilt==1.2.3
 ruamel.yaml==0.17.11
-yamllint==1.26.2
+yamllint==1.26.3
