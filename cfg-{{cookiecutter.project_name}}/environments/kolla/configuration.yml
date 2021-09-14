@@ -35,7 +35,6 @@ enable_watcher: "no"
 
 enable_etcd: "no"
 enable_mongodb: "no"
-enable_prometheus: "no"
 enable_skydive: "no"
 
 # generic
