@@ -15,7 +15,7 @@
     "git_port": "22",
     "git_repository": "osism/cfg-cookiecutter",
     "git_username": "git",
-    "git_version": "master",
+    "git_version": "main",
     "ip_external": "192.168.96.9",
     "ip_internal": "192.168.32.9",
     "manager_version": "latest",
