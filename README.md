@@ -139,7 +139,7 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>git_version</code></td>
     <td>Git Branch name</td>
-    <td><code>master</code></td>
+    <td><code>main</code></td>
   </tr>
   <tr>
     <td><code>ip_external</code></td>
