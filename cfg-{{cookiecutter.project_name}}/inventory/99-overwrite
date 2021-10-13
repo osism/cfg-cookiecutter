@@ -6,7 +6,7 @@
 # All predefined and usable inventory groups can be found
 # in the cfg-generics repository.
 #
-# https://github.com/osism/cfg-generics/tree/master/inventory
+# https://github.com/osism/cfg-generics/tree/main/inventory
 
 # [ceph-mds:children]
 # ceph-control
