@@ -166,8 +166,6 @@ openstack_keys:
 ##########################
 # manager
 
-dashboard_protocol: http
-
 ceph_mgr_modules:
   - balancer
   - dashboard
