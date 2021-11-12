@@ -24,7 +24,6 @@ management_interface: eno1
 
 # NOTE: The address of the internal interface.
 internal_address: 192.168.16.10
-fluentd_host: 192.168.16.10
 
 ##########################################################
 # cockpit
