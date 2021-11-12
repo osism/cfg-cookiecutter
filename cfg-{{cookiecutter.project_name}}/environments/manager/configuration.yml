@@ -21,9 +21,6 @@ ceph_ansible_enable: false
 {% endif -%}
 
 {% raw -%}
-configure_cockpit: true
-cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
-
 ara_enable: true
 ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
 

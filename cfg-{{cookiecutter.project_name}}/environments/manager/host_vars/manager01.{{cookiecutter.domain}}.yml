@@ -11,10 +11,6 @@ management_interface: eno1
 console_interface: eno1
 
 ##########################################################
-# cockpit
-
-cockpit_ssh_interface: eno1
-
 ##########################################################
 # network-interfaces
 

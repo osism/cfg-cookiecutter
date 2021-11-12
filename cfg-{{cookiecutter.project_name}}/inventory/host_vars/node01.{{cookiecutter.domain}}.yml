@@ -26,18 +26,6 @@ management_interface: eno1
 internal_address: 192.168.16.10
 
 ##########################################################
-# cockpit
-
-cockpit_ssh_interface: eno1
-
-# NOTE: Uncomment this when this node should be a Cockpit server.
-
-{% raw -%}
-# configure_cockpit_server: true
-# cockpit_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
-{%- endraw %}
-
-##########################################################
 # netdata
 
 netdata_host_type: client
