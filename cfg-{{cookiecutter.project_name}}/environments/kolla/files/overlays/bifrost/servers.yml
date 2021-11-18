@@ -6,7 +6,7 @@ node01:
     power:
       ipmi_username: "USERNAME"
       ipmi_address: "IP"
-      ipmi_password: "{{ bifrost_servers_oob_password }}"
+      ipmi_password: "PASSWORD"
   nics:
     -
       mac: "MAC"
@@ -34,7 +34,7 @@ node01:
 #       redfish_address: "https://IP"
 #       redfish_system_id: "/redfish/v1/Systems/1"
 #       redfish_verify_ca: "false"
-#       redfish_password: "{{ bifrost_servers_oob_password }}"
+#       redfish_password: "PASSWORD"
 #   nics:
 #     -
 #       mac: "MAC"
@@ -61,7 +61,7 @@ node01:
 #       ilo_username: "USERNAME"
 #       ilo_address: "IP"
 #       ilo_verify_ca: "false"
-#      i lo_password: "{{ bifrost_servers_oob_password }}"
+#       ilo_password: "PASSWORD"
 #   nics:
 #     -
 #       mac: "MAC"
