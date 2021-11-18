@@ -20,8 +20,8 @@ network_interface: "{{ bifrost_network_interface }}"
 ironic_tftp_master_path: "/httpboot/master_images"
 
 # define types and interfaces
-enabled_hardware_types:        ipmi,    redfish,ilo,ilo5
-enabled_power_interfaces:      ipmitool,redfish,ilo,     fake
+enabled_hardware_types: ipmi,    redfish,ilo,ilo5
+enabled_power_interfaces: ipmitool,redfish,ilo,     fake
 enabled_management_interfaces: ipmitool,redfish,ilo,ilo5,noop
 
 enable_tls: false
@@ -36,8 +36,8 @@ ipa_upstream_release: stable-{{ openstack_release }}
 
 # Deploy image
 use_cirros: true
-#cirros_deploy_image_upstream_url: https://github.com/cirros-dev/cirros/releases/download/0.5.1/cirros-0.5.1-x86_64-disk.img
-#cirros_deploy_image_upstream_url: https://minio.services.osism.tech/openstack-ironic-images/ubuntu-20.04-amd64-efi.gz
+# cirros_deploy_image_upstream_url: https://github.com/cirros-dev/cirros/releases/download/0.5.1/cirros-0.5.1-x86_64-disk.img
+# cirros_deploy_image_upstream_url: https://minio.services.osism.tech/openstack-ironic-images/ubuntu-20.04-amd64-efi.gz
 cirros_deploy_image_upstream_url: file:///etc/bifrost/ubuntu-ironic.qcow2
 # file:///etc/bifrost/osism-deploy.qcow2 results in /etc/kolla/bifrost/ directory on manager
 

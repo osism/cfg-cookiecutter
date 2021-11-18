@@ -26,56 +26,56 @@ node01:
   name: "node01"
 
 # REDFISH
-#node02:
-#  uuid: "UUID"
-#  driver_info:
-#    power:
-#      redfish_username: "USERNAME"
-#      redfish_address: "https://IP"
-#      redfish_system_id: "/redfish/v1/Systems/1"
-#      redfish_verify_ca: "false"
-#      redfish_password: "{{ bifrost_servers_oob_password }}"
-#  nics:
-#    -
-#      mac: "MAC"
-#  driver: "DRIVER"
-#  ipv4_interface_mac: "MAC"
-#  ipv4_address: "IP"
-#  ipv4_subnet_mask: "MASK"
-#  ipv4_gateway: "GW"
-#  ipv4_nameserver:
-#    - "NS1"
-#    - "NS2"
-#  properties:
-#    cpu_arch: "ARCH"
-#    ram: "RAM"
-#    disk_size: "DISK"
-#    cpus: "CPU"
-#  name: "node02"
+# node02:
+#   uuid: "UUID"
+#   driver_info:
+#     power:
+#       redfish_username: "USERNAME"
+#       redfish_address: "https://IP"
+#       redfish_system_id: "/redfish/v1/Systems/1"
+#       redfish_verify_ca: "false"
+#       redfish_password: "{{ bifrost_servers_oob_password }}"
+#   nics:
+#     -
+#       mac: "MAC"
+#   driver: "DRIVER"
+#   ipv4_interface_mac: "MAC"
+#   ipv4_address: "IP"
+#   ipv4_subnet_mask: "MASK"
+#   ipv4_gateway: "GW"
+#   ipv4_nameserver:
+#     - "NS1"
+#     - "NS2"
+#   properties:
+#     cpu_arch: "ARCH"
+#     ram: "RAM"
+#     disk_size: "DISK"
+#     cpus: "CPU"
+#   name: "node02"
 
 # ILO
-#node03:
-#  uuid: "UUID"
-#  driver_info:
-#    power:
-#      ilo_username: "USERNAME"
-#      ilo_address: "IP"
-#      ilo_verify_ca: "false"
-#      ilo_password: "{{ bifrost_servers_oob_password }}"
-#  nics:
-#    -
-#      mac: "MAC"
-#  driver: "DRIVER"
-#  ipv4_interface_mac: "MAC"
-#  ipv4_address: "IP"
-#  ipv4_subnet_mask: "MASK"
-#  ipv4_gateway: "GW"
-#  ipv4_nameserver:
-#    - "NS1"
-#    - "NS2"
-#  properties:
-#    cpu_arch: "ARCH"
-#    ram: "RAM"
-#    disk_size: "DISK"
-#    cpus: "CPU"
-#  name: "node03"
+# node03:
+#   uuid: "UUID"
+#   driver_info:
+#     power:
+#       ilo_username: "USERNAME"
+#       ilo_address: "IP"
+#       ilo_verify_ca: "false"
+#      i lo_password: "{{ bifrost_servers_oob_password }}"
+#   nics:
+#     -
+#       mac: "MAC"
+#   driver: "DRIVER"
+#   ipv4_interface_mac: "MAC"
+#   ipv4_address: "IP"
+#   ipv4_subnet_mask: "MASK"
+#   ipv4_gateway: "GW"
+#   ipv4_nameserver:
+#     - "NS1"
+#     - "NS2"
+#   properties:
+#     cpu_arch: "ARCH"
+#     ram: "RAM"
+#     disk_size: "DISK"
+#     cpus: "CPU"
+#   name: "node03"
