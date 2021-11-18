@@ -1,0 +1,12 @@
+---
+create_image_via_dib: true
+dib_os_element: ubuntu
+dib_os_release: bionic
+extra_dib_elements: "cloud-init-datasources cloud-init-nocloud enable-serial-console openssh-server lvm"
+dib_env_vars:
+  DIB_INSTALLTYPE_simple_init: repo
+  LANG: C
+  LC_ALL: C
+  LC_MESSAGES: C
+  DIB_CLOUD_INIT_DATASOURCES: ConfigDrive
+  DIB_DISABLE_KERNEL_CLEANUP: 1
