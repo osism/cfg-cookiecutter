@@ -54,9 +54,7 @@ operator_authorized_keys:
 # resolvconf
 
 resolvconf_nameserver:
-{%- for name_server in cookiecutter.name_servers.get("values") %}
   - {{ name_server }}
-{%- endfor %}
 resolvconf_search: {{cookiecutter.domain}}
 
 ##########################
@@ -98,9 +96,7 @@ osism_serial:
 # chrony
 
 chrony_servers:
-{%- for ntp_server in cookiecutter.ntp_servers.get("values") %}
   - {{ ntp_server }}
-{%- endfor %}
 chrony_allowed_subnets:
   - 127.0.0.1/32
 {%- if cookiecutter.with_ceph|int %}

@@ -157,14 +157,14 @@ ceph_network_backend [192.168.80.0/20]:
     <td><code>latest</code></td>
   </tr>
   <tr>
-    <td><code>name_servers</code></td>
-    <td>List of nameservers</td>
-    <td><code>{ "values": ["9.9.9.9", "149.112.112.112"] }</code></td>
+    <td><code>name_server</code></td>
+    <td>Nameserver</td>
+    <td><code>149.112.112.112</code></td>
   </tr>
   <tr>
-    <td><code>ntp_servers</code></td>
-    <td>List of NTP servers</td>
-    <td><code>{ "values": ["1.de.pool.ntp.org", "2.de.pool.ntp.org", "3.de.pool.ntp.org", "4.de.pool.ntp.org"] }</code></td>
+    <td><code>ntp_server</code></td>
+    <td>NTP server</td>
+    <td><code>de.pool.ntp.org</code></td>
   </tr>
   <tr>
     <td><code>openstack_version</code></td>
