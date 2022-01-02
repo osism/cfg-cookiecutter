@@ -19,8 +19,8 @@
     "ip_external": "192.168.96.9",
     "ip_internal": "192.168.32.9",
     "manager_version": "latest",
-    "name_servers": { "values": ["9.9.9.9", "149.112.112.112"] },
-    "ntp_servers": { "values": ["1.de.pool.ntp.org", "2.de.pool.ntp.org", "3.de.pool.ntp.org", "4.de.pool.ntp.org"] },
+    "name_server": "149.112.112.112",
+    "ntp_server": "de.pool.ntp.org",
     "openstack_version": "wallaby",
     "project_name": "customer",
     "_copy_without_render": [
