@@ -26,4 +26,7 @@ ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface
 
 netbox_enable: true
 netbox_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+
+flower_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+osism_api_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
 {%- endraw %}
