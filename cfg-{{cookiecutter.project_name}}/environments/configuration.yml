@@ -1,22 +1,5 @@
 ---
 ##########################
-# configuration
-
-configuration_directory: /opt/configuration
-configuration_git_private_key_file: ~/.ssh/id_rsa.configuration
-configuration_type: git
-
-configuration_git_host: {{cookiecutter.git_host}}
-configuration_git_port: {{cookiecutter.git_port}}
-# yamllint disable rule:line-length
-configuration_git_public_key: FIXME
-# yamllint enable rule:line-length
-configuration_git_protocol: ssh
-configuration_git_repository: {{cookiecutter.git_repository}}
-configuration_git_username: {{cookiecutter.git_username}}
-configuration_git_version: {{cookiecutter.git_version}}
-
-##########################
 # docker
 
 docker_version: "{{cookiecutter.docker_version}}"

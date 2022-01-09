@@ -14,19 +14,47 @@ openstack_version: {{cookiecutter.openstack_version}}
 docker_configure_repository: true
 
 ##########################
-# manager
+# ansible
 
 {% if not cookiecutter.with_ceph|int -%}
 ceph_ansible_enable: false
 {% endif -%}
 
+##########################
+# ara
+
 {% raw -%}
 ara_enable: true
-ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['ipv4']['address'] }}"
+
+##########################
+# netbox
 
 netbox_enable: true
-netbox_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+netbox_api_url: "http://{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['ipv4']['address'] }}:8121"
 
-flower_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
-osism_api_host: "{{ hostvars[inventory_hostname]['ansible_' + console_interface]['ipv4']['address'] }}"
+##########################
+# celery
+
+celery_enable: false
+
+flower_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['ipv4']['address'] }}"
+osism_api_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['ipv4']['address'] }}"
 {%- endraw %}
+
+##########################
+# configuration
+
+configuration_directory: /opt/configuration
+configuration_git_private_key_file: ~/.ssh/id_rsa.configuration
+configuration_type: git
+
+configuration_git_host: {{cookiecutter.git_host}}
+configuration_git_port: {{cookiecutter.git_port}}
+# yamllint disable rule:line-length
+configuration_git_public_key: FIXME
+# yamllint enable rule:line-length
+configuration_git_protocol: ssh
+configuration_git_repository: {{cookiecutter.git_repository}}
+configuration_git_username: {{cookiecutter.git_username}}
+configuration_git_version: {{cookiecutter.git_version}}
