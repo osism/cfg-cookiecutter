@@ -8,14 +8,18 @@ ansible_host: 192.168.16.10
 ##########################################################
 # generic
 
-# NOTE: Interface where the node can be reached via SSH.
-console_interface: eno1
-
-# NOTE: The internal interface for the internal communication.
-management_interface: eno1
+internal_interface: eno1
 
 # NOTE: The address of the internal interface.
 internal_address: 192.168.16.10
+
+{% raw -%}
+# NOTE: Interface where the node can be reached via SSH.
+console_interface: "{{ internal_interface }}"
+
+# NOTE: The internal interface for the internal communication.
+management_interface: "{{ internal_interface }}"
+{%- endraw %}
 
 ##########################################################
 # netdata
