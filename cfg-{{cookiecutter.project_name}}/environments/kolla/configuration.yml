@@ -48,10 +48,6 @@ enable_osprofiler: "no"
 
 es_heap_size: "4g"
 
-# rabbitmq
-
-rabbitmq_server_additional_erl_args: "+S 1:1"
-
 # horizon
 horizon_backend_database: "yes"
 
