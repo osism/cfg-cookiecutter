@@ -32,7 +32,8 @@ if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
         ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
     done
 else
-    rm environments/.vault_pass
+    echo password > environments/.vault_pass
+    chmod -x environments/.vault_pass
 fi
 
 if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
