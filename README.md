@@ -9,7 +9,7 @@ The `pwgen` tool must be installed.
 ```
 $ virtualenv -p python3 .venv
 $ source .venv/bin/activate
-$ pip3 install -r requirements.txt
+$ pip3 install -r https://raw.githubusercontent.com/osism/cfg-cookiecutter/main/requirements.txt
 ```
 
 
