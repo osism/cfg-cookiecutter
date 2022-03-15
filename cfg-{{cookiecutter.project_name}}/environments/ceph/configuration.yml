@@ -2,16 +2,7 @@
 ##########################
 # generic
 
-containerized_deployment: true
-
-generate_fsid: false
 fsid: {{cookiecutter.ceph_fsid}}
-
-##########################
-# osd
-
-osd_objectstore: bluestore
-osd_scenario: lvm
 
 ##########################
 # network
@@ -20,159 +11,11 @@ public_network: {{cookiecutter.ceph_network_frontend}}
 cluster_network: {{cookiecutter.ceph_network_backend}}
 
 ##########################
-# pools & keys
-
-{% raw -%}
-rgw_pool_default_size: 3
-rgw_pool_default_pg_num: 8
-
-rgw_zone: default
-rgw_create_pools:
-  "{{ rgw_zone }}.rgw.buckets.data":
-    pg_num: "{{ rgw_pool_default_pg_num }}"
-    size: "{{ rgw_pool_default_size }}"
-    type: replicated
-  "{{ rgw_zone }}.rgw.buckets.index":
-    pg_num: "{{ rgw_pool_default_pg_num }}"
-    size: "{{ rgw_pool_default_size }}"
-    type: replicated
-  "{{ rgw_zone }}.rgw.meta":
-    pg_num: "{{ rgw_pool_default_pg_num }}"
-    size: "{{ rgw_pool_default_size }}"
-    type: replicated
-  "{{ rgw_zone }}.rgw.log":
-    pg_num: "{{ rgw_pool_default_pg_num }}"
-    size: "{{ rgw_pool_default_size }}"
-    type: replicated
-  "{{ rgw_zone }}.rgw.control":
-    pg_num: "{{ rgw_pool_default_pg_num }}"
-    size: "{{ rgw_pool_default_size }}"
-    type: replicated
-{%- endraw %}
+# openstack
 
 # NOTE: After the initial deployment of the Ceph Clusters, the following parameter can be
 #       set to false. It must only be set to true again when new pools or keys are added.
 openstack_config: true
-
-openstack_pool_default_size: 3
-openstack_pool_default_min_size: 0
-openstack_pool_default_pg_num: 32
-
-{% raw -%}
-openstack_cinder_backup_pool:
-  name: "backups"
-  pg_num: "{{ openstack_pool_default_pg_num }}"
-  pgp_num: "{{ openstack_pool_default_pg_num }}"
-  rule_name: "replicated_rule"
-  type: 1
-  erasure_profile: ""
-  expected_num_objects: ""
-  application: "rbd"
-  size: "{{ openstack_pool_default_size }}"
-  min_size: "{{ openstack_pool_default_min_size }}"
-  pg_autoscale_mode: False
-
-openstack_cinder_pool:
-  name: "volumes"
-  pg_num: "{{ openstack_pool_default_pg_num }}"
-  pgp_num: "{{ openstack_pool_default_pg_num }}"
-  rule_name: "replicated_rule"
-  type: 1
-  erasure_profile: ""
-  expected_num_objects: ""
-  application: "rbd"
-  size: "{{ openstack_pool_default_size }}"
-  min_size: "{{ openstack_pool_default_min_size }}"
-  pg_autoscale_mode: False
-
-openstack_glance_pool:
-  name: "images"
-  pg_num: "{{ openstack_pool_default_pg_num }}"
-  pgp_num: "{{ openstack_pool_default_pg_num }}"
-  rule_name: "replicated_rule"
-  type: 1
-  erasure_profile: ""
-  expected_num_objects: ""
-  application: "rbd"
-  size: "{{ openstack_pool_default_size }}"
-  min_size: "{{ openstack_pool_default_min_size }}"
-  pg_autoscale_mode: False
-
-openstack_gnocchi_pool:
-  name: "metrics"
-  pg_num: "{{ openstack_pool_default_pg_num }}"
-  pgp_num: "{{ openstack_pool_default_pg_num }}"
-  rule_name: "replicated_rule"
-  type: 1
-  erasure_profile: ""
-  expected_num_objects: ""
-  application: "rbd"
-  size: "{{ openstack_pool_default_size }}"
-  min_size: "{{ openstack_pool_default_min_size }}"
-  pg_autoscale_mode: False
-
-openstack_nova_pool:
-  name: "vms"
-  pg_num: "{{ openstack_pool_default_pg_num }}"
-  pgp_num: "{{ openstack_pool_default_pg_num }}"
-  rule_name: "replicated_rule"
-  type: 1
-  erasure_profile: ""
-  expected_num_objects: ""
-  application: "rbd"
-  size: "{{ openstack_pool_default_size }}"
-  min_size: "{{ openstack_pool_default_min_size }}"
-  pg_autoscale_mode: False
-{%- endraw %}
-
-{% raw -%}
-openstack_pools:
-  - "{{ openstack_cinder_backup_pool }}"
-  - "{{ openstack_cinder_pool }}"
-  - "{{ openstack_glance_pool }}"
-  - "{{ openstack_gnocchi_pool }}"
-  - "{{ openstack_nova_pool }}"
-{%- endraw %}
-
-{% raw -%}
-openstack_keys:
-  - name: client.cinder-backup
-    caps:
-      mon: "profile rbd"
-      osd: "profile rbd pool={{ openstack_cinder_backup_pool.name }}"
-    mode: "0600"
-  - name: client.cinder
-    caps:
-      mon: "profile rbd"
-      osd: "profile rbd pool={{ openstack_cinder_pool.name }}, profile rbd pool={{ openstack_nova_pool.name }}, profile rbd pool={{ openstack_glance_pool.name }}"
-    mode: "0600"
-  - name: client.glance
-    caps:
-      mon: "profile rbd"
-      osd: "profile rbd pool={{ openstack_cinder_pool.name }}, profile rbd pool={{ openstack_glance_pool.name }}"
-    mode: "0600"
-  - name: client.gnocchi
-    caps:
-      mon: "profile rbd"
-      osd: "profile rbd pool={{ openstack_gnocchi_pool.name }}"
-    mode: "0600"
-  - name: client.nova
-    caps:
-      mon: "profile rbd"
-      osd: "profile rbd pool={{ openstack_glance_pool.name }}, profile rbd pool={{ openstack_nova_pool.name }}, profile rbd pool={{ openstack_cinder_pool.name }}, profile rbd pool={{ openstack_cinder_backup_pool.name }}"
-    mode: "0600"
-{%- endraw %}
-
-##########################
-# manager
-
-dashboard_protocol: http
-
-ceph_mgr_modules:
-  - balancer
-  - dashboard
-  - prometheus
-  - status
 
 ##########################
 # custom
