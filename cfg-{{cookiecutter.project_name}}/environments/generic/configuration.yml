@@ -2,4 +2,4 @@
 ##########################
 # patchman-client
 
-patchman_client_host: "{{ '{{' }} hostvars['manager01.{{cookiecutter.domain}}']['ansible_' + hostvars['manager01.{{cookiecutter.domain}}']['management_interface']]['ipv4']['address'] {{ '}}' }}"
+patchman_client_host: "{{ '{{' }} hostvars['manager01.{{cookiecutter.domain}}']['ansible_' + hostvars['manager01.{{cookiecutter.domain}}']['internal_interface']]['ipv4']['address'] {{ '}}' }}"

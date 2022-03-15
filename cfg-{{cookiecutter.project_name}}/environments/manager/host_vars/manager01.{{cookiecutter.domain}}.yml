@@ -7,11 +7,7 @@ ansible_host: 192.168.16.5
 ##########################################################
 # generic
 
-{% raw -%}
 internal_interface: eno1
-management_interface: "{{ internal_interface }}"
-console_interface: "{{ internal_interface }}"
-{%- endraw %}
 
 ##########################################################
 # network
