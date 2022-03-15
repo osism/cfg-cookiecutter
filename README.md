@@ -99,7 +99,7 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>docker_version</code></td>
     <td>The version of the Docker service. The <code>5:</code> prefix must be prepended starting with version 18.09.</td>
-    <td><code>5:20.10.12</code></td>
+    <td><code>5:20.10.13</code></td>
   </tr>
   <tr>
     <td><code>domain</code></td>
