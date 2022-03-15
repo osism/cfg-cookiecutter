@@ -2,4 +2,4 @@
 ##########################
 # netdata
 
-netdata_api_host: "{{ '{{' }} hostvars['manager01.{{cookiecutter.domain}}']['ansible_' + hostvars['manager01.{{cookiecutter.domain}}']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
+netdata_api_host: "{{ '{{' }} hostvars['manager01']['ansible_' + hostvars['manager01']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
