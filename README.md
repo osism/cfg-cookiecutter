@@ -169,7 +169,7 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>openstack_version</code></td>
     <td>The version of OpenStack</td>
-    <td><code>wallaby</code></td>
+    <td><code>xena</code></td>
   </tr>
   <tr>
     <td><code>project_name</code></td>

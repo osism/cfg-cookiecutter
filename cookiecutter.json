@@ -21,7 +21,7 @@
     "manager_version": "latest",
     "name_server": "149.112.112.112",
     "ntp_server": "de.pool.ntp.org",
-    "openstack_version": "wallaby",
+    "openstack_version": "xena",
     "project_name": "customer",
     "_copy_without_render": [
         "environments/kolla/files/overlays/haproxy/haproxy.cfg.*",
