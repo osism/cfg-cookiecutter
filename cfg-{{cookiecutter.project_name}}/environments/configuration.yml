@@ -51,16 +51,6 @@ hosts_additional_entries:
 {%- endif %}
 
 ##########################
-# common
-
-cleanup_services_extra:
-  - NetworkManager
-  - iscsid
-  - lxcfs
-  - nscd
-  - ntp
-
-##########################
 # kolla
 
 kolla_internal_vip_address: {{cookiecutter.ip_internal}}
