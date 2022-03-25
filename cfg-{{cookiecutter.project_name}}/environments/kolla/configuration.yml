@@ -29,24 +29,14 @@ openstack_service_workers: 5
 # elasticsearch
 es_heap_size: "4g"
 
-# horizon
-horizon_backend_database: "yes"
-
-# keystone
-keystone_token_provider: "fernet"
-
 # neutron
 neutron_plugin_agent: "openvswitch"
 
 enable_neutron_agent_ha: "yes"
 enable_neutron_qos: "yes"
 
-# nova
-nova_console: novnc
-
 # octavia
 octavia_network_type: tenant
-octavia_loadbalancer_topology: "ACTIVE_STANDBY"
 
 # designate
 designate_ns_record: openstack.{{cookiecutter.domain}}
@@ -55,8 +45,6 @@ designate_ns_record: openstack.{{cookiecutter.domain}}
 
 ##########################################################
 # external ceph
-
-enable_ceph: "no"
 
 cinder_backend_ceph: "yes"
 glance_backend_ceph: "yes"
