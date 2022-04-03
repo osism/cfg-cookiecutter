@@ -1,19 +1,23 @@
 # Cookiecutter template for an OSISM configuration repository
 
-## Installation
+## Usage with Docker
+
+Docker must be installed.
+
+```
+$ mkdir output
+$ docker run --rm -v $(pwd)/output:/output -it quay.io/osism/cookiecutter 
+```
+
+## Usage without Docker
 
 The `pwgen` tool must be installed.
-
-### Virtualenv
 
 ```
 $ virtualenv -p python3 .venv
 $ source .venv/bin/activate
 $ pip3 install -r https://raw.githubusercontent.com/osism/cfg-cookiecutter/main/requirements.txt
 ```
-
-
-## Usage
 
 * http://cookiecutter.readthedocs.io/en/latest/
 
