@@ -10,7 +10,7 @@ name: Test cookiecutter
 
 jobs:
   test-cookiecutter:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         openstack-version:
