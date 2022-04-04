@@ -108,17 +108,17 @@ ceph_network_backend [192.168.80.0/20]:
   <tr>
     <td><code>domain</code></td>
     <td>The Domain</td>
-    <td><code>osism.test</code></td>
+    <td><code>osism.xyz</code></td>
   </tr>
   <tr>
     <td><code>fqdn_external</code></td>
     <td>External API FQDN</td>
-    <td><code>api.osism.test</code></td>
+    <td><code>api.osism.xyz</code></td>
   </tr>
   <tr>
     <td><code>fqdn_internal</code></td>
     <td>Internal API FQDN</td>
-    <td><code>api-int.osism.test</code></td>
+    <td><code>api-int.osism.xyz</code></td>
   </tr>
   <tr>
     <td><code>git_host</code></td>

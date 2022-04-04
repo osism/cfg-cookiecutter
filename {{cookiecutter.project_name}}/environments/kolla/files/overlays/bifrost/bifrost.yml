@@ -46,6 +46,6 @@ dhcp_pool_start: X.X.X.X
 dhcp_pool_end: X.X.X.X
 dnsmasq_dns_servers: X.X.X.X
 dnsmasq_router: X.X.X.X
-domain: osism.testbed
+domain: osism.xyz
 
 # default_boot_mode: uefi
