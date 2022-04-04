@@ -9,6 +9,7 @@ PRIVATE_KEYS = {
 
 SECRETSFILE = 'environments/secrets.yml'
 CONFIGURATIONFILE = 'environments/configuration.yml'
+CONFIGURATIONFILE_MANAGER = 'environments/manager/configuration.yml'
 
 yaml = YAML()
 yaml.explicit_start = True
@@ -35,19 +36,27 @@ with open(SECRETSFILE, 'w+') as fp:
 with open(CONFIGURATIONFILE) as fp:
     configuration = yaml.load(fp)
 
-# operator public key
+with open(CONFIGURATIONFILE) as fp:
+    configuration_manager = yaml.load(fp)
+
+# set operator public key
 
 with open("secrets/id_rsa.operator.pub", 'r') as fp:
     data = fp.read()
     data = data.rstrip()
 configuration['operator_public_key'] = data
 
-# configuration public key
+# set configuration public key
 
 with open("secrets/id_rsa.configuration.pub", 'r') as fp:
     data = fp.read()
     data = data.rstrip()
-configuration['configuration_git_public_key'] = data
+configuration_manager['configuration_git_public_key'] = data
+
+# write configurations
 
 with open(CONFIGURATIONFILE, 'w+') as fp:
     yaml.dump(configuration, fp)
+
+with open(CONFIGURATIONFILE_MANAGER, 'w+') as fp:
+    yaml.dump(configuration_manager, fp)
