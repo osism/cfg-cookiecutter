@@ -5,9 +5,6 @@ MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 
 rm -f environments/kolla/files/overlays/haproxy/haproxy.cfg.*
-rm -rf environments/kolla/files/overlays/gnocchi-api
-rm -rf environments/kolla/files/overlays/gnocchi-metricd
-rm -rf environments/kolla/files/overlays/gnocchi-statsd
 
 chmod 0700 secrets/
 
