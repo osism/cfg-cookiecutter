@@ -45,6 +45,7 @@ with open("secrets/id_rsa.operator.pub", 'r') as fp:
     data = fp.read()
     data = data.rstrip()
 configuration['operator_public_key'] = data
+configuration_manager['operator_public_key'] = data
 
 # set configuration public key
 
