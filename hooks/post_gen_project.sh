@@ -15,11 +15,11 @@ done
 bash scripts/generate-secrets.sh
 rm -f environments/kolla/secrets.yml.*
 
-python scripts/set-secrets.py
-python scripts/set-ssh-keypairs.py
+python3 scripts/set-secrets.py
+python3 scripts/set-ssh-keypairs.py
 
 # pwgen -1 32 > secrets/keepass
-KEEPASS_PASSWORD="{{ cookiecutter.keepass_password }}" python scripts/generate-keepass.py
+KEEPASS_PASSWORD="{{ cookiecutter.keepass_password }}" python3 scripts/generate-keepass.py
 chmod 0600 secrets/keepass.kdbx
 
 if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
