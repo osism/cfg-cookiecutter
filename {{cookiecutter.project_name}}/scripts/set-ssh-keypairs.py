@@ -36,7 +36,7 @@ with open(SECRETSFILE, 'w+') as fp:
 with open(CONFIGURATIONFILE) as fp:
     configuration = yaml.load(fp)
 
-with open(CONFIGURATIONFILE) as fp:
+with open(CONFIGURATIONFILE_MANAGER) as fp:
     configuration_manager = yaml.load(fp)
 
 # set operator public key
