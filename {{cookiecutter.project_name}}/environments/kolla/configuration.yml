@@ -2,7 +2,7 @@
 ##########################################################
 # images
 
-docker_registry: {{cookiecutter.docker_registry}}
+docker_registry: quay.io
 
 ##########################################################
 # haproxy
