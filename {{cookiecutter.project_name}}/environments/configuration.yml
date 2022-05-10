@@ -8,16 +8,10 @@ docker_version: "{{cookiecutter.docker_version}}"
 docker_user: "{{ operator_user }}"
 {%- endraw %}
 
-# docker_configure_insecure_registries: true
-# docker_insecure_registries:
-#   - {{cookiecutter.docker_registry}}
-
 {%- if cookiecutter.with_ceph|int %}
-ceph_docker_registry: {{cookiecutter.docker_registry}}
+ceph_docker_registry: quay.io
 {%- endif %}
 docker_registry: index.docker.io
-docker_registry_ansible: {{cookiecutter.docker_registry}}
-docker_registry_service: {{cookiecutter.docker_registry}}
 
 ##########################
 # operator

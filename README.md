@@ -96,11 +96,6 @@ ceph_network_backend [192.168.80.0/20]:
     <td><code>pacific</code></td>
   </tr>
   <tr>
-    <td><code>docker_registry</code></td>
-    <td>Registry used by docker to fetch containers</td>
-    <td><code>quay.io</code></td>
-  </tr>
-  <tr>
     <td><code>docker_version</code></td>
     <td>The version of the Docker service. The <code>5:</code> prefix must be prepended starting with version 18.09.</td>
     <td><code>5:20.10.13</code></td>
