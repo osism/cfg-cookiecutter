@@ -17,7 +17,6 @@ kolla_external_fqdn: {{cookiecutter.fqdn_external}}
 
 # enable services
 enable_designate: "yes"
-enable_grafana: "yes"
 enable_octavia: "yes"
 
 # disable services
