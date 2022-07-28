@@ -41,8 +41,8 @@ if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
 
     rm -rf environments/kolla/files/overlays/gnocchi
 
+    rm -rf environments/kolla/files/overlays/glance
     rm -rf environments/kolla/files/overlays/glance-api
-    rm -f environments/kolla/files/overlays/glance/ceph.conf
 
     rm -rf environments/kolla/files/overlays/cinder/cinder-backup
     rm -rf environments/kolla/files/overlays/cinder/cinder-volume
@@ -52,6 +52,8 @@ if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
     rm -rf environments/kolla/files/overlays/nova/ceph.conf
     rm -rf environments/kolla/files/overlays/nova/ceph.client.cinder.keyring
     rm -rf environments/kolla/files/overlays/nova/ceph.client.nova.keyring
+
+    rm -rf environments/kolla/files/overlays/haproxy/services.d
 fi
 
 rm -rf scripts
