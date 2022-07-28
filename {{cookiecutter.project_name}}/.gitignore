@@ -5,4 +5,3 @@ id_rsa.operator
 roles
 secrets
 secure.yml
-tmp-from-image-mirror
