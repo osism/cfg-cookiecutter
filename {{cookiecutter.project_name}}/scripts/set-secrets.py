@@ -33,7 +33,7 @@ for key in SECRETS_ALL.keys():
     secrets_output_all[key] = secrets_input[SECRETS_ALL[key]]
 
 if 'ceph_cluster_fsid' in secrets_output_kolla:
-    del(secrets_output_kolla['ceph_cluster_fsid'])
+    del secrets_output_kolla['ceph_cluster_fsid']
 
 secrets_output_all['ara_server_mariadb_password'] = ''.join([
     random.SystemRandom().choice(
