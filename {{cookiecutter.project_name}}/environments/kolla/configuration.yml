@@ -15,10 +15,6 @@ kolla_external_fqdn: {{cookiecutter.fqdn_external}}
 ##########################################################
 # openstack
 
-# enable services
-enable_designate: "yes"
-enable_octavia: "yes"
-
 # disable services
 enable_heat: "no"
 
