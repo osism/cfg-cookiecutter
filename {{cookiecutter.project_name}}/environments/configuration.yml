@@ -7,16 +7,6 @@ docker_user: "{{ operator_user }}"
 {%- endraw %}
 
 ##########################
-# docker registries
-
-{%- if cookiecutter.with_ceph|int %}
-ceph_docker_registry: quay.io
-{%- endif %}
-docker_registry: index.docker.io
-docker_registry_ansible: quay.io
-docker_registry_service: index.docker.io
-
-##########################
 # operator
 
 operator_user: dragon
