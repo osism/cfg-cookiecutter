@@ -56,6 +56,5 @@ chrony_allowed_subnets:
 ##########################
 # ceph
 
-ceph_share_directory: /share
 ceph_cluster_fsid: {{cookiecutter.ceph_fsid}}
 {%- endif %}
