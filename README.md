@@ -167,7 +167,7 @@ ceph_network_backend [192.168.80.0/20]:
   </tr>
   <tr>
     <td><code>project_name</code></td>
-    <td>Name of the first OpenStack project</td>
+    <td>Name of the configuration repository directory</td>
     <td><code>customer</code></td>
   </tr>
   <tr>
