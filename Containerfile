@@ -16,7 +16,7 @@ RUN apk add --no-cache \
       openssl-dev \
       python3-dev \
       rust \
-    && pip3 --no-cache-dir install --upgrade 'pip==22.2.2' \
+    && pip3 --no-cache-dir install --upgrade 'pip==22.3' \
     && pip3 --no-cache-dir install -r /data/requirements.txt \
     && apk del .build-deps \
     && mkdir /output
