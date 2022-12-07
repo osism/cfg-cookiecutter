@@ -15,10 +15,10 @@ ceph_version: {{cookiecutter.ceph_version}}
 manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
 
+{% if not cookiecutter.with_ceph|int -%}
 ##########################
 # ansible
 
-{% if not cookiecutter.with_ceph|int -%}
 ceph_ansible_enable: false
 {% endif -%}
 
