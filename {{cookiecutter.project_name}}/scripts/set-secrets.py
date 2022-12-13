@@ -11,9 +11,9 @@ SECRETS_ALL = {"keystone_admin_password": "keystone_admin_password"}
 SECRETSFILE_INPUT = "environments/kolla/secrets.yml"
 
 SECRETSFILE_OUTPUT_ALL = "environments/secrets.yml"
-SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/kolla/secrets.yml"
+SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/infrastructure/secrets.yml"
 SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
-SECRETSFILE_OUTPUT_MANAGER = "environments/kolla/secrets.yml"
+SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
 
 yaml = YAML()
 yaml.explicit_start = True
