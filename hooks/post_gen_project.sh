@@ -27,6 +27,7 @@ if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
     for secretsfile in $(find environments -name 'secrets.yml'); do
         ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
     done
+    chmod +x environments/.vault_pass
 else
     echo password > environments/.vault_pass
     chmod -x environments/.vault_pass
