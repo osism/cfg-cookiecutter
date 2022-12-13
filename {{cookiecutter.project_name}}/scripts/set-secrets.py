@@ -63,8 +63,7 @@ operator_password = "".join(
 )
 secrets_output_all["operator_password_unhashed"] = operator_password
 secrets_output_all["operator_password"] = sha512_crypt.hash(operator_password)
-secrets_output_all.yaml_add_eol_comment(operator_password,
-                                        key="operator_password")
+secrets_output_all.yaml_add_eol_comment(operator_password, key="operator_password")
 
 netbox_api_token = "".join(
     [random.SystemRandom().choice(string.digits) for n in range(40)]
@@ -79,6 +78,12 @@ secrets_output_infrastructure["netbox_secret_key"] = "".join(
 )
 secrets_output_infrastructure["netbox_superuser_api_token"] = "".join(
     [random.SystemRandom().choice(string.digits) for n in range(40)]
+)
+secrets_output_infrastructure["netbox_superuser_password"] = "".join(
+    [
+        random.SystemRandom().choice(string.ascii_letters + string.digits)
+        for n in range(16)
+    ]
 )
 
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
