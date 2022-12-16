@@ -3,6 +3,7 @@
 import random
 import string
 
+from oslo_utils import uuidutils
 from passlib.hash import sha512_crypt
 from ruamel.yaml import YAML
 
@@ -90,12 +91,7 @@ secrets_output_infrastructure["netbox_superuser_password"] = "".join(
     ]
 )
 
-secrets_output_monitoring["netdata_api_key"] = "".join(
-    [
-        random.SystemRandom().choice(string.ascii_letters + string.digits)
-        for n in range(32)
-    ]
-)
+secrets_output_monitoring["netdata_api_key"] = uuidutils.generate_uuid()
 
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
     yaml.dump(secrets_output_all, fp)
