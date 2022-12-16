@@ -38,7 +38,7 @@ hosts_additional_entries:
 {%- endif %}
 
 ##########################
-# serial
+# ansible
 
 osism_serial_default: 100%
 osism_serial:
