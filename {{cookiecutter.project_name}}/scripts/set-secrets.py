@@ -14,6 +14,7 @@ SECRETSFILE_OUTPUT_ALL = "environments/secrets.yml"
 SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/infrastructure/secrets.yml"
 SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
+SECRETSFILE_OUTPUT_MONITORING = "environments/monitoring/secrets.yml"
 
 yaml = YAML()
 yaml.explicit_start = True
@@ -35,6 +36,9 @@ with open(SECRETSFILE_OUTPUT_KOLLA) as fp:
 
 with open(SECRETSFILE_OUTPUT_MANAGER) as fp:
     secrets_output_manager = yaml.load(fp)
+
+with open(SECRETSFILE_OUTPUT_MONITORING) as fp:
+    secrets_output_monitoring = yaml.load(fp)
 
 for key in SECRETS_ALL.keys():
     secrets_output_all[key] = secrets_input[SECRETS_ALL[key]]
@@ -86,6 +90,13 @@ secrets_output_infrastructure["netbox_superuser_password"] = "".join(
     ]
 )
 
+secrets_output_monitoring["netdata_api_key"] = "".join(
+    [
+        random.SystemRandom().choice(string.ascii_letters + string.digits)
+        for n in range(32)
+    ]
+)
+
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
     yaml.dump(secrets_output_all, fp)
 
@@ -97,3 +108,6 @@ with open(SECRETSFILE_OUTPUT_KOLLA, "w+") as fp:
 
 with open(SECRETSFILE_OUTPUT_MANAGER, "w+") as fp:
     yaml.dump(secrets_output_manager, fp)
+
+with open(SECRETSFILE_OUTPUT_MONITORING, "w+") as fp:
+    yaml.dump(secrets_output_monitoring, fp)
