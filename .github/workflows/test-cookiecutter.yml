@@ -17,6 +17,7 @@ jobs:
           - wallaby
           - xena
           - yoga
+          - zed
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
