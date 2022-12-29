@@ -2,7 +2,7 @@
 ##########################
 # generic
 
-fsid: {{cookiecutter.ceph_fsid}}
+fsid:
 
 ##########################
 # network
