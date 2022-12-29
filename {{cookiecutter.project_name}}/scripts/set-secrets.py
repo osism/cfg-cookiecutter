@@ -12,6 +12,7 @@ SECRETS_ALL = {"keystone_admin_password": "keystone_admin_password"}
 SECRETSFILE_INPUT = "environments/kolla/secrets.yml"
 
 SECRETSFILE_OUTPUT_ALL = "environments/secrets.yml"
+SECRETSFILE_OUTPUT_CEPH = "environments/ceph/secrets.yml"
 SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/infrastructure/secrets.yml"
 SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
@@ -28,6 +29,9 @@ with open(SECRETSFILE_INPUT) as fp:
 
 with open(SECRETSFILE_OUTPUT_ALL) as fp:
     secrets_output_all = yaml.load(fp)
+
+with open(SECRETSFILE_OUTPUT_CEPH) as fp:
+    secrets_output_ceph = yaml.load(fp)
 
 with open(SECRETSFILE_OUTPUT_INFRASTRUCTURE) as fp:
     secrets_output_infrastructure = yaml.load(fp)
@@ -70,6 +74,10 @@ secrets_output_all["operator_password_unhashed"] = operator_password
 secrets_output_all["operator_password"] = sha512_crypt.hash(operator_password)
 secrets_output_all.yaml_add_eol_comment(operator_password, key="operator_password")
 
+ceph_fsid = uuidutils.generate_uuid()
+secrets_output_all["ceph_cluster_fsid"] = ceph_fsid
+secrets_output_ceph["fsid"] = ceph_fsid
+
 netbox_api_token = "".join(
     [random.SystemRandom().choice(string.digits) for n in range(40)]
 )
@@ -95,6 +103,9 @@ secrets_output_monitoring["netdata_api_key"] = uuidutils.generate_uuid()
 
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
     yaml.dump(secrets_output_all, fp)
+
+with open(SECRETSFILE_OUTPUT_CEPH, "w+") as fp:
+    yaml.dump(secrets_output_ceph, fp)
 
 with open(SECRETSFILE_OUTPUT_INFRASTRUCTURE, "w+") as fp:
     yaml.dump(secrets_output_infrastructure, fp)

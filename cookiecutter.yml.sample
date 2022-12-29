@@ -1,6 +1,5 @@
 ---
 default_context:
-  ceph_fsid:
   ceph_network_backend:
   ceph_network_frontend:
   domain:

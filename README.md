@@ -23,7 +23,6 @@ $ pip3 install -r https://raw.githubusercontent.com/osism/cfg-cookiecutter/main/
 
 ```
 $ cookiecutter https://github.com/osism/cfg-cookiecutter.git
-ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
@@ -34,7 +33,6 @@ Alternative:
 $ git clone https://github.com/osism/cfg-cookiecutter.git
 $ cd cookiecutter
 $ cookiecutter .
-ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
@@ -48,12 +46,11 @@ In ``cookiecutter.yml.sample`` you can find a sample user config.
 ```
 ---
 default_context:
-  ceph_fsid: 00000000-0000-0000-0000-000000000000
+  ceph_network_backend: 192.168.80.0/20
 ```
 
 ```
 $ cookiecutter --config-file cookiecutter.yml https://github.com/osism/cfg-cookiecutter.git
-ceph_fsid [00000000-0000-0000-0000-000000000000]:
 ceph_network_backend [192.168.80.0/20]:
 [...]
 ```
@@ -74,11 +71,6 @@ ceph_network_backend [192.168.80.0/20]:
     <th>Parameter</th>
     <th>Description</th>
     <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>ceph_fsid</code></td>
-    <td>The UUID for the Ceph cluster, passed to ceph-ansible</td>
-    <td><code>00000000-0000-0000-0000-000000000000</code></td>
   </tr>
   <tr>
     <td><code>ceph_network_backend</code></td>
