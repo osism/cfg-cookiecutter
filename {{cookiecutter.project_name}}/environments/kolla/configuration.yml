@@ -33,7 +33,6 @@ es_heap_size: "4g"
 neutron_plugin_agent: "openvswitch"
 
 enable_neutron_agent_ha: "yes"
-enable_neutron_qos: "yes"
 
 # octavia
 octavia_network_type: tenant
