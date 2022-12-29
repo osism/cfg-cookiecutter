@@ -172,9 +172,4 @@ ceph_network_backend [192.168.80.0/20]:
     <td>1 to use Ansible-Vault, 0 to not use Ansible-Vault</td>
     <td><code>1</code></td>
   </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td><code></code></td>
-  </tr>
 </table>
