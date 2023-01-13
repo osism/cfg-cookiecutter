@@ -9,7 +9,7 @@ from ruamel.yaml import YAML
 
 SECRETS_ALL = {"keystone_admin_password": "keystone_admin_password"}
 
-SECRETSFILE_INPUT = "environments/kolla/secrets.yml"
+SECRETSFILE_INPUT_KOLLA = "environments/kolla/secrets.yml"
 
 SECRETSFILE_OUTPUT_ALL = "environments/secrets.yml"
 SECRETSFILE_OUTPUT_CEPH = "environments/ceph/secrets.yml"
@@ -24,7 +24,7 @@ yaml.indent(mapping=2, sequence=4, offset=2)
 yaml.preserve_quotes = True
 yaml.width = float("inf")
 
-with open(SECRETSFILE_INPUT) as fp:
+with open(SECRETSFILE_INPUT_KOLLA) as fp:
     secrets_input = yaml.load(fp)
 
 with open(SECRETSFILE_OUTPUT_ALL) as fp:
@@ -82,6 +82,8 @@ netbox_api_token = "".join(
     [random.SystemRandom().choice(string.digits) for n in range(40)]
 )
 secrets_output_manager["netbox_api_token"] = netbox_api_token
+secrets_output_manager["manager_listener_broker_password"] = SECRETSFILE_INPUT_KOLLA["rabbitmq_password"]
+
 secrets_output_infrastructure["netbox_user_api_token"] = netbox_api_token
 secrets_output_infrastructure["netbox_secret_key"] = "".join(
     [
