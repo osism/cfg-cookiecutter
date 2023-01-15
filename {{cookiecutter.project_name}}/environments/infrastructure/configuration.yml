@@ -10,6 +10,12 @@ netbox_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['
 ##########################
 # cephclient
 
-cephclient_mons:
-  - FIXME
+# FIXME: It does not work here to work with inventory groups because
+#        because cephclient expects a list of IP addresses or hostnames
+#        here that are not known when the configuration is created.
+#
+#        For cephclient_mons, a list of IP addresses or
+#        hostnames must be set up on which the Ceph cluster can be
+#        reached on the storage nodes.
+cephclient_mons: []
 {%- endif %}
