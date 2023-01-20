@@ -4,7 +4,7 @@ click==8.1.3
 cookiecutter==2.1.1
 cryptography==39.0.0
 oslo.utils==6.1.0
-paramiko==2.12.0
+paramiko==3.0.0
 passlib==1.7.4
 pwgen==0.8.2.post0
 pycrypto==2.6.1
