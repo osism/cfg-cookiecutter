@@ -9,11 +9,13 @@ docker_registry_service: index.docker.io
 ##########################
 # versions
 
+manager_version: {{cookiecutter.manager_version}}
+{% if cookiecutter.manager_version == "latest" %}
 {% if cookiecutter.with_ceph|int -%}
 ceph_version: {{cookiecutter.ceph_version}}
 {% endif -%}
-manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
+{%- endif %}
 
 {% if not cookiecutter.with_ceph|int -%}
 ##########################

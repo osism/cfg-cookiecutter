@@ -84,7 +84,7 @@ ceph_network_backend [192.168.80.0/20]:
   </tr>
   <tr>
     <td><code>ceph_version</code></td>
-    <td>The version of Ceph</td>
+    <td>The version of Ceph. When using a stable OSISM release (<code>manager_version != latest</code>), this value is ignored.</td>
     <td><code>pacific</code></td>
   </tr>
   <tr>
@@ -134,12 +134,12 @@ ceph_network_backend [192.168.80.0/20]:
   </tr>
   <tr>
     <td><code>ip_internal</code></td>
-    <td>the internal ip address of the API</td>
+    <td>The internal ip address of the API</td>
     <td><code>192.168.32.9</code></td>
   </tr>
   <tr>
     <td><code>manager_version</code></td>
-    <td>The version of the osism-ansible container</td>
+    <td>The version of OSISM. An overview of available OSISM releases can be found on <a href="https://release.osism.tech">release.osism.tech</a>.</td>
     <td><code>latest</code></td>
   </tr>
   <tr>
@@ -154,7 +154,7 @@ ceph_network_backend [192.168.80.0/20]:
   </tr>
   <tr>
     <td><code>openstack_version</code></td>
-    <td>The version of OpenStack</td>
+    <td>The version of OpenStack. When using a stable OSISM release (<code>manager_version != latest</code>), this value is ignored.</td>
     <td><code>yoga</code></td>
   </tr>
   <tr>
