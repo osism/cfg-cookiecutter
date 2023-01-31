@@ -64,6 +64,29 @@ ceph_network_backend [192.168.80.0/20]:
   Be careful not to forget dotfiles like ``.gitignore``. The directory itself is not
   stored in the repository.
 
+## Use of a stable release
+
+This repository contains tags that were created at the time of a stable release.
+These tags indicate the state of the repository that was tested at the time of a release.
+
+An overview of all available stable releases can be found on https://release.osism.tech..
+
+If a new configuration is to be created with the help of this repository and a stable
+release is to be used, this must be explicitly stated when creating the configuration.
+
+This is done via the parameter ``manager_version``. By default, this is always set to
+``latest``. If, for example, the stable release ``4.2.0`` is to be used, the value for
+this parameter is set to ``4.2.0``.
+
+```
+$ cookiecutter .
+manager_version [latest]: 4.2.0
+[...]
+```
+
+If the value for ``manager_version`` is set to a stable release, the values for
+``ceph_version`` and ``openstack_version`` are ignored.
+
 ## Parameters
 
 <table>
