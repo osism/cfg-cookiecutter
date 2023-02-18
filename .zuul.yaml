@@ -7,10 +7,12 @@
         - ansible-lint
         - flake8
         - hadolint
+        - markdownlint
         - yamllint
     gate:
       jobs:
         - ansible-lint
         - flake8
         - hadolint
+        - markdownlint
         - yamllint
