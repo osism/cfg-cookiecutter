@@ -1,0 +1,16 @@
+---
+- project:
+    merge-mode: squash-merge
+    default-branch: main
+    check:
+      jobs:
+        - ansible-lint
+        - flake8
+        - hadolint
+        - yamllint
+    gate:
+      jobs:
+        - ansible-lint
+        - flake8
+        - hadolint
+        - yamllint
