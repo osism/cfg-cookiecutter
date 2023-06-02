@@ -16,6 +16,7 @@ jobs:
         openstack-version:
           - yoga
           - zed
+          - "2023.1"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
