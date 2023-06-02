@@ -1,4 +1,4 @@
-# Cookiecutter template for an OSISM configuration repository
+# Cookiecutter template for an OSISM configuration repository (foobar)
 
 ## Usage with Docker
 
