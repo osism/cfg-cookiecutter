@@ -1,11 +1,12 @@
 ---
 exclude_paths:
-  - ./{{cookiecutter.project_name}}/environments/openstack/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/ceph/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/manager/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/kolla/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/generic/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/monitoring/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/infrastructure/configuration.yml
-  - ./{{cookiecutter.project_name}}/environments/custom/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/openstack/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/ceph/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/manager/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/kolla/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/generic/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/monitoring/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/infrastructure/configuration.yml
+#  - ./{{cookiecutter.project_name}}/environments/custom/configuration.yml
+   - {{cookiecutter.project_name}}/
