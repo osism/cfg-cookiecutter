@@ -8,7 +8,7 @@ paramiko==3.2.0
 passlib==1.7.4
 pwgen==0.8.2.post0
 pycrypto==2.6.1
-pykeepass==4.0.4
+pykeepass==4.0.5
 python-gilt==1.2.3
 ruamel.yaml==0.17.31
 yamllint==1.32.0
