@@ -108,7 +108,7 @@ If the value for ``manager_version`` is set to a stable release, the values for
   <tr>
     <td><code>ceph_version</code></td>
     <td>The version of Ceph. When using a stable OSISM release (<code>manager_version != latest</code>), this value is ignored.</td>
-    <td><code>pacific</code></td>
+    <td><code>quincy</code></td>
   </tr>
   <tr>
     <td><code>domain</code></td>
@@ -178,7 +178,7 @@ If the value for ``manager_version`` is set to a stable release, the values for
   <tr>
     <td><code>openstack_version</code></td>
     <td>The version of OpenStack. When using a stable OSISM release (<code>manager_version != latest</code>), this value is ignored.</td>
-    <td><code>yoga</code></td>
+    <td><code>zed</code></td>
   </tr>
   <tr>
     <td><code>project_name</code></td>
