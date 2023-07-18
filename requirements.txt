@@ -1,4 +1,4 @@
-PyYAML==6.0
+PyYAML==6.0.1
 ansible==8.1.0
 click==8.1.5
 cookiecutter==2.2.3
