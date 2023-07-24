@@ -1,4 +1,31 @@
 ---
+- job:
+    name: cfg-cookiecutter-tox
+    parent: tox
+    vars:
+      tox_envlist: cookiecutter
+
+- job:
+    name: cfg-cookiecutter-tox-yoga
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: yoga
+
+- job:
+    name: cfg-cookiecutter-tox-zed
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: zed
+
+- job:
+    name: cfg-cookiecutter-tox-antelope
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2023.1"
+
 - project:
     merge-mode: squash-merge
     default-branch: main
@@ -8,15 +35,24 @@
         - flake8
         - hadolint
         - yamllint
+        - cfg-cookiecutter-tox-yoga
+        - cfg-cookiecutter-tox-zed
+        - cfg-cookiecutter-tox-antelope
     gate:
       jobs:
         - ansible-lint
         - flake8
         - hadolint
         - yamllint
+        - cfg-cookiecutter-tox-yoga
+        - cfg-cookiecutter-tox-zed
+        - cfg-cookiecutter-tox-antelope
     periodic-daily:
       jobs:
         - ansible-lint
         - flake8
         - hadolint
         - yamllint
+        - cfg-cookiecutter-tox-yoga
+        - cfg-cookiecutter-tox-zed
+        - cfg-cookiecutter-tox-antelope
