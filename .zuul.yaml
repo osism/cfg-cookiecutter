@@ -1,4 +1,51 @@
 ---
+- secret:
+    name: SECRET_CFG_COOKIECUTTER
+    data:
+      DOCKER_USERNAME: !encrypted/pkcs1-oaep
+        - EG9ULS0yrJtK+4SCbnsB6t86zGowyObqUZlO2BCk3OU2FH09pMBTOTX1veJ6X46blzz7i
+          yI2NRht1Lf0v6WQiD+HwMFIFD3xgsCspCOpRjD1L2vAxoVl51aHLghATQXOGQfuuJ5bSE
+          MtTwuAwqz8XY5rs1K2GlzCOaPlwh3ROHjqk3MktwcNI9OzoTSTb59slqpULS6Mfh1Q6ed
+          jDqoNVGzJPPUkAKPpnewKADZ3opfYlTVJyRfPSbPwTHrIYtofEkp+7beege4Cwjq63vY9
+          jprybrqzD6UiLYUyozHHQeSmsmxctiRVk1BI+YtjvWr/QfMMlQp7zPbmC6WLBhD85971s
+          DWS+kRNj2SgrllvS+zNHWccAJWBGWSFXuLlBOJTuqh//u4DutZunC9l302kM0GTV6MLMD
+          X8nrRzlc82Nx6X+fTClAZYEHmrf7KX/RYzgdW3w+9Lk/tj2bkz1a/DH2stU8RrCNaPQ+q
+          lnMT2kpO0lzokj/u7O6J0qVzb6arX+9etk+vWwSC/LnkqeUphVdooqHqkTDNZWlJyQOFV
+          XFdky+R7/X05jiHeIak/22lwF8gk2pBqempsqrRn7A+R+sOPq4SgrVrVSfSIHU3z90164
+          2DpE6vPZnk1xcX5TZwyb/WL+bVealzUqpt+E9ZSnKKiWJTU4hN+DHuLARQAnMw=
+      DOCKER_PASSWORD: !encrypted/pkcs1-oaep
+        - DxvmmhPgioBdD+kpTuHbK1G3D3rqZMeUun8vB0JR41yuGJoXZWdk+Lk+t98iWzfKcEqGA
+          /GgTHstlGc7akA8g2lWJv2/pt2Ud3SD7MSFEnQiyYYtZw1q90OPW0nrjvrUcJvDADzcYB
+          C5y71irDF2yi30EnI3FgDNoS94487jgAIKAGdP8cBkqKen+J8MeJY05WdFf7hfgFZ4Sr/
+          p1aZapUnBJcorsJvRZUR9MiGz3b+1MoqpQ7Lv/xGaaJAIbzZJcpURKt4+zNSORjBsM5+m
+          TraFfOgYKWKRObXpJihNrPHmojUyiy38gTzFkWGWxHcklVkP46c+F8KsENtzNPV5Ieaov
+          UreXagwHIvCEKILJtDmuOmiKt/rMgdzmz6Oc8cpv6mbNwUMPzGiA1HG4dU6LIXcktTpsJ
+          4k/Z6JrrD99XhRt2gX/Edz9xUsaqsI0QqMVWqhM7UEViYO+y+yXfdYfkQnuq54petrKPk
+          d1cZv5fSgLLzlCgNB8MeXw9c9Lvx8YgYcS4JS7q2jOTwDCyPZNt4vXbBwHz1XXNFUgxgO
+          +cP1fg2JlsM361Ibp8Vy/B5rWprv6+63aZpaz9m7EIv/5qhUztqqspAGcZaHJ+yAvJ+O/
+          8okWwkFPFPjC44wUwlKBYQ5UZE4XfuE05vUzuwGGweVNVm5VWxNPaIqhBe0BHk=
+
+- job:
+    name: container-image-cfg-cookiecutter-build
+    pre-run: playbooks/pre.yml
+    run: playbooks/build.yml
+    vars:
+      docker_namespace: osism
+      docker_registry: osism.harbor.regio.digital
+      push_image: false
+
+- job:
+    name: container-image-cfg-cookiecutter-push
+    pre-run: playbooks/pre.yml
+    run: playbooks/build.yml
+    vars:
+      docker_namespace: osism
+      docker_registry: osism.harbor.regio.digital
+      push_image: true
+    secrets:
+      - name: secret
+        secret: SECRET_CFG_COOKIECUTTER
+
 - job:
     name: cfg-cookiecutter-tox
     parent: tox
@@ -38,6 +85,7 @@
         - cfg-cookiecutter-tox-yoga
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
+        - container-image-cfg-cookiecutter-build
     gate:
       jobs:
         - ansible-lint
@@ -56,3 +104,8 @@
         - cfg-cookiecutter-tox-yoga
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
+        - container-image-cfg-cookiecutter-push
+    post:
+      jobs:
+        - container-image-cfg-cookiecutter-push:
+            branches: main
