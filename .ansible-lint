@@ -9,3 +9,5 @@ exclude_paths:
   - ./{{cookiecutter.project_name}}/environments/monitoring/configuration.yml
   - ./{{cookiecutter.project_name}}/environments/infrastructure/configuration.yml
   - ./{{cookiecutter.project_name}}/environments/custom/configuration.yml
+mock_roles:
+  - ensure-docker
