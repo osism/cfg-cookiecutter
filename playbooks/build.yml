@@ -4,7 +4,7 @@
 
   environment:
     registry: "{{ docker_registry }}"
-    repository: "{{ docker_namespace }}/osism"
+    repository: "{{ docker_namespace }}/cookiecutter"
     version: latest
 
   tasks:
