@@ -2,7 +2,7 @@ PyYAML==6.0.1
 ansible==8.2.0
 click==8.1.6
 cookiecutter==2.2.3
-cryptography==41.0.2
+cryptography==41.0.3
 oslo.utils==6.2.0
 paramiko==3.3.1
 passlib==1.7.4
