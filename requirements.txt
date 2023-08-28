@@ -1,6 +1,6 @@
 PyYAML==6.0.1
 ansible==8.2.0
-click==8.1.6
+click==8.1.7
 cookiecutter==2.3.0
 cryptography==41.0.3
 oslo.utils==6.2.1
