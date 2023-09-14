@@ -20,6 +20,7 @@
     "openstack_version": "zed",
     "project_name": "customer",
     "_copy_without_render": [
+        "environments/kolla/files/overlays/keystone/wsgi-keystone.conf",
         "environments/kolla/files/overlays/haproxy/haproxy.cfg.*",
         "environments/kolla/files/overlays/neutron/ml2_conf.ini"
     ]
