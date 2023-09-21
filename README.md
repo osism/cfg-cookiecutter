@@ -178,7 +178,7 @@ If the value for ``manager_version`` is set to a stable release, the values for
   <tr>
     <td><code>openstack_version</code></td>
     <td>The version of OpenStack. When using a stable OSISM release (<code>manager_version != latest</code>), this value is ignored.</td>
-    <td><code>zed</code></td>
+    <td><code>2023.1</code></td>
   </tr>
   <tr>
     <td><code>project_name</code></td>
