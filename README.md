@@ -60,7 +60,7 @@ ceph_network_backend [192.168.80.0/20]:
 * The password for Ansible Vault encrypted files, ist stored at ``secrets/vaultpass``.
 * The password of the generated Keepass file is ``password``. This has to be changed.
 * If a user config has been used, it can also be stored in the repository
-* The contents in the generated ``customer`` directory is stored in the repository.
+* The contents in the generated ``configuration`` directory is stored in the repository.
   Be careful not to forget dotfiles like ``.gitignore``. The directory itself is not
   stored in the repository.
 
@@ -183,7 +183,7 @@ If the value for ``manager_version`` is set to a stable release, the values for
   <tr>
     <td><code>project_name</code></td>
     <td>Name of the configuration repository directory</td>
-    <td><code>customer</code></td>
+    <td><code>configuration</code></td>
   </tr>
   <tr>
     <td><code>with_ceph</code></td>
