@@ -21,17 +21,12 @@ python3 scripts/set-ssh-keypairs.py
 python3 scripts/generate-keepass.py
 chmod 0600 secrets/keepass.kdbx
 
-if [[ {{ cookiecutter.with_vault }} == 1 ]]; then
-    pwgen -1 32 > secrets/vaultpass
-    chmod 0600 secrets/vaultpass
-    for secretsfile in $(find environments -name 'secrets.yml'); do
-        ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
-    done
-    chmod +x environments/.vault_pass
-else
-    echo password > environments/.vault_pass
-    chmod -x environments/.vault_pass
-fi
+pwgen -1 32 > secrets/vaultpass
+chmod 0600 secrets/vaultpass
+for secretsfile in $(find environments -name 'secrets.yml'); do
+    ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
+done
+chmod +x environments/.vault_pass
 
 if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
 

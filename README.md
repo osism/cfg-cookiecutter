@@ -190,9 +190,4 @@ If the value for ``manager_version`` is set to a stable release, the values for
     <td>1 to use Ceph, 0 to not use Ceph</td>
     <td><code>1</code></td>
   </tr>
-  <tr>
-    <td><code>with_vault</code></td>
-    <td>1 to use Ansible-Vault, 0 to not use Ansible-Vault</td>
-    <td><code>1</code></td>
-  </tr>
 </table>
