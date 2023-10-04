@@ -42,6 +42,7 @@ ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interfac
 #        hostnames must be set up on which the RabbitMQ Broker can be
 #        reached on the control nodes.
 
+enable_listener: true
 manager_listener_broker_hosts: []
 manager_listener_broker_username: openstack
 manager_listener_broker_uri: "{% for host in manager_listener_broker_hosts %}amqp://{{ manager_listener_broker_username }}:{{ manager_listener_broker_password }}@{{ host }}:5672/{% if not loop.last %};{% endif %}{% endfor %}"
