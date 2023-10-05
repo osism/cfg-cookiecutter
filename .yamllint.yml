@@ -8,6 +8,7 @@ rules:
 ignore: |
   {{cookiecutter.project_name}}/environments/ceph/configuration.yml
   {{cookiecutter.project_name}}/environments/configuration.yml
+  {{cookiecutter.project_name}}/environments/custom/configuration.yml
   {{cookiecutter.project_name}}/environments/custom/playbook-cronjobs.yml
   {{cookiecutter.project_name}}/environments/infrastructure/configuration-mirror-images.yml
   {{cookiecutter.project_name}}/environments/infrastructure/configuration.yml

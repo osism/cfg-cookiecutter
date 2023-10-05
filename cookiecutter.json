@@ -8,7 +8,7 @@
     "fqdn_internal": "api-int.osism.xyz",
     "git_host": "github.com",
     "git_port": "22",
-    "git_repository": "osism/cfg-cookiecutter",
+    "git_repository": "YOUR_ORG/YOUR_NEW_CONFIGURATION_REPOSITORY",
     "git_username": "git",
     "git_version": "main",
     "ip_external": "192.168.96.9",
