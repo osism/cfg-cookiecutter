@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Default value of `git_repository` is now `YOUR_ORG/YOUR_NEW_CONFIGURATION_REPOSITORY`.
