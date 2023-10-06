@@ -38,13 +38,6 @@ hosts_additional_entries:
 {%- endif %}
 
 ##########################
-# ansible
-
-osism_serial_default: 100%
-osism_serial:
-  docker: 1
-
-##########################
 # chrony
 
 chrony_servers:
