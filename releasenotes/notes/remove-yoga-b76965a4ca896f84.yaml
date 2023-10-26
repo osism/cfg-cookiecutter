@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    OpenStack Yoga support has been removed from the CI and files.

@@ -53,13 +53,6 @@
       tox_envlist: cookiecutter
 
 - job:
-    name: cfg-cookiecutter-tox-yoga
-    parent: cfg-cookiecutter-tox
-    vars:
-      tox_environment:
-        OPENSTACK_VERSION: yoga
-
-- job:
     name: cfg-cookiecutter-tox-zed
     parent: cfg-cookiecutter-tox
     vars:
@@ -82,7 +75,6 @@
         - flake8
         - hadolint
         - yamllint
-        - cfg-cookiecutter-tox-yoga
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - container-image-cfg-cookiecutter-build
@@ -92,7 +84,6 @@
         - flake8
         - hadolint
         - yamllint
-        - cfg-cookiecutter-tox-yoga
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
     periodic-daily:
@@ -101,7 +92,6 @@
         - flake8
         - hadolint
         - yamllint
-        - cfg-cookiecutter-tox-yoga
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - container-image-cfg-cookiecutter-push
