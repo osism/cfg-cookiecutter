@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    The `ceph_cluster_fsid` parameter is only required inside the `ceph` environment.
+    The parameter was moved there.
