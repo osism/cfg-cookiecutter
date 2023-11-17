@@ -18,6 +18,9 @@ SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
 SECRETSFILE_OUTPUT_MONITORING = "environments/monitoring/secrets.yml"
 
+CONFIGURATIONFILE_OUTPUT_CEPH = "environments/ceph/configuration.yml"
+CONFIGURATIONFILE_OUTPUT_KOLLA = "environments/kolla/configuration.yml"
+
 yaml = YAML()
 yaml.explicit_start = True
 yaml.indent(mapping=2, sequence=4, offset=2)
@@ -44,6 +47,12 @@ with open(SECRETSFILE_OUTPUT_MANAGER) as fp:
 
 with open(SECRETSFILE_OUTPUT_MONITORING) as fp:
     secrets_output_monitoring = yaml.load(fp)
+
+with open(CONFIGURATIONFILE_OUTPUT_CEPH) as fp:
+    configuration_output_ceph = yaml.load(fp)
+
+with open(CONFIGURATIONFILE_OUTPUT_KOLLA) as fp:
+    configuration_output_kolla = yaml.load(fp)
 
 for key in SECRETS_ALL.keys():
     secrets_output_all[key] = secrets_input[SECRETS_ALL[key]]
@@ -75,14 +84,16 @@ secrets_output_all["operator_password"] = sha512_crypt.hash(operator_password)
 secrets_output_all.yaml_add_eol_comment(operator_password, key="operator_password")
 
 ceph_fsid = uuidutils.generate_uuid()
-secrets_output_all["ceph_cluster_fsid"] = ceph_fsid
-secrets_output_ceph["fsid"] = ceph_fsid
+configuration_output_kolla["ceph_cluster_fsid"] = ceph_fsid
+configuration_output_ceph["fsid"] = ceph_fsid
 
 netbox_api_token = "".join(
     [random.SystemRandom().choice(string.digits) for n in range(40)]
 )
 secrets_output_manager["netbox_api_token"] = netbox_api_token
-secrets_output_manager["manager_listener_broker_password"] = secrets_input["rabbitmq_password"]
+secrets_output_manager["manager_listener_broker_password"] = secrets_input[
+    "rabbitmq_password"
+]
 
 secrets_output_infrastructure["netbox_user_api_token"] = netbox_api_token
 secrets_output_infrastructure["netbox_secret_key"] = "".join(
@@ -120,3 +131,9 @@ with open(SECRETSFILE_OUTPUT_MANAGER, "w+") as fp:
 
 with open(SECRETSFILE_OUTPUT_MONITORING, "w+") as fp:
     yaml.dump(secrets_output_monitoring, fp)
+
+with open(CONFIGURATIONFILE_OUTPUT_CEPH, "w+") as fp:
+    yaml.dump(configuration_output_ceph, fp)
+
+with open(CONFIGURATIONFILE_OUTPUT_KOLLA, "w+") as fp:
+    yaml.dump(configuration_output_kolla, fp)
