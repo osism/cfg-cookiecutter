@@ -1,5 +1,6 @@
 ---
 features:
   - |
-    The `ceph_cluster_fsid` parameter is only required inside the `ceph` environment.
-    The parameter was moved there.
+    The `ceph_cluster_fsid` parameter is only required inside the `kolla` environment.
+    The parameter was moved there. The `fsid` parameter is used for this in the `ceph`
+    environment.
