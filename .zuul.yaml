@@ -74,6 +74,7 @@
         - ansible-lint
         - flake8
         - hadolint
+        - python-black
         - yamllint
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
@@ -83,6 +84,7 @@
         - ansible-lint
         - flake8
         - hadolint
+        - python-black
         - yamllint
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
@@ -91,6 +93,7 @@
         - ansible-lint
         - flake8
         - hadolint
+        - python-black
         - yamllint
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
