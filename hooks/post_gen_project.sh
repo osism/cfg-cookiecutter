@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ueo pipefail
+
 # NOTE: this is being done twice on purpose here
 MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
