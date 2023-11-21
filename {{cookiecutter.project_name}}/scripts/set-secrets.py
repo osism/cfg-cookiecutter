@@ -19,6 +19,7 @@ SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
 SECRETSFILE_OUTPUT_MONITORING = "environments/monitoring/secrets.yml"
 
+CONFIGURATIONFILE_OUTPUT_ALL = "environments/configuration.yml"
 CONFIGURATIONFILE_OUTPUT_CEPH = "environments/ceph/configuration.yml"
 CONFIGURATIONFILE_OUTPUT_KOLLA = "environments/kolla/configuration.yml"
 
@@ -55,6 +56,10 @@ with open(SECRETSFILE_OUTPUT_MANAGER) as fp:
 logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING) as fp:
     secrets_output_monitoring = yaml.load(fp)
+
+logger.info(f"Prepare use of {CONFIGURATIONFILE_OUTPUT_ALL}")
+with open(CONFIGURATIONFILE_OUTPUT_ALL) as fp:
+    configuration_output_all = yaml.load(fp)
 
 logger.info(f"Prepare use of {CONFIGURATIONFILE_OUTPUT_CEPH}")
 with open(CONFIGURATIONFILE_OUTPUT_CEPH) as fp:
@@ -100,7 +105,7 @@ secrets_output_all.yaml_add_eol_comment(operator_password, key="operator_passwor
 
 ceph_fsid = uuidutils.generate_uuid()
 logger.info("Set ceph_cluster_fsid")
-configuration_output_kolla["ceph_cluster_fsid"] = ceph_fsid
+configuration_output_all["ceph_cluster_fsid"] = ceph_fsid
 logger.info("Set fsid")
 configuration_output_ceph["fsid"] = ceph_fsid
 
@@ -161,6 +166,10 @@ with open(SECRETSFILE_OUTPUT_MANAGER, "w+") as fp:
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING, "w+") as fp:
     yaml.dump(secrets_output_monitoring, fp)
+
+logger.info(f"Write result to {CONFIGURATIONFILE_OUTPUT_ALL}")
+with open(CONFIGURATIONFILE_OUTPUT_ALL, "w+") as fp:
+    yaml.dump(configuration_output_all, fp)
 
 logger.info(f"Write result to {CONFIGURATIONFILE_OUTPUT_CEPH}")
 with open(CONFIGURATIONFILE_OUTPUT_CEPH, "w+") as fp:
