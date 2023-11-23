@@ -143,6 +143,11 @@ secrets_output_infrastructure["netbox_superuser_password"] = "".join(
 logger.info("Set netdata_api_key")
 secrets_output_monitoring["netdata_api_key"] = uuidutils.generate_uuid()
 
+logger.info("Set ceph_rgw_keystone_password")
+secrets_output_ceph["ceph_rgw_keystone_password"] = secrets_output_kolla[
+    "ceph_rgw_keystone_password"
+]
+
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_ALL}")
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
     yaml.dump(secrets_output_all, fp)
