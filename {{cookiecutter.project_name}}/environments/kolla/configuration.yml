@@ -42,6 +42,21 @@ designate_ns_record: openstack.{{cookiecutter.domain}}
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################################################
+# ceph rgw integration
+
+enable_ceph_rgw: true
+enable_ceph_rgw_keystone: true
+
+ceph_rgw_swift_compatibility: false
+ceph_rgw_swift_account_in_url: true
+
+# All Ceph RGW hosts must be listed here
+ceph_rgw_hosts:
+  - host: ceph-mon-0
+    ip: 127.0.0.1
+    port: 8081
+
+##########################################################
 # external ceph
 
 cinder_backend_ceph: "yes"
@@ -61,7 +76,7 @@ ceph_public_network: {{cookiecutter.ceph_network_frontend}}
 {%- endif %}
 
 ##########################################################
-# Keystone
+# keystone
 {% raw -%}
 keystone_identity_providers:
   - name: "keycloak"
