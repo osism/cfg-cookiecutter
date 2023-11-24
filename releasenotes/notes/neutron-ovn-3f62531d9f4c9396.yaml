@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    The Neutron OVN plugin is now used by default.
