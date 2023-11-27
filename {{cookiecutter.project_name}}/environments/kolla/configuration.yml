@@ -50,12 +50,6 @@ enable_ceph_rgw_keystone: true
 ceph_rgw_swift_compatibility: false
 ceph_rgw_swift_account_in_url: true
 
-# All Ceph RGW hosts must be listed here
-ceph_rgw_hosts:
-  - host: ceph-mon-0
-    ip: 127.0.0.1
-    port: 8081
-
 ##########################################################
 # external ceph
 
