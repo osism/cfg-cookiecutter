@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    The `monitor_interface` and `radosgw_interface` should not be used.
+    The `monitor_address` and `radosgw_address` are preferred.

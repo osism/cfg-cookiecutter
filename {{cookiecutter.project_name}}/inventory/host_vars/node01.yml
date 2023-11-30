@@ -59,9 +59,6 @@ network_interface: eno1
 # monitor_address:
 # radosgw_address:
 
-# monitor_interface:
-# radosgw_interface:
-
 # NOTE: Uncomment this when this node should be a OSD node.
 
 # devices:
