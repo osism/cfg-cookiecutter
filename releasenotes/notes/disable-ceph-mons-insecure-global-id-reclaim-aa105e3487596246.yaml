@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Set `auth allow insecure global id reclaim = false` by default in the Ceph
+    configuration.
