@@ -19,6 +19,7 @@ import random
 import string
 import sys
 
+from ansible.utils.encrypt import random_salt
 from cryptography import fernet
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -58,7 +59,14 @@ def generate_RSA(bits=4096):
 
 
 def genpwd(
-    passwords_file, length, uuid_keys, ssh_keys, blank_keys, fernet_keys, hmac_md5_keys
+    passwords_file,
+    length,
+    uuid_keys,
+    ssh_keys,
+    blank_keys,
+    fernet_keys,
+    hmac_md5_keys,
+    bcrypt_keys,
 ):
     with open(passwords_file, "r") as f:
         passwords = yaml.safe_load(f.read())
@@ -81,6 +89,11 @@ def genpwd(
                 ).hexdigest()
             elif k in fernet_keys:
                 passwords[k] = fernet.Fernet.generate_key().decode()
+            elif k in bcrypt_keys:
+                # NOTE(wszusmki) To be compatible with the ansible
+                # password_hash filter, we use the utility function from the
+                # ansible library.
+                passwords[k] = random_salt(22)
             else:
                 passwords[k] = "".join(
                     [
@@ -137,6 +150,9 @@ def main():
     # Fernet keys
     fernet_keys = ["barbican_crypto_key"]
 
+    # bcrypt salts
+    bcrypt_keys = ["prometheus_bcrypt_salt"]
+
     # length of password
     length = 40
 
@@ -148,6 +164,7 @@ def main():
         blank_keys,
         fernet_keys,
         hmac_md5_keys,
+        bcrypt_keys,
     )
 
 
