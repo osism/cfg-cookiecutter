@@ -34,6 +34,7 @@
 
           docker buildx build \
               --build-arg "VERSION=$version" \
+              --progress=plain \
               --label "org.opencontainers.image.created=$created" \
               --label "org.opencontainers.image.documentation=https://docs.osism.tech" \
               --label "org.opencontainers.image.licenses=ASL 2.0" \
