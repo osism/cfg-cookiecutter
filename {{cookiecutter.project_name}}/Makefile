@@ -20,16 +20,17 @@ prune:
 system-installations:
 	@which keepass2 > /dev/null || { echo "Missing requirement: keepass" >&2; exit 1; }
 
-ansible_vault_rekey:
+ansible_vault_rekey: deps
 	cp secrets/vaultpass secrets/vaultpass.old
 	pwgen -1 32 > secrets/vaultpass
-	ansible-vault rekey  -v \
+	${venv} && ansible-vault rekey  -v \
 		--vault-password-file secrets/vaultpass.old \
 		--new-vault-password-file secrets/vaultpass \
 		$(shell find environments/ inventory/ -name "*.yml" -exec grep -l ANSIBLE_VAULT {} \+|sort -u|xargs)
 
-ansible_vault_show:
-	ansible-vault view --vault-password-file secrets/vaultpass \
-		$(shell find environments/ inventory/ -name "*.yml" -exec grep -l ANSIBLE_VAULT {} \+|sort -u|xargs)
+ansible_vault_show: deps
+	${venv} && find environments/ inventory/ -name "*.yml" -exec grep -l ANSIBLE_VAULT {} \+|\
+		sort -u|\
+		xargs -n 1 --verbose ansible-vault view --vault-password-file secrets/vaultpass | cat
 
 phony: deps prune system-installations ansible_vault_rekey ansible_vault_show
