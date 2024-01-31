@@ -2,12 +2,3 @@ Jinja2==3.1.3
 PyYAML==6.0.1
 python-gilt==1.2.3
 requests==2.31.0
-tabulate==0.9.0
-ansible==9.1.0
-passlib==1.7.4
-pwgen==0.8.2.post0
-pykeepass==4.0.6
-# TODO: check these dependencies if they are really needed
-pycryptodome==3.20.0
-ruamel.yaml==0.18.5
-yamllint==1.33.0
