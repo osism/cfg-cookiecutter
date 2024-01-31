@@ -21,6 +21,9 @@ python3 scripts/set-secrets.py
 python3 scripts/set-ssh-keypairs.py
 
 python3 scripts/generate-keepass.py
+
+cat /data/requirements.txt|sort -u >> requirements.txt
+
 chmod 0600 secrets/keepass.kdbx
 
 pwgen -1 32 > secrets/vaultpass

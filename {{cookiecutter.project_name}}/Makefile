@@ -17,4 +17,8 @@ gilt.yaml:
 	@${venv} && pip3 install -r requirements.txt
 	touch .venv/bin/activate
 
-phony: deps
+prune:
+	rm -rf .venv
+
+
+phony: deps prune
