@@ -25,6 +25,10 @@
           +cP1fg2JlsM361Ibp8Vy/B5rWprv6+63aZpaz9m7EIv/5qhUztqqspAGcZaHJ+yAvJ+O/
           8okWwkFPFPjC44wUwlKBYQ5UZE4XfuE05vUzuwGGweVNVm5VWxNPaIqhBe0BHk=
 
+- semaphore:
+    name: semaphore-container-image-cfg-cookiecutter-push
+    max: 1
+
 - job:
     name: container-image-cfg-cookiecutter-build
     pre-run: playbooks/pre.yml
@@ -36,6 +40,8 @@
 
 - job:
     name: container-image-cfg-cookiecutter-push
+    semaphores:
+      - name: semaphore-container-image-cfg-cookiecutter-push
     pre-run: playbooks/pre.yml
     run: playbooks/build.yml
     vars:
