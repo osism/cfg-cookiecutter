@@ -26,9 +26,9 @@ WORKDIR /data
 VOLUME ["/output"]
 CMD ["cookiecutter", "-o", "/output", "/data"]
 
-LABEL "org.opencontainers.image.documentation"="https://docs.osism.tech" \
+LABEL "org.opencontainers.image.documentation"="https://osism.github.io/docs/intro" \
       "org.opencontainers.image.licenses"="ASL 2.0" \
       "org.opencontainers.image.source"="https://github.com/osism/cfg-cookiecutter" \
-      "org.opencontainers.image.url"="https://www.osism.tech" \
+      "org.opencontainers.image.url"="https://quay.io/organization/osism" \
       "org.opencontainers.image.vendor"="OSISM GmbH" \
       "org.opencontainers.image.title"="cookiecutter"
