@@ -27,7 +27,7 @@ WORKDIR /data
 
 VOLUME ["/output"]
 
-ENTRYPOINT ["/data/cookiecutter-entry.sh"]
+ENTRYPOINT ["/data/entrypoint.sh"]
 
 LABEL "org.opencontainers.image.documentation"="https://osism.github.io/docs/intro" \
       "org.opencontainers.image.licenses"="ASL 2.0" \
