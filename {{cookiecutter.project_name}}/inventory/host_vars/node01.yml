@@ -25,8 +25,8 @@ netdata_host_type: client
 ##########################################################
 # network
 
-# NOTE: This is the initial management interface. Further interfaces
-#       must be added.
+# NOTE: This is the initial management interface. Further interfaces can be added.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/commons/network#netplan
 
 network_type: netplan
 network_ethernets:
@@ -60,9 +60,10 @@ network_interface: eno1
 # radosgw_address:
 
 # NOTE: Uncomment this when this node should be a OSD node.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/ceph#lvm-devices
 
-# devices:
-#   - /dev/sdb
-#   - /dev/sdc
-#   - /dev/sdd
-#   - /dev/sde
+# ceph_osd_devices:
+#   sdb:
+#   sdc:
+#   sdd:
+#   sde:
