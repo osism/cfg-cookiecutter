@@ -16,7 +16,7 @@
     "manager_version": "6.0.2",
     "name_server": "149.112.112.112",
     "ntp_server": "de.pool.ntp.org",
-    "openstack_version": "2023.1",
+    "openstack_version": "2023.2",
     "project_name": "configuration",
     "_copy_without_render": [
         "environments/kolla/files/overlays/keystone/wsgi-keystone.conf",
