@@ -29,7 +29,7 @@ VOLUME ["/output"]
 
 ENTRYPOINT ["/data/entrypoint.sh"]
 
-LABEL "org.opencontainers.image.documentation"="https://osism.github.io/docs/intro" \
+LABEL "org.opencontainers.image.documentation"="https://osism.tech/docs/intro" \
       "org.opencontainers.image.licenses"="ASL 2.0" \
       "org.opencontainers.image.source"="https://github.com/osism/cfg-cookiecutter" \
       "org.opencontainers.image.url"="https://quay.io/organization/osism" \
