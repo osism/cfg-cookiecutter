@@ -1,5 +1,6 @@
 {
     "with_ceph": 1,
+    "with_keycloak": 0,
     "ceph_network_backend": "192.168.80.0/20",
     "ceph_network_frontend": "192.168.64.0/20",
     "ceph_version": "quincy",

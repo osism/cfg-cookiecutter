@@ -54,4 +54,8 @@ if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
     rm -rf environments/kolla/files/overlays/haproxy/services.d
 fi
 
+if [[ {{ cookiecutter.with_keycloak }} == 0 ]]; then
+    rm -rf environments/kolla/files/overlays/keystone
+fi
+
 rm -rf scripts
