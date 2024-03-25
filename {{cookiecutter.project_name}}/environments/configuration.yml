@@ -30,7 +30,6 @@ resolvconf_search: {{cookiecutter.domain}}
 ##########################
 # hosts
 
-hosts_type: template
 hosts_additional_entries:
   {{cookiecutter.fqdn_internal}}: {{cookiecutter.ip_internal}}
 {%- if cookiecutter.fqdn_external != cookiecutter.fqdn_internal %}
