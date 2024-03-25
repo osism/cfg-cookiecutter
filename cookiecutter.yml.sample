@@ -9,4 +9,3 @@ default_context:
   ip_external:
   ip_internal:
   project_name:
-  with_ceph: 1

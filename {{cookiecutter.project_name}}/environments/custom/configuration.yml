@@ -1,4 +1,5 @@
 ---
+{%- if cookiecutter.with_keycloak|int %}
 # keycloak-oidc-client-config
 {% raw -%}
 keycloak_admin_id: "admin"
@@ -17,3 +18,8 @@ keycloak_private_key_data: "{{ lookup('file', keycloak_private_key_file_path)| r
 keycloak_certificate_file_path: "{{ configuration_directory }}/environments/custom/files/keycloak/cert.crt"
 keycloak_certificate_data: "{{ lookup('file', keycloak_certificate_file_path)| regex_replace('\n', '\\\\n') }}"
 {%- endraw %}
+{%- else %}
+# Dummy variable to avoid error because ansible does not recognize the
+# file as a good configuration file when no variable in it.
+dummy:
+{%- endif %}
