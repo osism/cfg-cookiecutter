@@ -69,7 +69,7 @@ ceph_nova_keyring: ceph.client.nova.keyring
 ceph_public_network: {{cookiecutter.ceph_network_frontend}}
 {%- endif %}
 
-{%- if cookiecutter_with.keycloak|int %}
+{%- if cookiecutter.with_keycloak|int %}
 ##########################################################
 # keystone
 {% raw -%}
