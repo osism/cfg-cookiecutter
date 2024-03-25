@@ -11,13 +11,6 @@ public_network: {{cookiecutter.ceph_network_frontend}}
 cluster_network: {{cookiecutter.ceph_network_backend}}
 
 ##########################
-# openstack
-
-# NOTE: After the initial deployment of the Ceph Clusters, the following parameter can be
-#       set to false. It must only be set to true again when new pools or keys are added.
-openstack_config: true
-
-##########################
 # custom
 
 ceph_conf_overrides:
