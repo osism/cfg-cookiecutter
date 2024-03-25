@@ -12,7 +12,6 @@ internal_interface: eno1
 ##########################################################
 # network
 
-network_type: netplan
 network_ethernets:
   eno1:
     addresses:
