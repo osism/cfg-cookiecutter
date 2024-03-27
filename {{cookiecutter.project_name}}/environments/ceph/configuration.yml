@@ -15,6 +15,7 @@ cluster_network: {{cookiecutter.ceph_network_backend}}
 
 ceph_conf_overrides:
   global:
+    auth allow insecure global id reclaim: false
     osd pool default size: 3
   mon:
     mon allow pool delete: true
