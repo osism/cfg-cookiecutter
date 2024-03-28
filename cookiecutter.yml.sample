@@ -1,7 +1,6 @@
 ---
 default_context:
-  ceph_network_backend:
-  ceph_network_frontend:
+  ceph_network:
   domain:
   fqdn_external:
   fqdn_internal:

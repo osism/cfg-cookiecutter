@@ -66,7 +66,7 @@ ceph_nova_user: nova
 ceph_nova_keyring: ceph.client.nova.keyring
 
 # NOTE: public_network from environments/ceph/configuration.yml
-ceph_public_network: {{cookiecutter.ceph_network_frontend}}
+ceph_public_network: {{cookiecutter.ceph_network}}
 {%- endif %}
 
 {%- if cookiecutter.with_keycloak|int %}
