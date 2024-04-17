@@ -32,22 +32,6 @@ ara_enable: true
 ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface]['ipv4']['address'] }}"
 
 ##########################
-# listener
-
-# FIXME: It does not work here to work with inventory groups because
-#        the manager's inventory is independent from the rest of the
-#        inventory.
-#
-#        For manager_listener_broker_hosts, a list of IP addresses or
-#        hostnames must be set up on which the RabbitMQ Broker can be
-#        reached on the control nodes.
-
-enable_listener: true
-manager_listener_broker_hosts: []
-manager_listener_broker_username: openstack
-manager_listener_broker_uri: "{% for host in manager_listener_broker_hosts %}amqp://{{ manager_listener_broker_username }}:{{ manager_listener_broker_password }}@{{ host }}:5672/{% if not loop.last %};{% endif %}{% endfor %}"
-
-##########################
 # netbox
 
 netbox_enable: true
