@@ -148,6 +148,14 @@ secrets_output_ceph["ceph_rgw_keystone_password"] = secrets_output_kolla[
     "ceph_rgw_keystone_password"
 ]
 
+logger.info("Set ceph_dashboard_password")
+secrets_output_ceph["ceph_dashboard_password"] = "".join(
+    [
+        random.SystemRandom().choice(string.ascii_letters + string.digits)
+        for n in range(16)
+    ]
+)
+
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_ALL}")
 with open(SECRETSFILE_OUTPUT_ALL, "w+") as fp:
     yaml.dump(secrets_output_all, fp)
