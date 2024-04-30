@@ -2,6 +2,7 @@
 ##########################
 # docker
 
+docker_version: "5:24.0.9"
 {% raw -%}
 docker_user: "{{ operator_user }}"
 {%- endraw %}
