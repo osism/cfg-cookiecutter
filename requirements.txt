@@ -2,7 +2,7 @@ PyYAML==6.0.1
 ansible==9.5.1
 click==8.1.7
 cookiecutter==2.6.0
-cryptography==42.0.6
+cryptography==42.0.7
 loguru==0.7.2
 oslo.utils==7.1.0
 paramiko==3.4.0
