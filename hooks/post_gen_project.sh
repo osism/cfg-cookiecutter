@@ -58,7 +58,7 @@ if [[ {{ cookiecutter.with_keycloak }} == 0 ]]; then
     rm -rf environments/kolla/files/overlays/keystone
 fi
 
-for script in $(find scripts.d -type file -perm -111 -print); do
+for script in $(find scripts.d -type f -perm -111 -print); do
     echo run additional script $script
     $script
 done
