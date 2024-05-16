@@ -26,7 +26,7 @@ netdata_host_type: client
 # network
 
 # NOTE: This is the initial management interface. Further interfaces can be added.
-# DOCS: https://osism.tech/docs/guides/configuration-guide/commons/network#netplan
+# DOCS: https://osism.tech/docs/guides/configuration-guide/network
 
 network_ethernets:
   eno1:
