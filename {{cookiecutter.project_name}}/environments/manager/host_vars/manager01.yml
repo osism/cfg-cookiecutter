@@ -12,6 +12,8 @@ internal_interface: eno1
 ##########################################################
 # network
 
+# NOTE: This is the initial management interface. Further interfaces can be added.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/network
 network_ethernets:
   eno1:
     addresses:
