@@ -19,7 +19,6 @@ internal_address: 192.168.16.10
 netdata_host_type: client
 
 # NOTE: Uncomment this when this node should be a Netdata server.
-
 # netdata_host_type: server
 
 ##########################################################
@@ -27,7 +26,6 @@ netdata_host_type: client
 
 # NOTE: This is the initial management interface. Further interfaces can be added.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/network
-
 network_ethernets:
   eno1:
     addresses:
@@ -54,13 +52,11 @@ network_interface: eno1
 # ceph
 
 # NOTE: Uncomment this when this node is a part of the Ceph cluster.
-
 # monitor_address:
 # radosgw_address:
 
 # NOTE: Uncomment this when this node should be a OSD node.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/ceph#lvm-devices
-
 # ceph_osd_devices:
 #   sdb:
 #   sdc:
