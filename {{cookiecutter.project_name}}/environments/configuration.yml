@@ -42,8 +42,6 @@ hosts_additional_entries:
 
 chrony_servers:
   - {{cookiecutter.ntp_server}}
-chrony_allowed_subnets:
-  - 127.0.0.1/32
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################
