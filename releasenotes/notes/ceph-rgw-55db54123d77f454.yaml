@@ -1,4 +1,0 @@
----
-features:
-  - |
-    The configuration for Ceph RGW and its integration into OpenStack is now included by default.

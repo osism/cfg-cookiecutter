@@ -1,4 +1,0 @@
----
-features:
-  - |
-    Files required by Manila to use CephFS as a file system have been added.
