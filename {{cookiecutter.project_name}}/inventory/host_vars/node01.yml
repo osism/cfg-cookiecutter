@@ -1,3 +1,8 @@
+# NOTE: This file must be edited before using the configuration repository.
+#       This file serves as a template for a node. There must be a separate
+#       host vars file for each node in the cluster. The IP addresses, interface
+#       names etc. are examples.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/configuration-repository#step-4-post-processing-of-the-generated-configuration
 ---
 ##########################################################
 # ansible
@@ -21,7 +26,8 @@ internal_address: 192.168.16.10
 
 netdata_host_type: client
 
-# NOTE: Uncomment this when this node should be a Netdata server.
+# NOTE: Uncomment this when this node should be a Netdata server. The previous line
+#       with "netdata_host_type: client" is then commented
 # netdata_host_type: server
 
 ##########################################################
@@ -41,6 +47,8 @@ network_ethernets:
 
 network_interface: eno1
 
+# NOTE: These parameters are only commented out if necessary.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/openstack/#network-interfaces
 # api_interface:
 # bifrost_network_interface:
 # dns_interface:
@@ -55,10 +63,11 @@ network_interface: eno1
 # ceph
 
 # NOTE: Uncomment this when this node is a part of the Ceph cluster.
-# monitor_address:
-# radosgw_address:
+# monitor_address: 192.168.16.10
+# radosgw_address: 192.168.16.10
 
-# NOTE: Uncomment this when this node should be a OSD node.
+# NOTE: Uncomment this when this node should be a OSD node. The OSD devices
+#       used for Ceph must be modified.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/ceph#lvm-devices
 # ceph_osd_devices:
 #   sdb:

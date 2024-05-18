@@ -1,3 +1,9 @@
+# NOTE: This file must be edited before using the configuration repository.
+#       This file serves as a template for a manager node. It is sufficient
+#       to only add the host vars of the manager node in the inventory of
+#       the manager environment. The host vars of all other nodes belong in
+#       the global inventory. The manager node must also be added in the
+#       global inventory. The IP addresses, interface names etc. are examples.
 ---
 ##########################################################
 # ansible
