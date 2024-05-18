@@ -1,4 +1,0 @@
----
-features:
-  - |
-    The `ceph-rgw` group is now part of `inventory/20-roles`.
