@@ -1,3 +1,6 @@
+# NOTE: This file must be edited before using the configuration repository.
+# DOCS: https://osism.tech/docs/guides/configuration-guide/configuration-repository#step-4-post-processing-of-the-generated-configuration
+
 ##########################################################
 # roles
 
