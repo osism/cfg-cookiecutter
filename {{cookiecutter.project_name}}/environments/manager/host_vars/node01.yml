@@ -2,7 +2,11 @@
 ##########################################################
 # ansible
 
-ansible_host: 192.168.16.5
+# NOTE: Address where the node can be reached via SSH. If DHCP is used after the
+#       initial provisioning to assign an IP address to the nodes, the address
+#       assigned via DHCP is initially used here and later adapted to the static
+#       IP address.
+ansible_host: 192.168.16.10
 
 ##########################################################
 # generic
