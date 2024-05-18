@@ -79,6 +79,13 @@
       tox_environment:
         OPENSTACK_VERSION: "2023.2"
 
+- job:
+    name: cfg-cookiecutter-tox-caracal
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2024.1"
+
 - project:
     merge-mode: squash-merge
     default-branch: main
@@ -92,6 +99,7 @@
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
+        - cfg-cookiecutter-tox-caracal
         - container-image-cfg-cookiecutter-build
     gate:
       jobs:
@@ -103,6 +111,7 @@
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
+        - cfg-cookiecutter-tox-caracal
     periodic-daily:
       jobs:
         - ansible-lint
@@ -113,6 +122,7 @@
         - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
+        - cfg-cookiecutter-tox-caracal
         - container-image-cfg-cookiecutter-push
     post:
       jobs:
