@@ -59,13 +59,6 @@
       tox_envlist: cookiecutter
 
 - job:
-    name: cfg-cookiecutter-tox-zed
-    parent: cfg-cookiecutter-tox
-    vars:
-      tox_environment:
-        OPENSTACK_VERSION: zed
-
-- job:
     name: cfg-cookiecutter-tox-antelope
     parent: cfg-cookiecutter-tox
     vars:
@@ -96,7 +89,6 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
         - cfg-cookiecutter-tox-caracal
@@ -108,7 +100,6 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
         - cfg-cookiecutter-tox-caracal
@@ -119,7 +110,6 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-zed
         - cfg-cookiecutter-tox-antelope
         - cfg-cookiecutter-tox-bobcat
         - cfg-cookiecutter-tox-caracal
