@@ -4,6 +4,8 @@
 #       the manager environment. The host vars of all other nodes belong in
 #       the global inventory. The manager node must also be added in the
 #       global inventory. The IP addresses, interface names etc. are examples.
+#       This file (node01.yml) is removed and should not be present in the
+#       configuration repository.
 ---
 ##########################################################
 # ansible
