@@ -1,4 +1,6 @@
 # NOTE: This file must be edited before using the configuration repository.
+#       The node01 is used here as an example. Your own manager node must be
+#       added here. The node01 is then removed and not left in.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/configuration-repository#step-4-post-processing-of-the-generated-configuration
 
 [manager]
