@@ -2,4 +2,5 @@
 ##########################
 # netdata
 
-netdata_api_host: "{{ '{{' }} hostvars['manager01']['ansible_' + hostvars['manager01']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
+# NOTE: The node01 is used here as an example. Your own manager node must be used here.
+netdata_api_host: "{{ '{{' }} hostvars['node01']['ansible_' + hostvars['node01']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
