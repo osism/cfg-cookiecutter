@@ -37,6 +37,7 @@ opensearch_heap_size: "4g"
 # neutron
 neutron_plugin_agent: "ovn"
 neutron_ovn_availability_zones: [ nova ]
+neutron_dns_domain: {{cookiecutter.domain}}.
 
 # octavia
 octavia_network_type: tenant
