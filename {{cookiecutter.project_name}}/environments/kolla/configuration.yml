@@ -32,7 +32,7 @@ enable_heat: "no"
 openstack_service_workers: 5
 
 # elasticsearch
-es_heap_size: "4g"
+opensearch_heap_size: "4g"
 
 # neutron
 neutron_plugin_agent: "ovn"
