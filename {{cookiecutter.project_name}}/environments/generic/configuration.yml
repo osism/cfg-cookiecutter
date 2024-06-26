@@ -1,5 +1,4 @@
 ---
-##########################
-# patchman-client
-
-patchman_client_host: "{{ '{{' }} hostvars['manager01']['ansible_' + hostvars['manager01']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
+# Dummy variable to avoid error because ansible does not recognize the
+# file as a good configuration file when no variable in it.
+dummy:
