@@ -125,7 +125,7 @@ logger.info("Set netbox_secret_key")
 secrets_output_infrastructure["netbox_secret_key"] = "".join(
     [
         random.SystemRandom().choice(string.ascii_letters + string.digits)
-        for n in range(16)
+        for n in range(50)
     ]
 )
 logger.info("Set netbox_superuser_api_token")
