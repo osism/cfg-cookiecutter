@@ -75,3 +75,9 @@ network_interface: eno1
 #   sdc:
 #   sdd:
 #   sde:
+
+##########################################################
+# kubernetes
+
+# NOTE: The value of internal_interface is used by default.
+# k3s_interface:
