@@ -1,4 +1,4 @@
-# This file is required up to OpenStack Kolla 2023.2.
+# This file is required as of OpenStack Kolla 2024.1.
 
 # customer specific configuration
 
