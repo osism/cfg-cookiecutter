@@ -1,0 +1,6 @@
+[tool.black]
+extend-exclude = '''
+/(
+  {{cookiecutter.project_name}}/environments/kolla/files/overlays/horizon/_9999-custom-settings.py
+)
+'''
