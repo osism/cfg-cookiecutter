@@ -59,25 +59,32 @@
       tox_envlist: cookiecutter
 
 - job:
-    name: cfg-cookiecutter-tox-antelope
+    name: cfg-cookiecutter-tox-2023.1
     parent: cfg-cookiecutter-tox
     vars:
       tox_environment:
         OPENSTACK_VERSION: "2023.1"
 
 - job:
-    name: cfg-cookiecutter-tox-bobcat
+    name: cfg-cookiecutter-tox-2023.2
     parent: cfg-cookiecutter-tox
     vars:
       tox_environment:
         OPENSTACK_VERSION: "2023.2"
 
 - job:
-    name: cfg-cookiecutter-tox-caracal
+    name: cfg-cookiecutter-tox-2024.1
     parent: cfg-cookiecutter-tox
     vars:
       tox_environment:
         OPENSTACK_VERSION: "2024.1"
+
+- job:
+    name: cfg-cookiecutter-tox-2024.2
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2024.2"
 
 - project:
     merge-mode: squash-merge
@@ -89,9 +96,10 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-antelope
-        - cfg-cookiecutter-tox-bobcat
-        - cfg-cookiecutter-tox-caracal
+        - cfg-cookiecutter-tox-2023.1
+        - cfg-cookiecutter-tox-2023.2
+        - cfg-cookiecutter-tox-2024.1
+        - cfg-cookiecutter-tox-2024.2
         - container-image-cfg-cookiecutter-build
     gate:
       jobs:
@@ -100,9 +108,10 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-antelope
-        - cfg-cookiecutter-tox-bobcat
-        - cfg-cookiecutter-tox-caracal
+        - cfg-cookiecutter-tox-2023.1
+        - cfg-cookiecutter-tox-2023.2
+        - cfg-cookiecutter-tox-2024.1
+        - cfg-cookiecutter-tox-2024.2
     periodic-daily:
       jobs:
         - ansible-lint
@@ -110,9 +119,10 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-antelope
-        - cfg-cookiecutter-tox-bobcat
-        - cfg-cookiecutter-tox-caracal
+        - cfg-cookiecutter-tox-2023.1
+        - cfg-cookiecutter-tox-2023.2
+        - cfg-cookiecutter-tox-2024.1
+        - cfg-cookiecutter-tox-2024.2
         - container-image-cfg-cookiecutter-push
     post:
       jobs:
