@@ -3,7 +3,7 @@ ansible==10.7.0
 click==8.1.7
 cookiecutter==2.6.0
 cryptography==44.0.0
-loguru==0.7.2
+loguru==0.7.3
 oslo.utils==8.0.0
 paramiko==3.5.0
 passlib==1.7.4
