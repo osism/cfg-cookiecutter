@@ -13,10 +13,10 @@
     "git_version": "main",
     "ip_external": "192.168.16.254",
     "ip_internal": "192.168.16.9",
-    "manager_version": "7.0.4",
+    "manager_version": "8.l.0",
     "name_server": "149.112.112.112",
     "ntp_server": "de.pool.ntp.org",
-    "openstack_version": "2023.2",
+    "openstack_version": "2024.1",
     "project_name": "configuration",
     "_copy_without_render": [
         "environments/kolla/files/overlays/keystone/wsgi-keystone.conf",
