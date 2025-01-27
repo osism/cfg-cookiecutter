@@ -3,6 +3,9 @@ clouds:
   admin:
     auth:
       password: password
+  admin-system:
+    auth:
+      password: password
   octavia:
     auth:
       password: password
