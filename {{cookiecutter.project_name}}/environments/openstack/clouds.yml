@@ -8,6 +8,13 @@ clouds:
       project_domain_name: default
       user_domain_name: default
     endpoint_type: internalURL
+  admin-system:
+    auth:
+      username: admin
+      auth_url: https://{{cookiecutter.fqdn_internal}}:5000/v3
+      user_domain_name: default
+      system_scope: all
+    endpoint_type: internalURL
   octavia:
     auth:
       username: octavia
