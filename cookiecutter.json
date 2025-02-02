@@ -1,6 +1,5 @@
 {
     "with_ceph": 1,
-    "with_keycloak": 0,
     "ceph_network": "192.168.16.0/20",
     "ceph_version": "quincy",
     "domain": "osism.xyz",
