@@ -1,10 +1,5 @@
 ---
 ##########################################################
-# images
-
-docker_registry: quay.io
-
-##########################################################
 # loadbalancer
 
 kolla_internal_fqdn: {{cookiecutter.fqdn_internal}}
