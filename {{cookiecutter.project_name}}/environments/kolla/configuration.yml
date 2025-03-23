@@ -25,9 +25,6 @@ kolla_enable_tls_external: "yes"
 ##########################################################
 # openstack
 
-# disable services
-enable_heat: "no"
-
 # generic
 openstack_service_workers: 5
 
