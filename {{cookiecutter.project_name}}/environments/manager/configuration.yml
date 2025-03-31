@@ -48,9 +48,7 @@ osism_api_host: "{{ hostvars[inventory_hostname]['ansible_' + internal_interface
 ##########################
 # configuration
 
-configuration_directory: /opt/configuration
 configuration_git_private_key_file: ~/.ssh/id_rsa.configuration
-configuration_type: git
 
 configuration_git_host: {{cookiecutter.git_host}}
 configuration_git_port: {{cookiecutter.git_port}}
