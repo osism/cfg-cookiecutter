@@ -3,6 +3,7 @@
 #       host vars file for each node in the cluster. The IP addresses, interface
 #       names etc. are examples. This file (node01.yml) is removed and should
 #       not be present in the configuration repository.
+#
 # DOCS: https://osism.tech/docs/guides/configuration-guide/configuration-repository#step-4-post-processing-of-the-generated-configuration
 ---
 ##########################################################
