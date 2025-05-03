@@ -1,6 +1,7 @@
 ARG PYTHON_VERSION=3.12
 FROM python:${PYTHON_VERSION}-alpine
 
+COPY --from=ghcr.io/astral-sh/uv:0.6.16 /uv /usr/local/bin/uv
 COPY requirements.txt /tmp/requirements.txt
 
 # hadolint ignore=DL3018
@@ -16,8 +17,7 @@ RUN apk add --no-cache \
       openssl-dev \
       python3-dev \
       rust \
-    && pip3 --no-cache-dir install --upgrade 'pip==25.0.1' \
-    && pip3 --no-cache-dir install -r /tmp/requirements.txt \
+    && uv pip install --no-cache --system -r /tmp/requirements.txt \
     && apk del .build-deps \
     && mkdir /output
 
