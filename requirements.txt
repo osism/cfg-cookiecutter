@@ -4,7 +4,7 @@ click==8.2.2
 cookiecutter==2.6.0
 cryptography==45.0.6
 loguru==0.7.3
-oslo.utils==9.0.0
+oslo.utils==9.1.0
 paramiko==3.5.1
 passlib==1.7.4
 pwgen==0.8.2.post0
