@@ -109,12 +109,20 @@ configuration_output_all["ceph_cluster_fsid"] = ceph_fsid
 logger.info("Set fsid")
 configuration_output_ceph["fsid"] = ceph_fsid
 
-k3s_token = "".join([random.SystemRandom().choice(string.digits) for n in range(32)])
+k3s_token = "".join(
+    [
+        random.SystemRandom().choice(string.ascii_letters + string.digits)
+        for n in range(32)
+    ]
+)
 logger.info("Set k3s_token")
 secrets_output_manager["k3s_token"] = k3s_token
 
 netbox_api_token = "".join(
-    [random.SystemRandom().choice(string.digits) for n in range(40)]
+    [
+        random.SystemRandom().choice(string.ascii_letters + string.digits)
+        for n in range(40)
+    ]
 )
 logger.info("Set netbox_api_token")
 secrets_output_manager["netbox_api_token"] = netbox_api_token
