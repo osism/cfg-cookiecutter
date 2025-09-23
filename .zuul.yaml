@@ -59,13 +59,6 @@
       tox_envlist: cookiecutter
 
 - job:
-    name: cfg-cookiecutter-tox-2023.2
-    parent: cfg-cookiecutter-tox
-    vars:
-      tox_environment:
-        OPENSTACK_VERSION: "2023.2"
-
-- job:
     name: cfg-cookiecutter-tox-2024.1
     parent: cfg-cookiecutter-tox
     vars:
@@ -79,6 +72,13 @@
       tox_environment:
         OPENSTACK_VERSION: "2024.2"
 
+- job:
+    name: cfg-cookiecutter-tox-2025.1
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2025.1"
+
 - project:
     merge-mode: squash-merge
     default-branch: main
@@ -89,20 +89,10 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-2023.2
         - cfg-cookiecutter-tox-2024.1
         - cfg-cookiecutter-tox-2024.2
+        - cfg-cookiecutter-tox-2025.1
         - container-image-cfg-cookiecutter-build
-    gate:
-      jobs:
-        - ansible-lint
-        - flake8
-        - hadolint
-        - python-black
-        - yamllint
-        - cfg-cookiecutter-tox-2023.2
-        - cfg-cookiecutter-tox-2024.1
-        - cfg-cookiecutter-tox-2024.2
     periodic-daily:
       jobs:
         - ansible-lint
@@ -110,9 +100,9 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-2023.2
         - cfg-cookiecutter-tox-2024.1
         - cfg-cookiecutter-tox-2024.2
+        - cfg-cookiecutter-tox-2025.1
         - container-image-cfg-cookiecutter-push
     post:
       jobs:
