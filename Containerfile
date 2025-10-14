@@ -1,7 +1,7 @@
 ARG PYTHON_VERSION=3.12
 FROM python:${PYTHON_VERSION}-alpine
 
-COPY --from=ghcr.io/astral-sh/uv:0.8.20 /uv /usr/local/bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.9.2 /uv /usr/local/bin/uv
 COPY requirements.txt /tmp/requirements.txt
 
 # hadolint ignore=DL3018
