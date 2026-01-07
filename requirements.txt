@@ -11,5 +11,5 @@ pwgen==0.8.2.post0
 pycryptodome==3.23.0
 pykeepass==4.1.1.post1
 python-gilt==1.2.3
-ruamel.yaml==0.18.17
+ruamel.yaml==0.19.1
 yamllint==1.37.1
