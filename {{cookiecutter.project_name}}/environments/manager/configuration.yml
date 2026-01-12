@@ -3,7 +3,7 @@
 # docker registries
 
 docker_registry: index.docker.io
-docker_registry_ansible: quay.io
+docker_registry_ansible: registry.osism.tech
 
 ##########################
 # versions
