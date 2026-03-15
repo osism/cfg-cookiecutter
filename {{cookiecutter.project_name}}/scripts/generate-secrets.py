@@ -73,7 +73,7 @@ def genpwd(
 
     for k, v in passwords.items():
         if k in ssh_keys and (
-            v is None or v.get("public_key") is None and v.get("private_key") is None
+            v is None or v.get("public_key") is None or v.get("private_key") is None
         ):
             private_key, public_key = generate_RSA()
             passwords[k] = {"private_key": private_key, "public_key": public_key}
@@ -138,6 +138,7 @@ def main():
         "haproxy_ssh_key",
         "keystone_ssh_key",
         "kolla_ssh_key",
+        "neutron_ssh_key",
         "nova_ssh_key",
         "octavia_amp_ssh_key",
     ]
