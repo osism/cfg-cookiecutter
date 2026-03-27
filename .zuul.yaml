@@ -79,6 +79,13 @@
       tox_environment:
         OPENSTACK_VERSION: "2025.1"
 
+- job:
+    name: cfg-cookiecutter-tox-2025.2
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2025.2"
+
 - project:
     merge-mode: squash-merge
     default-branch: main
@@ -92,6 +99,7 @@
         - cfg-cookiecutter-tox-2024.1
         - cfg-cookiecutter-tox-2024.2
         - cfg-cookiecutter-tox-2025.1
+        - cfg-cookiecutter-tox-2025.2
         - container-image-cfg-cookiecutter-build
     periodic-daily:
       jobs:
@@ -100,9 +108,6 @@
         - hadolint
         - python-black
         - yamllint
-        - cfg-cookiecutter-tox-2024.1
-        - cfg-cookiecutter-tox-2024.2
-        - cfg-cookiecutter-tox-2025.1
         - container-image-cfg-cookiecutter-push
     post:
       jobs:
