@@ -66,13 +66,6 @@
         OPENSTACK_VERSION: "2024.1"
 
 - job:
-    name: cfg-cookiecutter-tox-2024.2
-    parent: cfg-cookiecutter-tox
-    vars:
-      tox_environment:
-        OPENSTACK_VERSION: "2024.2"
-
-- job:
     name: cfg-cookiecutter-tox-2025.1
     parent: cfg-cookiecutter-tox
     vars:
@@ -97,7 +90,6 @@
         - python-black
         - yamllint
         - cfg-cookiecutter-tox-2024.1
-        - cfg-cookiecutter-tox-2024.2
         - cfg-cookiecutter-tox-2025.1
         - cfg-cookiecutter-tox-2025.2
         - container-image-cfg-cookiecutter-build
