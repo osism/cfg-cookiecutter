@@ -2,7 +2,7 @@
 
 # customer specific configuration
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 # SESSION_TIMEOUT = 7200
 # OPENSTACK_ENABLE_PASSWORD_RETRIEVE = True
