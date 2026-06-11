@@ -24,9 +24,9 @@ operator_authorized_keys:
 ##########################
 # resolvconf
 
-# NOTE: As it is not trivial to comfortably query several entries for a parameter
-#       with Cookiecutter, only one DNS server is added here. At least one additional
-#       DNS server should be added. Delete this comment afterwards.
+# NOTE: Add at least one more DNS server for production deployments. Only one
+#       server is set here due to a Cookiecutter prompting limitation. Delete
+#       this comment afterwards.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/commons/resolvconf
 resolvconf_nameserver:
   - {{cookiecutter.name_server}}
@@ -44,9 +44,9 @@ hosts_additional_entries:
 ##########################
 # chrony
 
-# NOTE: As it is not trivial to comfortably query several entries for a parameter
-#       with Cookiecutter, only one NTP server is added here. At least one additional
-#       NTP server should be added. Delete this comment afterwards.
+# NOTE: Add at least one more NTP server. The chrony role requires a minimum of
+#       two servers and bootstrap fails otherwise. Only one server is set here
+#       due to a Cookiecutter prompting limitation. Delete this comment afterwards.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/services/chrony
 chrony_servers:
   - {{cookiecutter.ntp_server}}
