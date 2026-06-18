@@ -29,7 +29,6 @@ chmod 0600 secrets/vaultpass
 for secretsfile in $(find environments -name 'secrets.yml'); do
     ansible-vault encrypt --vault-password-file secrets/vaultpass $secretsfile
 done
-chmod +x environments/.vault_pass
 
 if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
 
