@@ -10,6 +10,12 @@ from ruamel.yaml import YAML
 
 SECRETS_ALL = {"keystone_admin_password": "keystone_admin_password"}
 
+SECRETS_OPENSTACK = {
+    "os_password_admin": "keystone_admin_password",
+    "os_password_admin_system": "keystone_admin_password",
+    "os_password_octavia": "octavia_keystone_password",
+}
+
 SECRETSFILE_INPUT_KOLLA = "environments/kolla/secrets.yml"
 
 SECRETSFILE_OUTPUT_ALL = "environments/secrets.yml"
@@ -18,6 +24,7 @@ SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/infrastructure/secrets.yml"
 SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
 SECRETSFILE_OUTPUT_MONITORING = "environments/monitoring/secrets.yml"
+SECRETSFILE_OUTPUT_OPENSTACK = "environments/openstack/secrets.yml"
 
 CONFIGURATIONFILE_OUTPUT_ALL = "environments/configuration.yml"
 CONFIGURATIONFILE_OUTPUT_CEPH = "environments/ceph/configuration.yml"
@@ -57,6 +64,10 @@ logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING) as fp:
     secrets_output_monitoring = yaml.load(fp)
 
+logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_OPENSTACK}")
+with open(SECRETSFILE_OUTPUT_OPENSTACK) as fp:
+    secrets_output_openstack = yaml.load(fp)
+
 logger.info(f"Prepare use of {CONFIGURATIONFILE_OUTPUT_ALL}")
 with open(CONFIGURATIONFILE_OUTPUT_ALL) as fp:
     configuration_output_all = yaml.load(fp)
@@ -72,6 +83,10 @@ with open(CONFIGURATIONFILE_OUTPUT_KOLLA) as fp:
 for key in SECRETS_ALL.keys():
     logger.info(f"Set {key}")
     secrets_output_all[key] = secrets_input[SECRETS_ALL[key]]
+
+for key in SECRETS_OPENSTACK.keys():
+    logger.info(f"Set {key}")
+    secrets_output_openstack[key] = secrets_input[SECRETS_OPENSTACK[key]]
 
 if "ceph_cluster_fsid" in secrets_output_kolla:
     del secrets_output_kolla["ceph_cluster_fsid"]
@@ -191,6 +206,10 @@ with open(SECRETSFILE_OUTPUT_MANAGER, "w+") as fp:
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING, "w+") as fp:
     yaml.dump(secrets_output_monitoring, fp)
+
+logger.info(f"Write result to {SECRETSFILE_OUTPUT_OPENSTACK}")
+with open(SECRETSFILE_OUTPUT_OPENSTACK, "w+") as fp:
+    yaml.dump(secrets_output_openstack, fp)
 
 logger.info(f"Write result to {CONFIGURATIONFILE_OUTPUT_ALL}")
 with open(CONFIGURATIONFILE_OUTPUT_ALL, "w+") as fp:
