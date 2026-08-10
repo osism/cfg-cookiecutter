@@ -1,0 +1,10 @@
+---
+##########################
+# k3s
+
+# apiserver_endpoint is the virtual IP address configured on each k3s master
+# by kube-vip.
+apiserver_endpoint: 192.168.16.8
+
+# Address range announced by MetalLB for LoadBalancer services.
+metal_lb_ip_range: "192.168.16.100-192.168.16.200"
