@@ -23,6 +23,7 @@ SECRETSFILE_OUTPUT_CEPH = "environments/ceph/secrets.yml"
 SECRETSFILE_OUTPUT_INFRASTRUCTURE = "environments/infrastructure/secrets.yml"
 SECRETSFILE_OUTPUT_KOLLA = "environments/kolla/secrets.yml"
 SECRETSFILE_OUTPUT_MANAGER = "environments/manager/secrets.yml"
+SECRETSFILE_OUTPUT_KUBERNETES = "environments/kubernetes/secrets.yml"
 SECRETSFILE_OUTPUT_MONITORING = "environments/monitoring/secrets.yml"
 SECRETSFILE_OUTPUT_OPENSTACK = "environments/openstack/secrets.yml"
 
@@ -59,6 +60,10 @@ with open(SECRETSFILE_OUTPUT_KOLLA) as fp:
 logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_MANAGER}")
 with open(SECRETSFILE_OUTPUT_MANAGER) as fp:
     secrets_output_manager = yaml.load(fp)
+
+logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_KUBERNETES}")
+with open(SECRETSFILE_OUTPUT_KUBERNETES) as fp:
+    secrets_output_kubernetes = yaml.load(fp)
 
 logger.info(f"Prepare use of {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING) as fp:
@@ -131,7 +136,7 @@ k3s_token = "".join(
     ]
 )
 logger.info("Set k3s_token")
-secrets_output_manager["k3s_token"] = k3s_token
+secrets_output_kubernetes["k3s_token"] = k3s_token
 
 netbox_api_token = "".join(
     [
@@ -202,6 +207,10 @@ with open(SECRETSFILE_OUTPUT_KOLLA, "w+") as fp:
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_MANAGER}")
 with open(SECRETSFILE_OUTPUT_MANAGER, "w+") as fp:
     yaml.dump(secrets_output_manager, fp)
+
+logger.info(f"Write result to {SECRETSFILE_OUTPUT_KUBERNETES}")
+with open(SECRETSFILE_OUTPUT_KUBERNETES, "w+") as fp:
+    yaml.dump(secrets_output_kubernetes, fp)
 
 logger.info(f"Write result to {SECRETSFILE_OUTPUT_MONITORING}")
 with open(SECRETSFILE_OUTPUT_MONITORING, "w+") as fp:
