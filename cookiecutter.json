@@ -1,7 +1,7 @@
 {
     "with_ceph": 1,
     "ceph_network": "192.168.16.0/20",
-    "ceph_version": "quincy",
+    "ceph_version": "reef",
     "domain": "osism.xyz",
     "fqdn_external": "api.osism.xyz",
     "fqdn_internal": "api-int.osism.xyz",
