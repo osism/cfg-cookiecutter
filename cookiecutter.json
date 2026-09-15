@@ -14,7 +14,7 @@
     "ip_internal": "192.168.16.9",
     "manager_version": "10.2.0",
     "name_server": "149.112.112.112",
-    "ntp_server": "de.pool.ntp.org",
+    "ntp_server": "0.de.pool.ntp.org,1.de.pool.ntp.org",
     "openstack_version": "2025.1",
     "project_name": "configuration",
     "_copy_without_render": [

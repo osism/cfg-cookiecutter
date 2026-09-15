@@ -44,12 +44,11 @@ hosts_additional_entries:
 ##########################
 # chrony
 
-# NOTE: Add at least one more NTP server. The chrony role requires a minimum of
-#       two servers and bootstrap fails otherwise. Only one server is set here
-#       due to a Cookiecutter prompting limitation. Delete this comment afterwards.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/services/chrony
 chrony_servers:
-  - {{cookiecutter.ntp_server}}
+{%- for ntp_server in cookiecutter.ntp_server.replace(',', ' ').split() %}
+  - {{ ntp_server }}
+{%- endfor %}
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################
