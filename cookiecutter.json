@@ -16,10 +16,5 @@
     "name_server": "149.112.112.112",
     "ntp_server": "0.de.pool.ntp.org,1.de.pool.ntp.org",
     "openstack_version": "2025.1",
-    "project_name": "configuration",
-    "_copy_without_render": [
-        "environments/kolla/files/overlays/keystone/wsgi-keystone.conf",
-        "environments/kolla/files/overlays/haproxy/haproxy.cfg.*",
-        "environments/kolla/files/overlays/neutron/ml2_conf.ini"
-    ]
+    "project_name": "configuration"
 }
