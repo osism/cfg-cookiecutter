@@ -1,5 +1,26 @@
 ---
 ##########################################################
+# images
+
+# Where the Kolla service images are pulled from. Nothing upstream emits a
+# usable value for this: osism/defaults ships only the placeholder `kolla`, and
+# the release pins do not set it at all. OSISM 10 introduced the versioned form,
+# with the OpenStack release appended; the rolling development head is the
+# exception and publishes to the plain namespace.
+#
+# The versioned form resolves openstack_version at Ansible time rather than
+# baking it in here, because that is the same value the image tags are chosen
+# from: for a pinned release it comes from the kolla-ansible container's own
+# group_vars (rendered at image build time), not from this repository. Writing a
+# literal would create two independent sources for one fact, and a namespace
+# naming one series while the tags name another fails the pull.
+{% if cookiecutter.manager_version == "latest" -%}
+docker_namespace: kolla
+{%- else -%}
+{% raw %}docker_namespace: "kolla/release/{{ openstack_version }}"{% endraw %}
+{%- endif %}
+
+##########################################################
 # loadbalancer
 
 kolla_internal_fqdn: {{cookiecutter.fqdn_internal}}
