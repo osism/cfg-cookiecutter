@@ -1,0 +1,31 @@
+# This file exists to keep this directory in git. Do not remove it.
+#
+# The certificates are installed into this directory rather than committed, so
+# the directory has to exist before they are written. Git does not carry an empty
+# directory, so removing this file removes the directory with it.
+#
+# The amphora certificates, used when Octavia runs the `amphora` provider driver:
+#
+#     client.cert-and-key.pem
+#     client_ca.cert.pem
+#     server_ca.cert.pem
+#     server_ca.key.pem
+#
+# They are deliberately not shipped as empty placeholders. Kolla's octavia
+# precheck stats exactly these four names and fails when one is missing, and a
+# zero-byte file satisfies that check -- so placeholders pass the precheck, the
+# unusable files are copied into the service configuration, and Octavia instead
+# fails at first use with `CertificateGenerationException: Unable to load PEM
+# file`, leaving every load balancer in ERROR. Leaving them out lets the precheck
+# fail instead, while the cause is still obvious.
+#
+# Generate them with the two commands below, which the deploy guide runs as part
+# of bringing Octavia up:
+#
+#     osism apply octavia-certificates
+#     osism apply copy-octavia-certificates
+#
+# https://osism.tech/docs/guides/deploy-guide/services/openstack
+#
+# The CA is keyed to `octavia_ca_password` in `environments/kolla/secrets.yml`.
+# To check or renew an existing set, see "Octavia" in the troubleshooting guide.
