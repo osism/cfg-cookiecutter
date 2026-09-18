@@ -55,4 +55,8 @@ chrony_servers:
 # ceph
 
 ceph_cluster_fsid:
+
+# yamllint disable rule:line-length
+ceph_public_key: FIXME
+# yamllint enable rule:line-length
 {%- endif %}

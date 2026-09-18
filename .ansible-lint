@@ -9,5 +9,7 @@ exclude_paths:
   - \{\{cookiecutter.project_name\}\}/environments/monitoring/configuration.yml
   - \{\{cookiecutter.project_name\}\}/environments/infrastructure/configuration.yml
   - \{\{cookiecutter.project_name\}\}/environments/custom/configuration.yml
+  - \{\{cookiecutter.project_name\}\}/environments/secrets.yml
+  - \{\{cookiecutter.project_name\}\}/inventory/group_vars/ceph.yml
 mock_roles:
   - ensure-docker

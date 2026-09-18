@@ -10,7 +10,7 @@ rm -f environments/kolla/files/overlays/haproxy/haproxy.cfg.*
 
 chmod 0700 secrets/
 
-for name in operator configuration; do
+for name in operator configuration{% if cookiecutter.with_ceph|int %} ceph{% endif %}; do
     ssh-keygen -t rsa -b 4096 -N "" -f secrets/id_rsa.$name -C "" -m PEM
 done
 
@@ -35,6 +35,9 @@ if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
     rm -rf environments/infrastructure/files
 
     rm -rf environments/ceph
+
+    rm -f inventory/group_vars/ceph.yml
+    rmdir inventory/group_vars 2>/dev/null || true
 
     rm -rf environments/kolla/files/overlays/gnocchi
 
