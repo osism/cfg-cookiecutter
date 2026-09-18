@@ -1,0 +1,9 @@
+---
+# The dedicated SSH key cephadm authenticates with. Scoped to the ceph group so
+# it reaches Ceph hosts and nowhere else; the deployment-wide operator keys come
+# from operator_authorized_keys and are unaffected, because the two lists resolve
+# independently.
+{% raw -%}
+operator_additional_authorized_keys:
+  - "{{ ceph_public_key }}"
+{%- endraw %}

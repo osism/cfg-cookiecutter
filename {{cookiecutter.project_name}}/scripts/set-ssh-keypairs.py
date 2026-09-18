@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 
+import os
+
 from loguru import logger
 from ruamel.yaml import YAML
+
+# The ceph keypair only exists when with_ceph was enabled at render time (see
+# hooks/post_gen_project.sh); key off that artifact rather than a separate
+# render-time flag so this stays correct even if the two ever drifted.
+_ceph_key = os.path.exists("secrets/id_rsa.ceph")
 
 PRIVATE_KEYS = {
     "operator": "operator_private_key",
     "configuration": "configuration_git_private_key",
 }
+if _ceph_key:
+    PRIVATE_KEYS["ceph"] = "ceph_ssh_private_key"
 
 SECRETSFILE = "environments/secrets.yml"
 CONFIGURATIONFILE = "environments/configuration.yml"
@@ -54,6 +63,16 @@ with open("secrets/id_rsa.operator.pub", "r") as fp:
 
 logger.info("Set operator_public_key")
 configuration["operator_public_key"] = data
+
+if _ceph_key:
+    # set ceph public key
+
+    with open("secrets/id_rsa.ceph.pub", "r") as fp:
+        data = fp.read()
+        data = data.rstrip()
+
+    logger.info("Set ceph_public_key")
+    configuration["ceph_public_key"] = data
 
 # set configuration public key
 
