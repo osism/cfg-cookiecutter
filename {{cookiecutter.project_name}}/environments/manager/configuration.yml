@@ -10,9 +10,6 @@ docker_registry_ansible: registry.osism.tech
 
 manager_version: {{cookiecutter.manager_version}}
 {% if cookiecutter.manager_version == "latest" %}
-{% if cookiecutter.with_ceph|int -%}
-ceph_version: {{cookiecutter.ceph_version}}
-{% endif -%}
 openstack_version: {{cookiecutter.openstack_version}}
 {%- endif %}
 
