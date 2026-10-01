@@ -1,7 +1,7 @@
 {
     "with_ceph": 1,
     "ceph_network": "192.168.16.0/20",
-    "ceph_version": "reef",
+    "ceph_version": "tentacle",
     "domain": "osism.xyz",
     "fqdn_external": "api.osism.xyz",
     "fqdn_internal": "api-int.osism.xyz",
@@ -12,9 +12,9 @@
     "git_version": "main",
     "ip_external": "192.168.16.254",
     "ip_internal": "192.168.16.9",
-    "manager_version": "10.3.0",
+    "manager_version": "11.0.0",
     "name_server": "149.112.112.112",
     "ntp_server": "0.de.pool.ntp.org,1.de.pool.ntp.org",
-    "openstack_version": "2025.1",
+    "openstack_version": "2026.1",
     "project_name": "configuration"
 }
