@@ -29,7 +29,9 @@ ceph_conf_overrides:
     "rgw keystone admin project": "service"
     "rgw keystone admin tenant": "service"
     "rgw keystone admin user": "ceph_rgw"
+{%- if cookiecutter.ceph_version in ["quincy", "reef", "squid"] %}
     "rgw keystone api version": "3"
+{%- endif %}
     "rgw keystone implicit tenants": "true"
     "rgw keystone url": "https://{{cookiecutter.fqdn_internal}}:5000"
     "rgw keystone verify ssl": "false"
