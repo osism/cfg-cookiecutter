@@ -13,7 +13,7 @@ manager_version: {{cookiecutter.manager_version}}
 openstack_version: {{cookiecutter.openstack_version}}
 {%- endif %}
 
-{% if not cookiecutter.with_ceph|int -%}
+{% if not cookiecutter.with_ceph|int or cookiecutter.ceph_version not in ["quincy", "reef", "squid"] -%}
 ##########################
 # ansible
 
