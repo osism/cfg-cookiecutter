@@ -55,6 +55,9 @@ chrony_servers:
 # ceph
 
 ceph_cluster_fsid:
+{%- if cookiecutter.manager_version == "latest" %}
+ceph_version: {{cookiecutter.ceph_version}}
+{%- endif %}
 
 # yamllint disable rule:line-length
 ceph_public_key: FIXME
