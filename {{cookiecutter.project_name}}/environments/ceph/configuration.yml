@@ -11,6 +11,16 @@ public_network: {{cookiecutter.ceph_network}}
 cluster_network: {{cookiecutter.ceph_network}}
 
 ##########################
+# dashboard
+
+# The haproxy overlay for the dashboard uses `http-check disable-on-404` to
+# drop standby managers from the backend, so a standby has to answer 404. These
+# are stated here, as extra vars, because the deploy plays take precedence over
+# the inventory defaults.
+ceph_dashboard_standby_behaviour: error
+ceph_dashboard_standby_error_status_code: 404
+
+##########################
 # custom
 
 ceph_conf_overrides:
