@@ -9,6 +9,16 @@ fsid:
 
 public_network: {{cookiecutter.ceph_network}}
 cluster_network: {{cookiecutter.ceph_network}}
+{%- if cookiecutter.ceph_version not in ["quincy", "reef", "squid"] %}
+
+##########################
+# rgw
+
+# The cephadm plays deploy RGW and create its pools only when this is true;
+# environments/kolla/configuration.yml, which enables the OpenStack side, is
+# not loaded here.
+enable_ceph_rgw: true
+{%- endif %}
 
 ##########################
 # custom
