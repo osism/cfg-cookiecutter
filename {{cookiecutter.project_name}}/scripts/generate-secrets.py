@@ -129,7 +129,6 @@ def main():
         "gnocchi_resource_id",
         "gnocchi_user_id",
         "designate_pool_id",
-        "karbor_openstack_infra_id",
     ]
 
     # SSH key pair
