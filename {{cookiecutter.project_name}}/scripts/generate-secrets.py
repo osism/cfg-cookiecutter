@@ -137,7 +137,6 @@ def main():
         "bifrost_ssh_key",
         "haproxy_ssh_key",
         "keystone_ssh_key",
-        "kolla_ssh_key",
         "neutron_ssh_key",
         "nova_ssh_key",
         "octavia_amp_ssh_key",
