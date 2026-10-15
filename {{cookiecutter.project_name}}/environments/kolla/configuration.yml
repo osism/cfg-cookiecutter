@@ -58,6 +58,16 @@ octavia_network_type: tenant
 # designate
 designate_ns_record: openstack.{{cookiecutter.domain}}
 
+# ceilometer
+# With ceilometer enabled, its polling agents serve their samples on this
+# port and the Prometheus that OSISM deploys scrapes them. Uncomment to turn
+# the export off or to move it to another port.
+# enable_ceilometer_prometheus_exporter: "no"
+# ceilometer_prometheus_exporter_port: "9181"
+# A host that runs both the central and the compute agent needs one of them
+# on another port; set it in that host's host_vars:
+# ceilometer_central_prometheus_exporter_port: "9182"
+
 {%- if cookiecutter.with_ceph|int %}
 
 ##########################################################
