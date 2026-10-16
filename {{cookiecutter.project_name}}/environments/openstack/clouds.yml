@@ -8,6 +8,7 @@ clouds:
       project_domain_name: default
       user_domain_name: default
     endpoint_type: internalURL
+    cacert: /etc/ssl/certs/ca-certificates.crt
   admin-system:
     auth:
       username: admin
@@ -15,6 +16,7 @@ clouds:
       user_domain_name: default
       system_scope: all
     endpoint_type: internalURL
+    cacert: /etc/ssl/certs/ca-certificates.crt
   octavia:
     auth:
       username: octavia
@@ -23,3 +25,4 @@ clouds:
       project_domain_name: default
       user_domain_name: default
     endpoint_type: internalURL
+    cacert: /etc/ssl/certs/ca-certificates.crt
