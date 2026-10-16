@@ -24,12 +24,11 @@ operator_authorized_keys:
 ##########################
 # resolvconf
 
-# NOTE: Add at least one more DNS server for production deployments. Only one
-#       server is set here due to a Cookiecutter prompting limitation. Delete
-#       this comment afterwards.
 # DOCS: https://osism.tech/docs/guides/configuration-guide/commons/resolvconf
 resolvconf_nameserver:
-  - {{cookiecutter.name_server}}
+{%- for name_server in cookiecutter.name_server.replace(',', ' ').split() %}
+  - {{ name_server }}
+{%- endfor %}
 resolvconf_search: {{cookiecutter.domain}}
 
 ##########################

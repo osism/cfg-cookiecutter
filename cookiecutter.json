@@ -13,7 +13,7 @@
     "ip_external": "192.168.16.254",
     "ip_internal": "192.168.16.9",
     "manager_version": "11.0.1",
-    "name_server": "149.112.112.112",
+    "name_server": "9.9.9.9,149.112.112.112",
     "ntp_server": "0.de.pool.ntp.org,1.de.pool.ntp.org",
     "openstack_version": "2026.1",
     "project_name": "configuration"
