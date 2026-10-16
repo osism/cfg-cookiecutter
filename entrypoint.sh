@@ -15,8 +15,13 @@ fi
 
 set -x
 umask 0077
-cookiecutter -o /output /data $@
-chown -R $TARGET_UID:$TARGET_GID /output
+cookiecutter -o /output /data "$@"
+rc=$?
+chown -R "$TARGET_UID:$TARGET_GID" /output
 
 set +x
+if [ "$rc" -ne 0 ]; then
+  echo "ERROR: COOKIECUTTER FAILED (exit code $rc)"
+  exit "$rc"
+fi
 echo "COOKIECUTTER COMPLETED"
