@@ -36,6 +36,12 @@ node01
 [network]
 node01
 
+# Do not define a [storage] group here, not even for the Ceph nodes. It is
+# kolla's group for cinder-volume, cinder-backup, gnocchi and tgtd, and generics
+# maps it to control. A group defined in this file replaces the generics
+# definition rather than adding to it, so a [storage] group here moves those
+# services onto its hosts. Ceph nodes belong in ceph-control and ceph-resource.
+
 # Nodes that serve as controllers for Ceph, so things like the
 # Ceph monitor service run here.
 [ceph-control]
