@@ -25,15 +25,6 @@ internal_interface: eno1
 internal_address: 192.168.16.10
 
 ##########################################################
-# netdata
-
-netdata_host_type: client
-
-# NOTE: Uncomment this when this node should be a Netdata server. The previous line
-#       with "netdata_host_type: client" is then commented
-# netdata_host_type: server
-
-##########################################################
 # network
 
 # NOTE: This is the initial management interface. Further interfaces can be added.
