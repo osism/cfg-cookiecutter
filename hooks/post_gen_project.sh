@@ -2,7 +2,11 @@
 
 set -ueo pipefail
 
-# NOTE: this is being done twice on purpose here
+# NOTE: The first run replaces the bootstrap gilt.yml with generics' full one
+#       (from main). The second copies the files, still from main, and its
+#       set-versions.py then pins gilt.yml to the release's generics_version.
+#       The third copies the files from that pinned version.
+MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 MANAGER_VERSION={{ cookiecutter.manager_version }} gilt overlay
 
