@@ -41,6 +41,8 @@ if [[ {{ cookiecutter.with_ceph }} == 0 ]]; then
 
     rm -rf environments/kolla/files/overlays/gnocchi
 
+    rm -rf environments/kolla/files/overlays/manila
+
     rm -rf environments/kolla/files/overlays/glance
     rm -rf environments/kolla/files/overlays/glance-api
 
