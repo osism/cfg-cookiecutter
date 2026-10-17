@@ -1,0 +1,4 @@
+---
+# The manager runs the netdata server; every other node is a client (the role
+# default) and streams to it.
+netdata_host_type: server

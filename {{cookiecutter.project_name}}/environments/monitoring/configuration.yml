@@ -2,6 +2,5 @@
 ##########################
 # netdata
 
-# NOTE: The node01 is used here as an example. Your own manager node must be used here.
-#       Delete this comment afterwards.
-netdata_api_host: "{{ '{{' }} hostvars['node01']['ansible_' + hostvars['node01']['internal_interface']]['ipv4']['address'] {{ '}}' }}"
+# The netdata server: the first manager node (inventory/group_vars/manager.yml).
+netdata_api_host: "{{ '{{' }} hostvars[groups['manager'][0]]['internal_address'] {{ '}}' }}"
