@@ -1,28 +1,9 @@
-# This file is required as of OpenStack Kolla 2024.1.
-
-# customer specific configuration
-
-from django.utils.translation import gettext_lazy as _
+# Custom Horizon settings
+#
+# Kolla installs this file as local_settings.d/_9999-custom-settings.py,
+# where it is loaded last and overrides all other Horizon settings. The
+# file is rendered as an Ansible template, so Jinja expressions can be
+# used.
 
 # SESSION_TIMEOUT = 7200
 # OPENSTACK_ENABLE_PASSWORD_RETRIEVE = True
-
-SHOW_KEYSTONE_V2_RC = False
-USER_MENU_LINKS = [
-    {
-        "name": _("OpenStack clouds.yml File"),
-        "icon_classes": [
-            "fa-download",
-        ],
-        "url": "horizon:project:api_access:clouds.yaml",
-        "external": False,
-    },
-    {
-        "name": _("OpenStack RC File v3"),
-        "icon_classes": [
-            "fa-download",
-        ],
-        "url": "horizon:project:api_access:openrc",
-        "external": False,
-    },
-]
