@@ -94,6 +94,13 @@
         OPENSTACK_VERSION: "2026.1"
         WITH_CEPH: "0"
 
+- job:
+    name: cfg-cookiecutter-tox-2026.2
+    parent: cfg-cookiecutter-tox
+    vars:
+      tox_environment:
+        OPENSTACK_VERSION: "2026.2"
+
 - project:
     merge-mode: squash-merge
     default-branch: main
@@ -109,6 +116,7 @@
         - cfg-cookiecutter-tox-2025.2
         - cfg-cookiecutter-tox-2026.1
         - cfg-cookiecutter-tox-2026.1-without-ceph
+        - cfg-cookiecutter-tox-2026.2
         - container-image-cfg-cookiecutter-build
     periodic-daily:
       jobs:
