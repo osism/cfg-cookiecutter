@@ -1,5 +1,5 @@
 PyYAML==6.0.4
-ansible==12.3.0
+ansible==15.0.0
 click==8.5.1
 cookiecutter==2.7.1
 cryptography==50.0.2
