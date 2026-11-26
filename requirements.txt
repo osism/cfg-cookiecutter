@@ -6,7 +6,7 @@ cryptography==50.0.2
 loguru==0.8.0
 oslo.utils==10.3.0
 paramiko==5.1.0
-passlib==1.7.4
+passlib==1.9.5
 pwgen==0.8.2.post0
 pycryptodome==3.24.1
 pykeepass==4.2.0
